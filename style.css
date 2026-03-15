@@ -1320,3 +1320,737 @@ footer {
     color: #000;
     box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
 }
+
+/* ============================================
+   LINUX ENTHUSIAST SECTION
+   ============================================ */
+
+/* --- Messenger-Style Chat --- */
+.chat-messenger {
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-color: rgba(0, 255, 136, 0.25);
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
+}
+
+.chat-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.chat-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chat-avatar-group {
+    display: flex;
+    gap: -6px;
+}
+
+.chat-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar-kernel {
+    background: rgba(255, 0, 170, 0.15);
+}
+
+.avatar-shell {
+    background: rgba(0, 255, 136, 0.15);
+    margin-left: -8px;
+}
+
+.chat-room-name {
+    font-family: var(--font-display);
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.chat-status-online {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.chat-online-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+.chat-topbar-right {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-window-btn {
+    color: #555;
+    font-size: 0.85rem;
+    cursor: default;
+    font-family: var(--font-mono);
+}
+
+.chat-close-btn {
+    color: #ff5f56;
+}
+
+/* Chat Messages Area */
+.chat-messages {
+    padding: 20px 24px;
+    min-height: 320px;
+    max-height: 420px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    scroll-behavior: smooth;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Chat Bubble */
+.chat-bubble {
+    display: flex;
+    gap: 10px;
+    max-width: 85%;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: bubbleIn 0.4s ease forwards;
+}
+
+.chat-bubble.bubble-adhi {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.chat-bubble.bubble-kernel,
+.chat-bubble.bubble-shell {
+    align-self: flex-start;
+}
+
+.chat-bubble-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.bubble-adhi .chat-bubble-avatar {
+    background: rgba(0, 240, 255, 0.15);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.bubble-kernel .chat-bubble-avatar {
+    background: rgba(255, 0, 170, 0.15);
+    border: 1px solid rgba(255, 0, 170, 0.3);
+}
+
+.bubble-shell .chat-bubble-avatar {
+    background: rgba(0, 255, 136, 0.15);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.chat-bubble-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.chat-bubble-name {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.bubble-adhi .chat-bubble-name {
+    color: var(--cyan);
+    text-align: right;
+}
+
+.bubble-kernel .chat-bubble-name {
+    color: var(--magenta);
+}
+
+.bubble-shell .chat-bubble-name {
+    color: var(--green);
+}
+
+.chat-bubble-msg {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    padding: 10px 16px;
+    border-radius: 14px;
+    position: relative;
+}
+
+.bubble-adhi .chat-bubble-msg {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.12), rgba(0, 102, 255, 0.12));
+    color: #e0f0ff;
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-top-right-radius: 4px;
+}
+
+.bubble-kernel .chat-bubble-msg {
+    background: rgba(255, 0, 170, 0.08);
+    color: #f0dde8;
+    border: 1px solid rgba(255, 0, 170, 0.12);
+    border-top-left-radius: 4px;
+}
+
+.bubble-shell .chat-bubble-msg {
+    background: rgba(0, 255, 136, 0.08);
+    color: #ddf0e8;
+    border: 1px solid rgba(0, 255, 136, 0.12);
+    border-top-left-radius: 4px;
+}
+
+@keyframes bubbleIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chat Input Bar */
+.chat-inputbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.chat-input-icon {
+    font-size: 1.2rem;
+}
+
+.chat-input-placeholder {
+    flex: 1;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: #555;
+    animation: typingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes typingPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.chat-send-btn {
+    color: var(--cyan);
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+
+/* --- Animated Terminal --- */
+.linux-main-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.linux-terminal {
+    padding: 0;
+    overflow: hidden;
+    border-color: rgba(0, 255, 136, 0.15);
+}
+
+.linux-terminal-body {
+    padding: 20px 24px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    min-height: 240px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.terminal-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.term-prompt {
+    color: var(--green);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.term-typing {
+    color: #e0e0e0;
+}
+
+.term-cursor {
+    color: var(--green);
+    animation: termBlink 0.7s infinite;
+    font-weight: bold;
+}
+
+@keyframes termBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.term-output {
+    margin-top: 8px;
+}
+
+.term-output-line {
+    color: #aaa;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    opacity: 0;
+    animation: termLineFade 0.3s ease forwards;
+}
+
+.term-output-line.output-highlight {
+    color: var(--cyan);
+}
+
+@keyframes termLineFade {
+    to { opacity: 1; }
+}
+
+/* --- Tux Penguin Card --- */
+.tux-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    border-color: rgba(0, 255, 136, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.tux-container {
+    width: 160px;
+    height: 210px;
+    position: relative;
+}
+
+.tux-svg {
+    width: 100%;
+    height: 100%;
+    animation: tuxWaddle 3s ease-in-out infinite;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes tuxWaddle {
+    0%, 100% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(-3deg) translateY(-3px); }
+    75% { transform: rotate(3deg) translateY(-3px); }
+}
+
+.tux-flipper-left {
+    animation: tuxWaveLeft 2s ease-in-out infinite;
+    transform-origin: 50px 140px;
+}
+
+.tux-flipper-right {
+    animation: tuxWaveRight 2s ease-in-out infinite 0.3s;
+    transform-origin: 150px 140px;
+}
+
+@keyframes tuxWaveLeft {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-15deg); }
+}
+
+@keyframes tuxWaveRight {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+}
+
+.tux-eye-left, .tux-eye-right {
+    animation: tuxEyeLook 4s ease-in-out infinite;
+}
+
+@keyframes tuxEyeLook {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+.tux-label {
+    font-family: var(--font-mono);
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.btw-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--green);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    animation: btwGlow 2s ease-in-out infinite alternate;
+    letter-spacing: 1px;
+}
+
+@keyframes btwGlow {
+    0% { box-shadow: 0 0 5px rgba(0, 255, 136, 0.2); }
+    100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4), 0 0 40px rgba(0, 255, 136, 0.1); }
+}
+
+/* --- Linux Bottom Grid (Journey + Meme) --- */
+.linux-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.linux-journey-card h3 {
+    font-family: var(--font-display);
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.journey-timeline-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.journey-step {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.step-icon {
+    font-size: 1.5rem;
+    min-width: 40px;
+    text-align: center;
+}
+
+.journey-step strong {
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+}
+
+.journey-step p {
+    color: #aaa;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.journey-step code {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--green);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+/* --- Meme Card --- */
+.linux-meme-card {
+    border-color: rgba(255, 0, 170, 0.2);
+    background: linear-gradient(135deg, rgba(255, 0, 170, 0.03), rgba(17, 17, 24, 0.9));
+    position: relative;
+    overflow: hidden;
+}
+
+.linux-meme-card::before {
+    content: '🐧';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 8rem;
+    opacity: 0.04;
+    pointer-events: none;
+}
+
+.meme-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.meme-emoji {
+    font-size: 1.8rem;
+}
+
+.meme-header h3 {
+    font-family: var(--font-display);
+    color: white;
+    font-size: 1.2rem;
+}
+
+.meme-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.meme-quote {
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid var(--magenta);
+    border-radius: 0 8px 8px 0;
+    transition: all 0.3s;
+}
+
+.meme-quote:hover {
+    background: rgba(255, 0, 170, 0.06);
+    border-left-color: var(--cyan);
+    transform: translateX(5px);
+}
+
+.meme-text {
+    color: #ddd;
+    font-style: italic;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.meme-author {
+    color: #888;
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+}
+
+.meme-footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.meme-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    background: rgba(255, 0, 170, 0.08);
+    border: 1px solid rgba(255, 0, 170, 0.2);
+    border-radius: 20px;
+    color: var(--magenta);
+}
+
+/* --- Linux Fact Badges --- */
+.linux-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.linux-fact-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #ccc;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.linux-fact-badge i {
+    font-size: 1.2rem;
+}
+
+.linux-fact-badge:hover {
+    transform: translateY(-4px);
+    border-color: var(--green);
+    background: rgba(0, 255, 136, 0.05);
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.1);
+}
+
+/* --- Linux Section Responsive --- */
+@media (max-width: 968px) {
+    .linux-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .linux-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .linux-chat-body {
+        min-height: 200px;
+        max-height: 300px;
+        padding: 16px 20px;
+        font-size: 0.8rem;
+    }
+
+    .tux-container {
+        width: 120px;
+        height: 160px;
+    }
+}
+
+/* ============================================
+   SPIDER-MAN SCROLL COMPANION
+   ============================================ */
+
+#spiderman-container {
+    position: fixed;
+    left: 20px;
+    top: 0;
+    width: 80px;
+    height: 100vh;
+    z-index: 90;
+    pointer-events: none;
+}
+
+.spidey-web-svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 89;
+    pointer-events: none;
+}
+
+.spiderman-character {
+    position: absolute;
+    width: 55px;
+    height: 70px;
+    left: 12px;
+    top: 100px;
+    transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: drop-shadow(0 3px 10px rgba(212, 43, 43, 0.4));
+    z-index: 91;
+}
+
+.spidey-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Swing animation */
+.spiderman-character.swinging {
+    animation: spideySwing 0.6s ease-in-out;
+}
+
+@keyframes spideySwing {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-20deg) scale(1.05); }
+    50% { transform: rotate(15deg) scale(1.1); }
+    75% { transform: rotate(-8deg) scale(1.05); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+/* Arm animation while swinging */
+.spiderman-character.swinging .spidey-arm-right {
+    animation: armReach 0.6s ease-in-out;
+}
+
+@keyframes armReach {
+    0% { transform: rotate(0deg); }
+    30% { transform: rotate(-30deg); transform-origin: 40px 38px; }
+    100% { transform: rotate(0deg); }
+}
+
+/* Idle subtle bob */
+.spiderman-character:not(.swinging) {
+    animation: spideyIdle 3s ease-in-out infinite;
+}
+
+@keyframes spideyIdle {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-4px) rotate(1deg); }
+}
+
+.spidey-label {
+    position: absolute;
+    left: 70px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: #d42b2b;
+    background: rgba(212, 43, 43, 0.1);
+    border: 1px solid rgba(212, 43, 43, 0.3);
+    padding: 3px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateX(-10px);
+    pointer-events: none;
+}
+
+.spidey-label.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Web line style */
+.spidey-web-line {
+    stroke: rgba(200, 200, 200, 0.35);
+    stroke-width: 1.5;
+    fill: none;
+    stroke-dasharray: 6 4;
+}
+
+/* Hide on mobile */
+@media (max-width: 968px) {
+    #spiderman-container {
+        display: none;
+    }
+}
