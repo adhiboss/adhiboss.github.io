@@ -25,6 +25,42 @@
         <span class="float-letter f-3">ತ್ಯ</span>
     </div>
 
+    <!-- Spider-Man Scroll Companion -->
+    <div id="spiderman-container">
+        <svg id="spidey-web" class="spidey-web-svg"></svg>
+        <div id="spiderman" class="spiderman-character">
+            <svg viewBox="0 0 60 80" xmlns="http://www.w3.org/2000/svg" class="spidey-svg">
+                <!-- Head -->
+                <circle cx="30" cy="18" r="16" fill="#d42b2b"/>
+                <!-- Eyes -->
+                <path d="M20 14 Q24 10 30 16 Q24 18 20 14Z" fill="white" stroke="#111" stroke-width="0.5"/>
+                <path d="M40 14 Q36 10 30 16 Q36 18 40 14Z" fill="white" stroke="#111" stroke-width="0.5"/>
+                <!-- Web pattern on head -->
+                <path d="M30 2 L30 34" stroke="#8b0000" stroke-width="0.5" opacity="0.5"/>
+                <path d="M14 18 L46 18" stroke="#8b0000" stroke-width="0.5" opacity="0.5"/>
+                <path d="M16 8 L44 28" stroke="#8b0000" stroke-width="0.4" opacity="0.4"/>
+                <path d="M44 8 L16 28" stroke="#8b0000" stroke-width="0.4" opacity="0.4"/>
+                <!-- Body -->
+                <rect x="20" y="34" width="20" height="22" rx="6" fill="#d42b2b"/>
+                <!-- Chest spider -->
+                <path d="M30 38 L28 42 L26 38 M30 38 L32 42 L34 38" stroke="#111" stroke-width="1" fill="none"/>
+                <!-- Blue parts -->
+                <rect x="20" y="44" width="4" height="12" rx="2" fill="#1a3a6e"/>
+                <rect x="36" y="44" width="4" height="12" rx="2" fill="#1a3a6e"/>
+                <!-- Arms -->
+                <line class="spidey-arm-left" x1="20" y1="38" x2="6" y2="28" stroke="#d42b2b" stroke-width="4" stroke-linecap="round"/>
+                <line class="spidey-arm-right" x1="40" y1="38" x2="54" y2="28" stroke="#d42b2b" stroke-width="4" stroke-linecap="round"/>
+                <!-- Legs -->
+                <line x1="25" y1="56" x2="20" y2="74" stroke="#1a3a6e" stroke-width="4" stroke-linecap="round"/>
+                <line x1="35" y1="56" x2="40" y2="74" stroke="#1a3a6e" stroke-width="4" stroke-linecap="round"/>
+                <!-- Feet -->
+                <ellipse cx="18" cy="76" rx="5" ry="3" fill="#d42b2b"/>
+                <ellipse cx="42" cy="76" rx="5" ry="3" fill="#d42b2b"/>
+            </svg>
+        </div>
+        <div class="spidey-label" id="spideyLabel">🕷️ Swinging!</div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <a href="#home" class="logo logo-switcher">
@@ -38,6 +74,7 @@
             <a href="#projects">Projects</a>
             <a href="#certifications">Certs</a>
             <a href="#achievements">Achievements</a>
+            <a href="#linux">Linux</a>
             <a href="#contact">Contact</a>
         </div>
         <div style="display: flex; align-items: center; gap: 15px;">
@@ -507,14 +544,14 @@
                     <div class="timeline-content glass-card">
                         <div class="timeline-header">
                             <div>
-                                <h3>Placement Team & Industry Representation</h3>
+                                <h3>Placements & Industry Interface cell</h3>
                                 <span class="timeline-date">Jain University | Present</span>
                             </div>
                             <span class="gpa-badge"
-                                style="background: rgba(0, 240, 255, 0.1); color: var(--cyan); border-color: var(--cyan);">Coordinator</span>
+                                style="background: rgba(0, 240, 255, 0.1); color: var(--cyan); border-color: var(--cyan);">Student Coordinator</span>
                         </div>
                         <p>
-                            I was selected as a <strong>Coordinator in the Placement Team</strong> at my university.
+                            I was selected as a <strong>Student Coordinator in the Placement Team</strong> at my university.
                             This opportunity allowed me to work closely with the placement leadership team
                             including
                             <a href="https://www.linkedin.com/in/senthil-d-64445a141/" target="_blank">Senthil Sir</a>,
@@ -530,7 +567,7 @@
                         <p>
                             Through this platform, I was selected as a
                             <strong>Student Ambassador for Capgemini Brand Quest 2025</strong>.
-                            In this role, I helped promote Capgemini’s campus campaign,
+                            In this role, I helped promote Capgemini's campus campaign,
                             encouraged student participation, and acted as a bridge between
                             the company and the student community.
                         </p>
@@ -604,8 +641,6 @@
                     <div class="hackathon-info">
                         <h3>Bharatiya Antriksh Hackathon 2025</h3>
                         <p>My first Hackathon experience at Dayananda Sagar University. A great start to innovation!</p>
-
-
                     </div>
                 </div>
 
@@ -618,10 +653,194 @@
                             We built RoadRisk AI, a predictive road safety navigation system.
                             Traditional navigation apps optimize for fastest routes.
                             RoadRisk optimizes for safest routes.</p>
-
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Linux Enthusiast Section -->
+    <section id="linux" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">kernel://passion</span>
+                <h2 class="section-title">Linux <span class="text-green">Enthusiast</span></h2>
+                <p style="color: #888; font-family: var(--font-mono); font-size: 0.9rem; margin-top: 10px;">"Talk is cheap. Show me the code." – Linus Torvalds</p>
+            </div>
+
+            <!-- Animated Kernel & Shell Chat (Messenger Style) -->
+            <div class="chat-messenger glass-card fade-in">
+                <div class="chat-topbar">
+                    <div class="chat-topbar-left">
+                        <div class="chat-avatar-group">
+                            <span class="chat-avatar avatar-kernel">🧠</span>
+                            <span class="chat-avatar avatar-shell">⚡</span>
+                        </div>
+                        <div>
+                            <h4 class="chat-room-name">Kernel & Shell</h4>
+                            <span class="chat-status-online"><span class="chat-online-dot"></span> online &middot; PID 1</span>
+                        </div>
+                    </div>
+                    <div class="chat-topbar-right">
+                        <span class="chat-window-btn">—</span>
+                        <span class="chat-window-btn">□</span>
+                        <span class="chat-window-btn chat-close-btn">✕</span>
+                    </div>
+                </div>
+                <div class="chat-messages" id="kernelChat">
+                    <!-- Chat bubbles injected by JS -->
+                </div>
+                <div class="chat-inputbar">
+                    <span class="chat-input-icon">🐧</span>
+                    <span class="chat-input-placeholder">adhi is typing...</span>
+                    <span class="chat-send-btn"><i class="fa-solid fa-paper-plane"></i></span>
+                </div>
+            </div>
+
+            <!-- Main Linux Grid -->
+            <div class="linux-main-grid">
+                <!-- Animated Terminal -->
+                <div class="linux-terminal glass-card fade-in">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="t-dot t-red"></span>
+                            <span class="t-dot t-yellow"></span>
+                            <span class="t-dot t-green"></span>
+                        </div>
+                        <span class="terminal-title">adhiboss@arch:~</span>
+                    </div>
+                    <div class="linux-terminal-body" id="linuxTerminal">
+                        <div class="terminal-line">
+                            <span class="term-prompt">adhiboss@arch:~$</span>
+                            <span class="term-typing" id="termTyping"></span>
+                            <span class="term-cursor">█</span>
+                        </div>
+                        <div id="termOutput" class="term-output"></div>
+                    </div>
+                </div>
+
+                <!-- Tux the Penguin -->
+                <div class="tux-card glass-card fade-in">
+                    <div class="tux-container">
+                        <svg class="tux-svg" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Body -->
+                            <ellipse cx="100" cy="170" rx="65" ry="80" fill="#1a1a2e" stroke="#333" stroke-width="2"/>
+                            <!-- White belly -->
+                            <ellipse cx="100" cy="180" rx="45" ry="60" fill="#e8e8e8"/>
+                            <!-- Head -->
+                            <circle cx="100" cy="75" r="45" fill="#1a1a2e" stroke="#333" stroke-width="2"/>
+                            <!-- Left eye white -->
+                            <ellipse cx="82" cy="65" rx="14" ry="16" fill="white"/>
+                            <!-- Right eye white -->
+                            <ellipse cx="118" cy="65" rx="14" ry="16" fill="white"/>
+                            <!-- Left pupil -->
+                            <circle class="tux-eye-left" cx="85" cy="67" r="6" fill="#111"/>
+                            <!-- Right pupil -->
+                            <circle class="tux-eye-right" cx="121" cy="67" r="6" fill="#111"/>
+                            <!-- Beak top -->
+                            <path d="M88 82 Q100 78 112 82 Q100 95 88 82Z" fill="#f4a623"/>
+                            <!-- Beak bottom -->
+                            <path d="M90 85 Q100 98 110 85" fill="#e8941a" stroke="none"/>
+                            <!-- Left flipper -->
+                            <path class="tux-flipper-left" d="M35 140 Q25 170 40 210 Q50 215 55 200 Q45 170 50 145Z" fill="#1a1a2e" stroke="#333" stroke-width="1.5"/>
+                            <!-- Right flipper -->
+                            <path class="tux-flipper-right" d="M165 140 Q175 170 160 210 Q150 215 145 200 Q155 170 150 145Z" fill="#1a1a2e" stroke="#333" stroke-width="1.5"/>
+                            <!-- Left foot -->
+                            <ellipse cx="75" cy="248" rx="22" ry="8" fill="#f4a623"/>
+                            <!-- Right foot -->
+                            <ellipse cx="125" cy="248" rx="22" ry="8" fill="#f4a623"/>
+                        </svg>
+                    </div>
+                    <p class="tux-label">Tux says hi! 🐧</p>
+                    <span class="btw-badge">btw I use Linux</span>
+                </div>
+            </div>
+
+            <!-- Linux Journey + Meme Row -->
+            <div class="linux-bottom-grid">
+                <!-- Linux Journey Card -->
+                <div class="glass-card linux-journey-card fade-in">
+                    <h3><i class="fa-brands fa-linux" style="color: var(--green); margin-right: 10px;"></i>My Linux Journey</h3>
+                    <div class="journey-timeline-mini">
+                        <div class="journey-step">
+                            <span class="step-icon">🪟➡️🐧</span>
+                            <div>
+                                <strong style="color: var(--cyan);">WSL Explorer</strong>
+                                <p>Started with Windows Subsystem for Linux — running Ubuntu on WSL2, learning bash, exploring the terminal life.</p>
+                            </div>
+                        </div>
+                        <div class="journey-step">
+                            <span class="step-icon">⚡</span>
+                            <div>
+                                <strong style="color: var(--green);">Going Full Linux</strong>
+                                <p>Soon transitioning to a full Linux OS setup. Arch/Ubuntu dual-boot is the plan. No more training wheels!</p>
+                            </div>
+                        </div>
+                        <div class="journey-step">
+                            <span class="step-icon">🔧</span>
+                            <div>
+                                <strong style="color: var(--magenta);">What I Love</strong>
+                                <p>The kernel, shell scripting, package managers, system monitoring, networking tools, and the glorious <code>sudo</code> power.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linus Torvalds Meme Card -->
+                <div class="glass-card linux-meme-card fade-in">
+                    <div class="meme-header">
+                        <span class="meme-emoji">😤🐧</span>
+                        <h3>Linus Torvalds Energy</h3>
+                    </div>
+                    <div class="meme-body">
+                        <div class="meme-quote">
+                            <p class="meme-text">"Software is like sex: it's better when it's free."</p>
+                            <span class="meme-author">— Linus Torvalds</span>
+                        </div>
+                        <div class="meme-quote">
+                            <p class="meme-text">"Only wimps use tape backup. REAL men just upload their important stuff on FTP and let the rest of the world mirror it."</p>
+                            <span class="meme-author">— Linus Torvalds</span>
+                        </div>
+                        <div class="meme-quote">
+                            <p class="meme-text">"If Microsoft ever does applications for Linux, it means I've won."</p>
+                            <span class="meme-author">— Linus Torvalds <span style="color: var(--green);">(he did win btw, hello VSCode & WSL 😎)</span></span>
+                        </div>
+                    </div>
+                    <div class="meme-footer">
+                        <span class="meme-tag">🔥 Legend</span>
+                        <span class="meme-tag">🐧 FOSS King</span>
+                        <span class="meme-tag">💻 Git Creator</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linux Fact Badges -->
+            <div class="linux-badges fade-in">
+                <div class="linux-fact-badge">
+                    <i class="fa-brands fa-ubuntu" style="color: #E95420;"></i>
+                    <span>Ubuntu Fan</span>
+                </div>
+                <div class="linux-fact-badge">
+                    <i class="fa-solid fa-terminal" style="color: var(--green);"></i>
+                    <span>Bash Lover</span>
+                </div>
+                <div class="linux-fact-badge">
+                    <i class="fa-solid fa-server" style="color: var(--cyan);"></i>
+                    <span>Server Tinkerer</span>
+                </div>
+                <div class="linux-fact-badge">
+                    <i class="fa-brands fa-linux" style="color: #fff;"></i>
+                    <span>Kernel Curious</span>
+                </div>
+                <div class="linux-fact-badge">
+                    <i class="fa-solid fa-shield-halved" style="color: var(--magenta);"></i>
+                    <span>Security Minded</span>
+                </div>
+                <div class="linux-fact-badge">
+                    <i class="fa-brands fa-git-alt" style="color: #F05032;"></i>
+                    <span>Git Powered</span>
+                </div>
             </div>
         </div>
     </section>
@@ -662,7 +881,7 @@
                             class="fa-brands fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" class="social-icon"
                         aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://leetcode.com/adhiboss" target="_blank" class="social-icon"
+                    <a href="https://leetcode.com/u/adhiboss/" target="_blank" class="social-icon"
                         aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
                 </div>
                 <p>Adhi Gowda 2026 <span class="kannada-text" style="font-size: 0.8rem; margin-left: 10px;">| ನಮ್ಮ
