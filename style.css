@@ -1197,49 +1197,228 @@ footer {
     /* subtle magenta tint */
 }
 
-/* --- Responsive --- */
+/* ============================================
+   HAMBURGER MENU & MOBILE NAV OVERLAY
+   ============================================ */
+
+/* Hide hamburger on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.hamburger:hover {
+    background: rgba(0, 240, 255, 0.1);
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cyan);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile nav overlay (full-screen slide-in) */
+.mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 40px 30px;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.mobile-nav-overlay.open {
+    transform: translateX(0);
+}
+
+.mobile-nav-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #aaa;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.mobile-nav-close:hover {
+    background: rgba(255, 0, 170, 0.1);
+    border-color: var(--magenta);
+    color: var(--magenta);
+}
+
+.mobile-nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cyan);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.mobile-nav-links a {
+    font-family: var(--font-mono);
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding: 10px 30px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.2s;
+}
+
+.mobile-nav-links a:hover,
+.mobile-nav-links a:active {
+    background: rgba(0, 240, 255, 0.1);
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.mobile-nav-socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 6px;
+}
+
+/* ============================================
+   RESPONSIVE — TABLETS & MOBILE (≤ 968px)
+   ============================================ */
 @media (max-width: 968px) {
-    .navbar {
-        padding: 15px 20px;
+
+    /* Show hamburger, hide desktop nav + connect btn */
+    .hamburger {
+        display: flex;
     }
 
     .nav-links {
         display: none;
     }
 
+    .desktop-only {
+        display: none;
+    }
+
+    .navbar {
+        padding: 14px 20px;
+    }
+
+    /* --- Hero --- */
     .hero-section {
-        padding: 100px 20px;
-        height: auto;
+        padding: 100px 20px 60px;
+        min-height: 100vh;
     }
 
     .hero-content {
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
-        margin-top: -40px;
+        gap: 30px;
+        margin-top: 0;
+    }
+
+    .hero-text {
+        max-width: 100%;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .terminal-lines {
+        text-align: left;
+        display: inline-block;
+    }
+
+    .t-line {
+        font-size: 0.95rem;
+    }
+
+    .hero-desc {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 24px;
+        font-size: 0.85rem;
     }
 
     .hero-visual {
-        width: 250px;
-        height: 250px;
-        margin-top: 40px;
+        width: 230px;
+        height: 230px;
+        margin: 0 auto;
     }
 
+    .kannada-badge {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        margin-left: 6px;
+    }
+
+    /* --- Kannada hero greeting --- */
+    .kannada-text {
+        font-size: 0.85rem;
+    }
+
+    /* --- Sections --- */
     .section {
-        padding: 60px 20px;
+        padding: 70px 18px;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    .about-grid,
-    .passion-grid,
-    .skills-grid,
-    .projects-grid,
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    /* --- Skills --- */
     .skills-grid-advanced {
         grid-template-columns: 1fr;
     }
@@ -1248,14 +1427,192 @@ footer {
         grid-column: span 1;
     }
 
+    /* --- Timeline (Journey & Achievements) --- */
+    .timeline {
+        margin-left: 10px;
+        padding-left: 26px;
+    }
+
+    .timeline-item::before {
+        left: -34px;
+    }
+
+    .timeline-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
     .semesters-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* --- Projects --- */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Certifications --- */
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-image {
+        height: 160px;
+    }
+
+    /* --- Hackathons --- */
+    .hackathon-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Linux Section --- */
+    .linux-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .linux-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-messages {
+        min-height: 200px;
+        max-height: 300px;
+        padding: 14px 16px;
+    }
+
+    .tux-container {
+        width: 120px;
+        height: 160px;
+    }
+
+    .linux-badges {
+        gap: 10px;
+    }
+
+    .linux-fact-badge {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+
+    /* --- Contact form --- */
+    .contact-form {
+        padding: 24px 18px;
+    }
+
+    /* --- Footer --- */
     .footer-content {
         flex-direction: column;
         gap: 15px;
         text-align: center;
+    }
+
+    /* --- Orbital rings (hide on mobile for perf) --- */
+    .orbit-container {
+        display: none;
+    }
+}
+
+/* ============================================
+   RESPONSIVE — SMALL PHONES (≤ 480px)
+   ============================================ */
+@media (max-width: 480px) {
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .hero-visual {
+        width: 190px;
+        height: 190px;
+    }
+
+    .section-title {
+        font-size: 1.55rem;
+    }
+
+    .section {
+        padding: 60px 14px;
+    }
+
+    .navbar {
+        padding: 12px 14px;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 11px 18px;
+        font-size: 0.8rem;
+    }
+
+    /* timeline tighter on tiny screens */
+    .timeline {
+        margin-left: 4px;
+        padding-left: 20px;
+    }
+
+    .timeline-item::before {
+        left: -28px;
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Intro card text smaller */
+    .intro-text {
+        font-size: 0.95rem;
+    }
+
+    /* Terminal title truncate */
+    .terminal-title {
+        font-size: 0.65rem;
+        padding-right: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 160px;
+    }
+
+    .project-content h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Skills tags wrap nicely */
+    .skill-tags span {
+        font-size: 0.72rem;
+        padding: 5px 9px;
+    }
+
+    /* Send button in mobile chat */
+    .chat-inputbar {
+        padding: 10px 14px;
+    }
+
+    /* Kannada badge wrap fix */
+    .kannada-badge {
+        display: none;
+    }
+
+    /* Hero buttons stacked vertically */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        text-align: center;
+    }
+
+    /* Semesters single column on tiny phones */
+    .semesters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer {
+        padding: 28px 14px;
     }
 }
 
