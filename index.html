@@ -74,14 +74,40 @@
             <a href="#projects">Projects</a>
             <a href="#certifications">Certs</a>
             <a href="#achievements">Achievements</a>
-            <a href="#linux">Linux</a>
             <a href="#contact">Contact</a>
         </div>
         <div style="display: flex; align-items: center; gap: 15px;">
             <a href="https://leetcode.com/u/adhiboss/" target="_blank" class="social-icon" aria-label="LeetCode" style="font-size: 1rem;"><i class="fa-solid fa-code"></i></a>
-            <a href="#contact" class="nav-btn">Connect</a>
+            <a href="#contact" class="nav-btn desktop-only">Connect</a>
+            <!-- Hamburger Button (mobile only) -->
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+        <div class="mobile-nav-logo">ADHI<span class="logo-dot">·</span>GOWDA</div>
+        <nav class="mobile-nav-links">
+            <a href="#home" onclick="closeMobileNav()">Home</a>
+            <a href="#journey" onclick="closeMobileNav()">Journey</a>
+            <a href="#skills" onclick="closeMobileNav()">Skills</a>
+            <a href="#projects" onclick="closeMobileNav()">Projects</a>
+            <a href="#certifications" onclick="closeMobileNav()">Certs</a>
+            <a href="#achievements" onclick="closeMobileNav()">Achievements</a>
+            <a href="#contact" onclick="closeMobileNav()">Contact</a>
+        </nav>
+        <div class="mobile-nav-socials">
+            <a href="https://github.com/adhiboss" target="_blank" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://leetcode.com/u/adhiboss/" target="_blank" class="social-icon" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+        </div>
+        <a href="#contact" class="btn-primary" style="text-align:center; margin-top: 10px;" onclick="closeMobileNav()">Connect</a>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
@@ -656,191 +682,6 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Linux Enthusiast Section -->
-    <section id="linux" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">kernel://passion</span>
-                <h2 class="section-title">Linux <span class="text-green">Enthusiast</span></h2>
-                <p style="color: #888; font-family: var(--font-mono); font-size: 0.9rem; margin-top: 10px;">"Talk is cheap. Show me the code." – Linus Torvalds</p>
-            </div>
-
-            <!-- Animated Kernel & Shell Chat (Messenger Style) -->
-            <div class="chat-messenger glass-card fade-in">
-                <div class="chat-topbar">
-                    <div class="chat-topbar-left">
-                        <div class="chat-avatar-group">
-                            <span class="chat-avatar avatar-kernel">🧠</span>
-                            <span class="chat-avatar avatar-shell">⚡</span>
-                        </div>
-                        <div>
-                            <h4 class="chat-room-name">Kernel & Shell</h4>
-                            <span class="chat-status-online"><span class="chat-online-dot"></span> online &middot; PID 1</span>
-                        </div>
-                    </div>
-                    <div class="chat-topbar-right">
-                        <span class="chat-window-btn">—</span>
-                        <span class="chat-window-btn">□</span>
-                        <span class="chat-window-btn chat-close-btn">✕</span>
-                    </div>
-                </div>
-                <div class="chat-messages" id="kernelChat">
-                    <!-- Chat bubbles injected by JS -->
-                </div>
-                <div class="chat-inputbar">
-                    <span class="chat-input-icon">🐧</span>
-                    <span class="chat-input-placeholder">adhi is typing...</span>
-                    <span class="chat-send-btn"><i class="fa-solid fa-paper-plane"></i></span>
-                </div>
-            </div>
-
-            <!-- Main Linux Grid -->
-            <div class="linux-main-grid">
-                <!-- Animated Terminal -->
-                <div class="linux-terminal glass-card fade-in">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="t-dot t-red"></span>
-                            <span class="t-dot t-yellow"></span>
-                            <span class="t-dot t-green"></span>
-                        </div>
-                        <span class="terminal-title">adhiboss@arch:~</span>
-                    </div>
-                    <div class="linux-terminal-body" id="linuxTerminal">
-                        <div class="terminal-line">
-                            <span class="term-prompt">adhiboss@arch:~$</span>
-                            <span class="term-typing" id="termTyping"></span>
-                            <span class="term-cursor">█</span>
-                        </div>
-                        <div id="termOutput" class="term-output"></div>
-                    </div>
-                </div>
-
-                <!-- Tux the Penguin -->
-                <div class="tux-card glass-card fade-in">
-                    <div class="tux-container">
-                        <svg class="tux-svg" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Body -->
-                            <ellipse cx="100" cy="170" rx="65" ry="80" fill="#1a1a2e" stroke="#333" stroke-width="2"/>
-                            <!-- White belly -->
-                            <ellipse cx="100" cy="180" rx="45" ry="60" fill="#e8e8e8"/>
-                            <!-- Head -->
-                            <circle cx="100" cy="75" r="45" fill="#1a1a2e" stroke="#333" stroke-width="2"/>
-                            <!-- Left eye white -->
-                            <ellipse cx="82" cy="65" rx="14" ry="16" fill="white"/>
-                            <!-- Right eye white -->
-                            <ellipse cx="118" cy="65" rx="14" ry="16" fill="white"/>
-                            <!-- Left pupil -->
-                            <circle class="tux-eye-left" cx="85" cy="67" r="6" fill="#111"/>
-                            <!-- Right pupil -->
-                            <circle class="tux-eye-right" cx="121" cy="67" r="6" fill="#111"/>
-                            <!-- Beak top -->
-                            <path d="M88 82 Q100 78 112 82 Q100 95 88 82Z" fill="#f4a623"/>
-                            <!-- Beak bottom -->
-                            <path d="M90 85 Q100 98 110 85" fill="#e8941a" stroke="none"/>
-                            <!-- Left flipper -->
-                            <path class="tux-flipper-left" d="M35 140 Q25 170 40 210 Q50 215 55 200 Q45 170 50 145Z" fill="#1a1a2e" stroke="#333" stroke-width="1.5"/>
-                            <!-- Right flipper -->
-                            <path class="tux-flipper-right" d="M165 140 Q175 170 160 210 Q150 215 145 200 Q155 170 150 145Z" fill="#1a1a2e" stroke="#333" stroke-width="1.5"/>
-                            <!-- Left foot -->
-                            <ellipse cx="75" cy="248" rx="22" ry="8" fill="#f4a623"/>
-                            <!-- Right foot -->
-                            <ellipse cx="125" cy="248" rx="22" ry="8" fill="#f4a623"/>
-                        </svg>
-                    </div>
-                    <p class="tux-label">Tux says hi! 🐧</p>
-                    <span class="btw-badge">btw I use Linux</span>
-                </div>
-            </div>
-
-            <!-- Linux Journey + Meme Row -->
-            <div class="linux-bottom-grid">
-                <!-- Linux Journey Card -->
-                <div class="glass-card linux-journey-card fade-in">
-                    <h3><i class="fa-brands fa-linux" style="color: var(--green); margin-right: 10px;"></i>My Linux Journey</h3>
-                    <div class="journey-timeline-mini">
-                        <div class="journey-step">
-                            <span class="step-icon">🪟➡️🐧</span>
-                            <div>
-                                <strong style="color: var(--cyan);">WSL Explorer</strong>
-                                <p>Started with Windows Subsystem for Linux — running Ubuntu on WSL2, learning bash, exploring the terminal life.</p>
-                            </div>
-                        </div>
-                        <div class="journey-step">
-                            <span class="step-icon">⚡</span>
-                            <div>
-                                <strong style="color: var(--green);">Going Full Linux</strong>
-                                <p>Soon transitioning to a full Linux OS setup. Arch/Ubuntu dual-boot is the plan. No more training wheels!</p>
-                            </div>
-                        </div>
-                        <div class="journey-step">
-                            <span class="step-icon">🔧</span>
-                            <div>
-                                <strong style="color: var(--magenta);">What I Love</strong>
-                                <p>The kernel, shell scripting, package managers, system monitoring, networking tools, and the glorious <code>sudo</code> power.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Linus Torvalds Meme Card -->
-                <div class="glass-card linux-meme-card fade-in">
-                    <div class="meme-header">
-                        <span class="meme-emoji">😤🐧</span>
-                        <h3>Linus Torvalds Energy</h3>
-                    </div>
-                    <div class="meme-body">
-                        <div class="meme-quote">
-                            <p class="meme-text">"Software is like sex: it's better when it's free."</p>
-                            <span class="meme-author">— Linus Torvalds</span>
-                        </div>
-                        <div class="meme-quote">
-                            <p class="meme-text">"Only wimps use tape backup. REAL men just upload their important stuff on FTP and let the rest of the world mirror it."</p>
-                            <span class="meme-author">— Linus Torvalds</span>
-                        </div>
-                        <div class="meme-quote">
-                            <p class="meme-text">"If Microsoft ever does applications for Linux, it means I've won."</p>
-                            <span class="meme-author">— Linus Torvalds <span style="color: var(--green);">(he did win btw, hello VSCode & WSL 😎)</span></span>
-                        </div>
-                    </div>
-                    <div class="meme-footer">
-                        <span class="meme-tag">🔥 Legend</span>
-                        <span class="meme-tag">🐧 FOSS King</span>
-                        <span class="meme-tag">💻 Git Creator</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Linux Fact Badges -->
-            <div class="linux-badges fade-in">
-                <div class="linux-fact-badge">
-                    <i class="fa-brands fa-ubuntu" style="color: #E95420;"></i>
-                    <span>Ubuntu Fan</span>
-                </div>
-                <div class="linux-fact-badge">
-                    <i class="fa-solid fa-terminal" style="color: var(--green);"></i>
-                    <span>Bash Lover</span>
-                </div>
-                <div class="linux-fact-badge">
-                    <i class="fa-solid fa-server" style="color: var(--cyan);"></i>
-                    <span>Server Tinkerer</span>
-                </div>
-                <div class="linux-fact-badge">
-                    <i class="fa-brands fa-linux" style="color: #fff;"></i>
-                    <span>Kernel Curious</span>
-                </div>
-                <div class="linux-fact-badge">
-                    <i class="fa-solid fa-shield-halved" style="color: var(--magenta);"></i>
-                    <span>Security Minded</span>
-                </div>
-                <div class="linux-fact-badge">
-                    <i class="fa-brands fa-git-alt" style="color: #F05032;"></i>
-                    <span>Git Powered</span>
-                </div>
             </div>
         </div>
     </section>

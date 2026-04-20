@@ -268,7 +268,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 120px 100px 40px; /* added 120px top padding to clear fixed navbar and 40px bottom */
+    padding: 120px 100px 40px;
+    /* added 120px top padding to clear fixed navbar and 40px bottom */
     position: relative;
 }
 
@@ -1934,8 +1935,15 @@ footer {
 }
 
 @keyframes typingPulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 .chat-send-btn {
@@ -1991,8 +1999,15 @@ footer {
 }
 
 @keyframes termBlink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .term-output {
@@ -2013,7 +2028,9 @@ footer {
 }
 
 @keyframes termLineFade {
-    to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
 }
 
 /* --- Tux Penguin Card --- */
@@ -2043,9 +2060,19 @@ footer {
 }
 
 @keyframes tuxWaddle {
-    0%, 100% { transform: rotate(0deg) translateY(0); }
-    25% { transform: rotate(-3deg) translateY(-3px); }
-    75% { transform: rotate(3deg) translateY(-3px); }
+
+    0%,
+    100% {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    25% {
+        transform: rotate(-3deg) translateY(-3px);
+    }
+
+    75% {
+        transform: rotate(3deg) translateY(-3px);
+    }
 }
 
 .tux-flipper-left {
@@ -2059,23 +2086,48 @@ footer {
 }
 
 @keyframes tuxWaveLeft {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(-15deg); }
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
 }
 
 @keyframes tuxWaveRight {
-    0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(15deg); }
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
 }
 
-.tux-eye-left, .tux-eye-right {
+.tux-eye-left,
+.tux-eye-right {
     animation: tuxEyeLook 4s ease-in-out infinite;
 }
 
 @keyframes tuxEyeLook {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    75% { transform: translateX(2px); }
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-2px);
+    }
+
+    75% {
+        transform: translateX(2px);
+    }
 }
 
 .tux-label {
@@ -2098,8 +2150,13 @@ footer {
 }
 
 @keyframes btwGlow {
-    0% { box-shadow: 0 0 5px rgba(0, 255, 136, 0.2); }
-    100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4), 0 0 40px rgba(0, 255, 136, 0.1); }
+    0% {
+        box-shadow: 0 0 5px rgba(0, 255, 136, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.4), 0 0 40px rgba(0, 255, 136, 0.1);
+    }
 }
 
 /* --- Linux Bottom Grid (Journey + Meme) --- */
@@ -2347,11 +2404,25 @@ footer {
 }
 
 @keyframes spideySwing {
-    0% { transform: rotate(0deg) scale(1); }
-    25% { transform: rotate(-20deg) scale(1.05); }
-    50% { transform: rotate(15deg) scale(1.1); }
-    75% { transform: rotate(-8deg) scale(1.05); }
-    100% { transform: rotate(0deg) scale(1); }
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(-20deg) scale(1.05);
+    }
+
+    50% {
+        transform: rotate(15deg) scale(1.1);
+    }
+
+    75% {
+        transform: rotate(-8deg) scale(1.05);
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
 }
 
 /* Arm animation while swinging */
@@ -2360,9 +2431,18 @@ footer {
 }
 
 @keyframes armReach {
-    0% { transform: rotate(0deg); }
-    30% { transform: rotate(-30deg); transform-origin: 40px 38px; }
-    100% { transform: rotate(0deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(-30deg);
+        transform-origin: 40px 38px;
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 /* Idle subtle bob */
@@ -2371,8 +2451,15 @@ footer {
 }
 
 @keyframes spideyIdle {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-4px) rotate(1deg); }
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-4px) rotate(1deg);
+    }
 }
 
 .spidey-label {
