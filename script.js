@@ -18,3 +18,8 @@ if (hamburger && mobileNav) {
 function closeMobileNav() {
   if (mobileNav) mobileNav.classList.remove('open');
 }
+
+// Batman Easter Egg
+console.log("%c🦇 BATMAN PROTOCOL INITIALIZED 🦇\n%c\"I am vengeance. I am the night. I am Adhi Gowda.\"", 
+  "color: #e3b341; font-size: 14px; font-weight: bold; background: #06090e; padding: 4px 8px; border-radius: 4px;",
+  "color: #7ee787; font-size: 12px; font-style: italic;");

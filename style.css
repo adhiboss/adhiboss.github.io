@@ -1,12 +1,17 @@
 /* === Reset & Variables === */
 :root {
-  --bg: #0d1117;
+  --bg: #06090e;
+  --bg-card: #0c1017;
+  --bg-card-hover: rgba(22, 27, 34, 0.5);
   --text: #c9d1d9;
+  --text-muted: #8b949e;
   --green: #7ee787;
-  --dim: #484f58;
+  --dim: #7d8590;
   --prompt: #79c0ff;
-  --white: #e6edf3;
-  --border: #21262d;
+  --white: #f0f6fc;
+  --border: #1c232d;
+  --border-hover: #30363d;
+  --accent-bat: #e3b341;
 }
 
 *, *::before, *::after {
@@ -28,18 +33,26 @@ body {
   overflow-x: hidden;
 }
 
+/* Custom selection */
+::selection {
+  background: rgba(126, 231, 135, 0.25);
+  color: var(--white);
+}
+
 a {
   color: var(--green);
   text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  text-shadow: 0 0 8px rgba(126, 231, 135, 0.35);
 }
 
 /* === Layout === */
 .wrapper {
-  max-width: 720px;
+  max-width: 740px;
   margin: 0 auto;
   padding: 40px 24px 80px;
 }
@@ -49,34 +62,52 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 32px;
+  padding-bottom: 28px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 40px;
 }
 
-.batman-logo {
-  width: 28px;
-  height: 28px;
-  fill: var(--dim);
-  transition: fill 0.2s;
+.batman-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: transform 0.25s ease, color 0.25s ease, filter 0.25s ease;
+  text-decoration: none;
 }
 
-.batman-logo:hover {
-  fill: var(--white);
+.batman-logo {
+  width: 34px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.batman-btn:hover {
+  color: var(--accent-bat);
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px rgba(227, 179, 65, 0.6));
+  text-decoration: none;
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 16px;
+  align-items: center;
 }
 
 .nav-links a {
-  color: var(--dim);
-  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease, text-shadow 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: var(--text);
+  color: var(--green);
+  background: rgba(126, 231, 135, 0.08);
+  text-shadow: 0 0 8px rgba(126, 231, 135, 0.3);
   text-decoration: none;
 }
 
@@ -87,9 +118,10 @@ a:hover {
 
 .prompt-line {
   color: var(--green);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   font-size: 1rem;
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .prompt-line .cmd {
@@ -124,11 +156,18 @@ a:hover {
 }
 
 .section-list li {
-  padding: 10px 0;
+  padding: 12px 12px;
+  margin: 0 -12px;
+  border-radius: 6px;
   border-bottom: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.section-list li:hover {
+  background: var(--bg-card-hover);
 }
 
 .section-list li:last-child {
@@ -138,10 +177,11 @@ a:hover {
 .section-list .item-title {
   color: var(--white);
   font-weight: 700;
+  font-size: 0.98rem;
 }
 
 .section-list .item-sub {
-  color: var(--dim);
+  color: var(--text-muted);
   font-size: 0.85rem;
 }
 
@@ -149,6 +189,7 @@ a:hover {
   color: var(--text);
   font-size: 0.9rem;
   margin-top: 4px;
+  line-height: 1.6;
 }
 
 /* === Tags === */
@@ -156,15 +197,23 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .tag {
   font-size: 0.75rem;
   color: var(--green);
+  background: rgba(126, 231, 135, 0.05);
   border: 1px solid var(--border);
   padding: 2px 8px;
-  border-radius: 3px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  border-color: var(--green);
+  background: rgba(126, 231, 135, 0.12);
+  text-decoration: none;
 }
 
 /* === Skills Grid === */
@@ -175,12 +224,12 @@ a:hover {
 }
 
 .skill-col h4 {
-  color: var(--dim);
-  font-size: 0.8rem;
+  color: var(--prompt);
+  font-size: 0.82rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 8px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .skill-col ul {
@@ -195,7 +244,8 @@ a:hover {
 
 .skill-col li::before {
   content: '· ';
-  color: var(--dim);
+  color: var(--green);
+  font-weight: bold;
 }
 
 /* === Inline Items (simple) === */
@@ -204,13 +254,84 @@ a:hover {
 }
 
 .simple-list li {
-  padding: 8px 0;
+  padding: 10px 12px;
+  margin: 0 -12px;
+  border-radius: 6px;
   border-bottom: 1px solid var(--border);
   font-size: 0.9rem;
+  transition: background 0.15s ease;
+}
+
+.simple-list li:hover {
+  background: var(--bg-card-hover);
 }
 
 .simple-list li:last-child {
   border-bottom: none;
+}
+
+/* === Batman Meme Box === */
+.meme-box {
+  margin-top: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.meme-box:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+}
+
+.meme-header {
+  width: 100%;
+  background: #090e15;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.meme-header .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.meme-header .dot.red { background: #ff5f56; }
+.meme-header .dot.yellow { background: #ffbd2e; }
+.meme-header .dot.green { background: #27c93f; }
+
+.meme-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+.meme-image {
+  max-width: calc(100% - 32px);
+  width: 440px;
+  margin: 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: block;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.meme-caption {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0 16px 16px;
 }
 
 /* === Contact === */
@@ -219,14 +340,22 @@ a:hover {
 }
 
 .contact-links li {
-  padding: 6px 0;
+  padding: 8px 12px;
+  margin: 0 -12px;
+  border-radius: 6px;
   font-size: 0.9rem;
+  transition: background 0.15s ease;
+}
+
+.contact-links li:hover {
+  background: var(--bg-card-hover);
 }
 
 .contact-links .label {
-  color: var(--dim);
+  color: var(--text-muted);
   display: inline-block;
-  min-width: 80px;
+  min-width: 90px;
+  font-weight: 600;
 }
 
 /* === Footer === */
@@ -235,7 +364,7 @@ a:hover {
   padding-top: 24px;
   border-top: 1px solid var(--border);
   color: var(--dim);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   text-align: center;
 }
 
@@ -243,30 +372,37 @@ a:hover {
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
 }
 
 .hamburger span {
   display: block;
-  width: 18px;
-  height: 1.5px;
-  background: var(--dim);
+  width: 20px;
+  height: 2px;
+  background: var(--text-muted);
+  border-radius: 1px;
+  transition: background 0.2s ease;
+}
+
+.hamburger:hover span {
+  background: var(--green);
 }
 
 .mobile-nav {
   display: none;
   position: fixed;
   inset: 0;
-  background: var(--bg);
+  background: rgba(6, 9, 14, 0.98);
+  backdrop-filter: blur(8px);
   z-index: 100;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
+  gap: 8px;
 }
 
 .mobile-nav.open {
@@ -274,14 +410,17 @@ a:hover {
 }
 
 .mobile-nav a {
-  color: var(--dim);
+  color: var(--text-muted);
   font-size: 1.3rem;
-  padding: 14px 20px;
+  padding: 12px 24px;
   font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
 .mobile-nav a:hover {
-  color: var(--text);
+  color: var(--green);
+  background: rgba(126, 231, 135, 0.1);
   text-decoration: none;
 }
 
@@ -291,9 +430,14 @@ a:hover {
   right: 24px;
   background: none;
   border: none;
-  color: var(--dim);
-  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-size: 1.5rem;
   cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-close:hover {
+  color: var(--white);
 }
 
 /* === Responsive === */
