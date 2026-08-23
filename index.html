@@ -2,801 +2,287 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adhi Gowda</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adhi Gowda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
 </head>
 
 <body>
-    <div id="bg-canvas"></div>
-    <div class="floating-kannada-letters">
-        <span class="float-letter f-1">ಆ</span>
-        <span class="float-letter f-2">ದಿ</span>
-        <span class="float-letter f-3">ತ್ಯ</span>
+
+  <div class="wrapper">
+
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav-links">
+        <a href="#whoami">whoami</a>
+        <a href="#experience">experience</a>
+        <a href="#skills">skills</a>
+        <a href="#projects">projects</a>
+        <a href="#contact">contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <!-- Batman Logo SVG -->
+      <svg class="batman-logo" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 0C85 0 72 10 60 25C48 10 35 0 20 0C15 0 5 5 0 15C5 20 12 28 20 35C10 42 3 50 0 60C10 55 25 50 40 48C50 58 70 68 100 75C130 68 150 58 160 48C175 50 190 55 200 60C197 50 190 42 180 35C188 28 195 20 200 15C195 5 185 0 180 0C165 0 152 10 140 25C128 10 115 0 100 0Z"/>
+      </svg>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
+      <a href="#whoami" onclick="closeMobileNav()">whoami</a>
+      <a href="#experience" onclick="closeMobileNav()">experience</a>
+      <a href="#skills" onclick="closeMobileNav()">skills</a>
+      <a href="#projects" onclick="closeMobileNav()">projects</a>
+      <a href="#contact" onclick="closeMobileNav()">contact</a>
     </div>
 
-
-
-    <!-- Navigation -->
-    <nav class="navbar">
-        <a href="#home" class="logo logo-switcher">
-            <span class="en">ADITHYA<span class="logo-dot"></span>GOWDA</span>
-            <span class="kn">ಆದಿತ್ಯ<span class="logo-dot"></span>ಗೌಡ</span>
-        </a>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#journey">Journey</a>
-            <a href="#experience">Experiences</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#certifications">Certs</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <a href="https://leetcode.com/u/adhiboss/" target="_blank" class="social-icon" aria-label="LeetCode" style="font-size: 1rem;"><i class="fa-solid fa-code"></i></a>
-            <a href="https://www.researchgate.net/profile/Adithya-Gowda-3?ev=hdr_xprf" target="_blank" class="social-icon" aria-label="ResearchGate" style="font-size: 1rem;"><i class="fa-brands fa-researchgate"></i></a>
-            <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en" target="_blank" class="social-icon" aria-label="Google Scholar" style="font-size: 1rem;"><i class="fa-solid fa-graduation-cap"></i></a>
-            <a href="#contact" class="nav-btn desktop-only">Connect</a>
-            <!-- Hamburger Button (mobile only) -->
-            <button class="hamburger" id="hamburger" aria-label="Open menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Mobile Nav Overlay -->
-    <div class="mobile-nav-overlay" id="mobileNavOverlay">
-        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
-        <div class="mobile-nav-logo">ADHI<span class="logo-dot">·</span>GOWDA</div>
-        <nav class="mobile-nav-links">
-            <a href="#home" onclick="closeMobileNav()">Home</a>
-            <a href="#journey" onclick="closeMobileNav()">Journey</a>
-            <a href="#experience" onclick="closeMobileNav()">Experience</a>
-            <a href="#skills" onclick="closeMobileNav()">Skills</a>
-            <a href="#projects" onclick="closeMobileNav()">Projects</a>
-            <a href="#certifications" onclick="closeMobileNav()">Certs</a>
-            <a href="#achievements" onclick="closeMobileNav()">Achievements</a>
-            <a href="#contact" onclick="closeMobileNav()">Contact</a>
-        </nav>
-        <div class="mobile-nav-socials">
-            <a href="https://github.com/adhiboss" target="_blank" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://leetcode.com/u/adhiboss/" target="_blank" class="social-icon" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
-            <a href="https://www.researchgate.net/profile/Adithya-Gowda-3?ev=hdr_xprf" target="_blank" class="social-icon" aria-label="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
-            <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en" target="_blank" class="social-icon" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-        </div>
-        <a href="#contact" class="btn-primary" style="text-align:center; margin-top: 10px;" onclick="closeMobileNav()">Connect</a>
-    </div>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <div class="hero-text">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                    <div class="kannada-text" style="display: flex; align-items: center;">
-                        <span>ನಮಸ್ಕಾರ</span>
-                        <span class="kannada-flag-icon"></span>
-                    </div>
-                </div>
-                <h1 class="hero-title">
-                    Hello, I'm <span class="kannada-gradient-text">Adhi Gowda</span>
-                    <span class="kannada-badge"><span class="kannada-flag-icon"
-                            style="margin-left: 0; margin-right: 5px; height: 12px; width: 18px;"></span>
-                        ಕನ್ನಡಿಗ</span><span class="cursor"></span>
-                </h1>
-                <div class="terminal-lines">
-                    <div class="t-line"><span class="prompt">&gt;</span> 3rd Year Engineering Student</div>
-                    <div class="t-line"><span class="prompt">&gt;</span> Corporate Relations Intern & Placement Coordinator</div>
-                    <div class="t-line"><span class="prompt">&gt;</span> Cloud SRE & DevOps Enthusiast</div>
-                    <div class="t-line"><span class="prompt">&gt;</span> Cybersecurity Learner</div>
-                    <div class="t-line"><span class="prompt">&gt;</span> Researcher</div>
-                </div>
-                <p class="hero-desc">
-                    B.Tech Computer Science student at <span class="text-cyan">Jain University</span> focused on <span
-                        class="text-green">Linux</span>, <span class="text-magenta">cloud infrastructure</span>, and
-                    <span class="text-cyan">networking</span>. I also work as a <span class="text-green">Corporate Relations Intern</span> and <span class="text-cyan">Placement Coordinator</span>, where I manage IT skill sets and do hands-on projects in <span
-                        class="text-magenta">Cloud SRE</span>, <span class="text-green">DevOps</span>, and <span
-                        class="text-cyan">infrastructure security</span> with the goal of designing <span
-                        class="text-green">reliable</span>, <span class="text-magenta">secure</span>, and <span
-                        class="text-cyan">scalable</span> systems.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#journey" class="btn-primary">My Journey</a>
-                    <a href="#skills" class="btn-secondary">View Skills</a>
-                </div>
-                <div class="hero-buttons" style="margin-top: 20px;">
-                    <a href="resume.pdf" target="_blank" class="btn-primary"
-                        style="background: linear-gradient(90deg, var(--green), var(--cyan));">View Resume</a>
-                    <a href="resume.pdf" download="Adhi_Gowda_Resume.pdf" class="btn-secondary"
-                        style="border-color: var(--cyan); color: var(--cyan);">Download Resume</a>
-                </div>
-                <div class="social-links" style="margin-top: 30px; display: flex; gap: 20px;">
-                    <a href="https://github.com/adhiboss" target="_blank" class="social-icon" aria-label="GitHub"><i
-                            class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" class="social-icon"
-                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://leetcode.com/u/adhiboss/" target="_blank" class="social-icon"
-                        aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
-                    <a href="https://www.researchgate.net/profile/Adithya-Gowda-3?ev=hdr_xprf" target="_blank" class="social-icon"
-                        aria-label="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
-                    <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en" target="_blank" class="social-icon"
-                        aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-slideshow">
-                    <img class="hero-photo slide-1" src="images/suit.jpeg" alt="Adhi Gowda in formal attire"
-                        loading="lazy">
-                    <img class="hero-photo slide-2" src="images/capgeminijpeg.jpeg" alt="Capgemini Work" loading="lazy">
-                    <img class="hero-photo slide-3" src="images/hackathon.jpeg" alt="Hackathon Event" loading="lazy">
-
-                    <img class="hero-photo slide-6" src="images/suit2.jpeg" alt="Suit Attire" loading="lazy">
-                </div>
-                <div class="orbit-container">
-                    <div class="orbit ring-1"></div>
-                    <div class="orbit ring-2"></div>
-                    <div class="orbit ring-3"></div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-        </div>
+    <!-- whoami -->
+    <section id="whoami" class="section">
+      <div class="prompt-line">~ $ <span class="cmd">whoami</span></div>
+      <div class="output">
+        <p><span class="highlight">Adhi Gowda</span> &mdash; Engineering Student &amp; Cloud Enthusiast</p>
+        <p>B.Tech Computer Science student at <span class="accent">Jain University</span> focused on Linux, cloud infrastructure, and networking. I work as a Corporate Relations Intern and Placement Coordinator, doing hands-on projects in Cloud SRE, DevOps, and infrastructure security.</p>
+      </div>
     </section>
 
-    <!-- Journey & Education Section -->
-    <section id="journey" class="section cyber-grid-bg">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Journey</span>
-                <h2 class="section-title">My <span class="text-magenta">Journey</span></h2>
+    <!-- education -->
+    <section class="section">
+      <div class="prompt-line">~ $ <span class="cmd">cat education.md</span></div>
+      <div class="output">
+        <ul class="section-list">
+          <li>
+            <span class="item-title">B.Tech Computer Science &amp; Engineering</span>
+            <span class="item-sub">Jain University, Bangalore &middot; Aug 2024 &ndash; Present &middot; CGPA: 8.0</span>
+            <span class="item-desc">Specializing in Cloud &amp; Security concepts.</span>
+            <div class="tags">
+              <span class="tag">Sem 1: 7.4</span>
+              <span class="tag">Sem 2: 8.4</span>
+              <span class="tag">Sem 3: 8.6</span>
+              <span class="tag">Sem 4: Current</span>
             </div>
-
-            <div class="timeline">
-                <!-- Jain University -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Bachelor of Technology in CSE</h3>
-                                <span class="timeline-date">Jain University, Bangalore | Aug 2024 – Present</span>
-                            </div>
-                            <span class="gpa-badge">CGPA: 8.0</span>
-                        </div>
-                        <p>Currently in my 2nd year, specializing myself in Cloud & Security concepts.</p>
-
-                        <div class="semesters-grid">
-                            <div class="sem-card">
-                                <span class="sem-no">Sem 1</span>
-                                <span class="sem-gpa">7.4 SGPA</span>
-                            </div>
-                            <div class="sem-card">
-                                <span class="sem-no">Sem 2</span>
-                                <span class="sem-gpa">8.4 SGPA</span>
-                            </div>
-                            <div class="sem-card">
-                                <span class="sem-no">Sem 3</span>
-                                <span class="sem-gpa">8.6 SGPA</span>
-                            </div>
-                            <div class="sem-card active">
-                                <span class="sem-no">Sem 4</span>
-                                <span class="sem-gpa">Current</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PU College -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Pre-University (Science + Biology)</h3>
-                                <span class="timeline-date">Rural PU College, Kanakapura | 2022 – 2024</span>
-                            </div>
-                        </div>
-                        <p>Completed higher secondary education with a focus on Science subjects.</p>
-                    </div>
-                </div>
-
-                <!-- High School -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>High School (10th Grade)</h3>
-                                <span class="timeline-date">Jain Public School, Bangalore | Completed 2022</span>
-                            </div>
-                        </div>
-                        <p>Completed foundational schooling.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+          </li>
+          <li>
+            <span class="item-title">Pre-University (Science + Biology)</span>
+            <span class="item-sub">Rural PU College, Kanakapura &middot; 2022 &ndash; 2024</span>
+          </li>
+          <li>
+            <span class="item-title">High School (10th Grade)</span>
+            <span class="item-sub">Jain Public School, Bangalore &middot; Completed 2022</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- experience -->
     <section id="experience" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Experience</span>
-                <h2 class="section-title">Professional <span class="text-green">Experience</span></h2>
-            </div>
-
-            <div class="timeline">
-                <!-- Omniforge Intern -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Intern</h3>
-                                <span class="timeline-date">Omniforge | Present</span>
-                            </div>
-                            <span class="gpa-badge" style="background: rgba(0, 255, 128, 0.1); color: var(--green); border-color: var(--green);">Internship</span>
-                        </div>
-                        <p>Learning the ins and outs of how a startup operates & works, taking on dynamic challenges, and gaining hands-on experience in a fast-paced environment.</p>
-                    </div>
-                </div>
-
-                <!-- Corporate Relations Intern -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Corporate Relations Intern</h3>
-                                <span class="timeline-date">Jain University | Present</span>
-                            </div>
-                            <span class="gpa-badge" style="background: rgba(0, 255, 128, 0.1); color: var(--green); border-color: var(--green);">Internship</span>
-                        </div>
-                        <p>Working closely with the Corporate Relations team to foster industry connections, facilitate professional opportunities, and manage essential IT skill sets for career readiness.</p>
-                    </div>
-                </div>
-
-                <!-- Placement Coordinator -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Placement Coordinator</h3>
-                                <span class="timeline-date">Jain University | Present</span>
-                            </div>
-                            <span class="gpa-badge" style="background: rgba(0, 240, 255, 0.1); color: var(--cyan); border-color: var(--cyan);">Coordinator</span>
-                        </div>
-                        <p>Serving as a Student Coordinator in the Placements & Industry Interface cell, bridging the gap between students and corporate partners while actively managing and demonstrating technical projects.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="prompt-line">~ $ <span class="cmd">ls experience/</span></div>
+      <div class="output">
+        <ul class="section-list">
+          <li>
+            <span class="item-title">Intern</span>
+            <span class="item-sub">Omniforge &middot; Present</span>
+            <span class="item-desc">Learning the ins and outs of how a startup operates, taking on dynamic challenges, and gaining hands-on experience in a fast-paced environment.</span>
+          </li>
+          <li>
+            <span class="item-title">Corporate Relations Intern</span>
+            <span class="item-sub">Jain University &middot; Present</span>
+            <span class="item-desc">Working closely with the Corporate Relations team to foster industry connections, facilitate professional opportunities, and manage essential IT skill sets for career readiness.</span>
+          </li>
+          <li>
+            <span class="item-title">Placement Coordinator</span>
+            <span class="item-sub">Jain University &middot; Present</span>
+            <span class="item-desc">Serving as a Student Coordinator in the Placements &amp; Industry Interface cell, bridging the gap between students and corporate partners while actively managing and demonstrating technical projects.</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- achievements -->
+    <section class="section">
+      <div class="prompt-line">~ $ <span class="cmd">cat achievements.log</span></div>
+      <div class="output">
+        <p class="muted">My real journey of growth and achievement began at Jain University. These milestones represent some of the most meaningful steps in my journey so far.</p>
+        <p class="muted" style="margin-top: 8px; font-style: italic;">"ಕಾಯಕವೇ ಕೈಲಾಸ" &mdash; Work is Worship &mdash; Sri Basavanna</p>
+
+        <ul class="section-list" style="margin-top: 16px;">
+          <li>
+            <span class="item-title">Club Leadership Journey</span>
+            <span class="item-sub">Jain University &middot; 2024 &ndash; 2025 &middot; Club Lead</span>
+            <span class="item-desc">Joined as a member, promoted to Club Lead in 2025. Organized and managed a major event, coordinating a team and handling the event budget responsibly.</span>
+          </li>
+          <li>
+            <span class="item-title">Placements &amp; Industry Interface Cell</span>
+            <span class="item-sub">Jain University &middot; Present &middot; Student Coordinator</span>
+            <span class="item-desc">Student Ambassador for Capgemini Brand Quest 2025. LinkedIn Co-Pilot for 2026.</span>
+          </li>
+          <li>
+            <span class="item-title">Core Member &amp; Treasurer &ndash; GRI</span>
+            <span class="item-sub">Centre for Grassroots Research &amp; Innovation</span>
+            <span class="item-desc">Student-led initiative partnering with rural communities to develop sustainable solutions through research, field engagement, and frugal innovation.</span>
+          </li>
+        </ul>
+
+        <p class="muted" style="margin-top: 20px;">Hackathons Attended:</p>
+        <ul class="simple-list">
+          <li><span class="item-title">Bharatiya Antriksh Hackathon 2025</span> &mdash; First hackathon experience at Dayananda Sagar University</li>
+          <li><span class="item-title">Inceptrix 2.0 Hackathon 2026</span> &mdash; Built RoadRisk AI, a predictive road safety navigation system</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- skills -->
     <section id="skills" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Skills</span>
-                <h2 class="section-title">Technical <span class="text-blue">Arsenal</span></h2>
-            </div>
-
-            <div class="skills-grid-advanced">
-                <!-- Languages -->
-                <div class="glass-card skill-box fade-in">
-                    <h3 class="text-cyan">Languages</h3>
-                    <div class="skill-tags">
-                        <span><i class="devicon-python-plain" style="color: #3776AB"></i> Python</span>
-                        <span><i class="devicon-javascript-plain" style="color: #F7DF1E"></i> JavaScript</span>
-                        <span><i class="devicon-html5-plain" style="color: #E34F26"></i> HTML</span>
-                        <span><i class="devicon-css3-plain" style="color: #1572B6"></i> CSS</span>
-                        <span><i class="fa-solid fa-database" style="color: #ff9900"></i> SQL</span>
-                    </div>
-                </div>
-                <!-- Frameworks -->
-                <div class="glass-card skill-box fade-in">
-                    <h3 class="text-magenta">Frameworks</h3>
-                    <div class="skill-tags">
-                        <span><i class="devicon-react-original" style="color: #61DAFB"></i> React.js</span>
-                        <span><i class="devicon-nodejs-plain" style="color: #339933"></i> Node.js</span>
-                        <span><i class="fa-solid fa-eye" style="color: var(--cyan)"></i> YOLO</span>
-                        <span><i class="devicon-tensorflow-original" style="color: #FF6F00"></i> MobileNet V2</span>
-                    </div>
-                </div>
-                <!-- Cloud -->
-                <div class="glass-card skill-box fade-in">
-                    <h3 class="text-green">Cloud & Platforms</h3>
-                    <div class="skill-tags">
-                        <span><i class="devicon-amazonwebservices-plain-wordmark" style="color: #FF9900"></i> AWS</span>
-                        <span><i class="devicon-oracle-original" style="color: #F80000"></i> Oracle Cloud</span>
-                        <span><i class="devicon-ubuntu-plain" style="color: #E95420"></i> Linux (Ubuntu)</span>
-                        <span><i class="devicon-google-plain" style="color: #4285F4"></i> Google Colab</span>
-                    </div>
-                </div>
-                <!-- Tools -->
-                <div class="glass-card skill-box fade-in">
-                    <h3 class="text-blue">Tools</h3>
-                    <div class="skill-tags">
-                        <span><i class="devicon-vscode-plain" style="color: #007ACC"></i> VS Code</span>
-                        <span><i class="devicon-github-original" style="color: #fff"></i> GitHub</span>
-                        <span><i class="fa-solid fa-paper-plane" style="color: #FF6C37"></i> Postman</span>
-                        <span><i class="fa-solid fa-server" style="color: #4479A1"></i> SQL Databases</span>
-                    </div>
-                </div>
-                <!-- Core Concepts -->
-                <div class="glass-card skill-box fade-in full-width">
-                    <h3 class="text-cyan">Core Concepts</h3>
-                    <div class="skill-tags">
-                        <span><i class="fa-solid fa-brain" style="color: var(--magenta)"></i> Machine Learning &
-                            AI</span>
-                        <span><i class="fa-solid fa-crosshairs" style="color: var(--cyan)"></i> Object Detection</span>
-                        <span><i class="fa-solid fa-network-wired" style="color: var(--green)"></i> Computer
-                            Networking</span>
-                        <span><i class="fa-solid fa-microchip" style="color: #ccc"></i> Operating Systems</span>
-                        <span><i class="fa-solid fa-microscope" style="color: #4285F4"></i> Research</span>
-                    </div>
-                </div>
-                <!-- Languages Spoken -->
-                <div class="glass-card skill-box fade-in full-width">
-                    <h3 class="text-green">Languages (Spoken)</h3>
-                    <div class="skill-tags" style="gap: 15px;">
-                        <span class="lang-switcher" data-en="Kannada (Native)" data-native="ಕನ್ನಡ (ಮಾತೃಭಾಷೆ)"></span>
-                        <span class="lang-switcher" data-en="Hindi (Fluent)" data-native="हिन्दी (धाराप्रवाह)"></span>
-                        <span class="lang-switcher" data-en="English (Fluent)" data-native="English (Fluent)"></span>
-                        <span class="lang-switcher" data-en="Tamil (Basic)" data-native="தமிழ் (அடிப்படை)"></span>
-                    </div>
-                </div>
-            </div>
+      <div class="prompt-line">~ $ <span class="cmd">tree skills/ --depth=1</span></div>
+      <div class="output">
+        <div class="skills-columns">
+          <div class="skill-col">
+            <h4>Languages</h4>
+            <ul>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <h4>Frameworks</h4>
+            <ul>
+              <li>React.js</li>
+              <li>Node.js</li>
+              <li>YOLO</li>
+              <li>MobileNet V2</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <h4>Cloud &amp; Platforms</h4>
+            <ul>
+              <li>AWS</li>
+              <li>Oracle Cloud</li>
+              <li>Linux (Ubuntu)</li>
+              <li>Google Colab</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <h4>Tools</h4>
+            <ul>
+              <li>VS Code</li>
+              <li>GitHub</li>
+              <li>Postman</li>
+              <li>SQL Databases</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <h4>Core Concepts</h4>
+            <ul>
+              <li>Machine Learning &amp; AI</li>
+              <li>Object Detection</li>
+              <li>Computer Networking</li>
+              <li>Operating Systems</li>
+              <li>Research</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <h4>Languages (Spoken)</h4>
+            <ul>
+              <li>Kannada (Native)</li>
+              <li>Hindi (Fluent)</li>
+              <li>English (Fluent)</li>
+              <li>Tamil (Basic)</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section cyber-grid-bg">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Portfolio</span>
-                <h2 class="section-title">My <span class="text-blue">Projects</span></h2>
-            </div>
-
-            <div class="projects-grid">
-                <!-- ProcrastiTrack -->
-                <div class="glass-card project-card terminal-card fade-in">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="t-dot t-red"></span>
-                            <span class="t-dot t-yellow"></span>
-                            <span class="t-dot t-green"></span>
-                        </div>
-                        <span class="terminal-title">adhiboss@linux:~/procrastitrack</span>
-                    </div>
-                    <div class="project-content">
-                        <h3>ProcrastiTrack</h3>
-                        <div class="project-tags">
-                            <span>PHP & MySQL</span>
-                            <span>Google Classroom API</span>
-                            <span>Gamified Task Management</span>
-                        </div>
-                        <p>ProcrastiTrack is a gamified task management system built to help students overcome procrastination. It features Google Classroom OAuth synchronization for automated assignment fetching, a robust database backend, and AI-driven motivational tools. Designed with a professional "Cyber-Emerald" aesthetic for a modern productivity experience.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/adhiboss/Procrasti_Track" target="_blank"
-                                class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Smart System Monitor -->
-                <div class="glass-card project-card terminal-card fade-in">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="t-dot t-red"></span>
-                            <span class="t-dot t-yellow"></span>
-                            <span class="t-dot t-green"></span>
-                        </div>
-                        <span class="terminal-title">adhiboss@linux:~/smart-system-monitor</span>
-                    </div>
-                    <div class="project-content">
-                        <h3>Smart System Monitor</h3>
-                        <div class="project-tags">
-                            <span>Linux</span>
-                            <span>Bash Syntax</span>
-                            <span>System Admin</span>
-                        </div>
-                        <p>Smart System Monitor is a lightweight Linux monitoring and automation tool designed to track
-                            system health and performance. It checks critical resources such as CPU usage, memory
-                            utilization, disk space, and network connectivity, and helps administrators quickly detect
-                            potential issues. The project also includes automation scripts and remote monitoring
-                            capabilities, making it useful for basic infrastructure monitoring and system diagnostics.
-                        </p>
-                        <div class="project-links">
-                            <a href="https://github.com/adhiboss/smart-system-monitor" target="_blank"
-                                class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RoadRisk AI -->
-                <div class="glass-card project-card terminal-card fade-in">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="t-dot t-red"></span>
-                            <span class="t-dot t-yellow"></span>
-                            <span class="t-dot t-green"></span>
-                        </div>
-                        <span class="terminal-title">adhiboss@linux:~/roadrisk-ai</span>
-                    </div>
-                    <div class="project-content">
-                        <h3>RoadRisk AI</h3>
-                        <div class="project-tags">
-                            <span>AI/ML</span>
-                            <span>Data Visualization</span>
-                            <span>Python</span>
-                        </div>
-                        <p>RoadRisk AI is a web-based project that demonstrates the concept of intelligent road safety
-                            analysis using AI. The platform focuses on identifying potential accident risks and
-                            promoting safer driving awareness through data analysis and visualization of road safety
-                            insights. It showcases how AI can assist in improving traffic safety and reducing accident
-                            risks through intelligent monitoring systems.</p>
-                        <div class="project-links">
-                            <a href="https://roadriskai.vercel.app/" target="_blank" class="btn-link"><i
-                                    class="fa-solid fa-link"></i> Live Project</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Daily Tech Notes -->
-                <div class="glass-card project-card terminal-card fade-in">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="t-dot t-red"></span>
-                            <span class="t-dot t-yellow"></span>
-                            <span class="t-dot t-green"></span>
-                        </div>
-                        <span class="terminal-title">adhiboss@linux:~/daily-tech-notes</span>
-                    </div>
-                    <div class="project-content">
-                        <h3>Daily Tech Notes</h3>
-                        <div class="project-tags">
-                            <span>Linux</span>
-                            <span>Networking</span>
-                            <span>DevOps</span>
-                        </div>
-                        <p>Daily Tech Notes is a structured learning repository where I document my day-to-day
-                            exploration of Linux systems, networking fundamentals, HTTP internals, and DevOps concepts.
-                            Each entry represents a focused concept or experiment, helping reinforce understanding
-                            through consistent documentation and practice. This repository reflects my commitment to
-                            continuous learning and building strong foundations in systems and infrastructure
-                            engineering.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/adhiboss/daily-tech-notes" target="_blank" class="btn-link"><i
-                                    class="fa-brands fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Linux Networking Lab -->
-                <div class="glass-card project-card terminal-card fade-in">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="t-dot t-red"></span>
-                            <span class="t-dot t-yellow"></span>
-                            <span class="t-dot t-green"></span>
-                        </div>
-                        <span class="terminal-title">adhiboss@linux:~/linux-networking-lab</span>
-                    </div>
-                    <div class="project-content">
-                        <h3>Linux Networking Lab</h3>
-                        <div class="project-tags">
-                            <span>Networking</span>
-                            <span>TCP/IP</span>
-                            <span>Linux</span>
-                        </div>
-                        <p>Hands-on experiments exploring networking concepts like TCP communication, DNS resolution,
-                            HTTP requests, and port testing.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/adhiboss/linux-networking-lab" target="_blank"
-                                class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AWS Linux Server Playbook -->
-                <div class="glass-card project-card terminal-card fade-in">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="t-dot t-red"></span>
-                            <span class="t-dot t-yellow"></span>
-                            <span class="t-dot t-green"></span>
-                        </div>
-                        <span class="terminal-title">adhiboss@linux:~/aws-linux-server-playbook</span>
-                    </div>
-                    <div class="project-content">
-                        <h3>AWS Linux Server Playbook</h3>
-                        <div class="project-tags">
-                            <span>AWS </span>
-                            <span>EC2 </span>
-                            <span>CloudWatch</span>
-                        </div>
-                        <p>AWS Linux Server Playbook is a practical documentation repository focused on deploying,
-                            managing, and troubleshooting Linux servers in cloud environments. It includes guides on EC2
-                            setup, SSH security hardening, monitoring with CloudWatch, infrastructure troubleshooting,
-                            and basic cloud administration workflows. The goal of this repository is to build a strong
-                            foundation in cloud infrastructure and server management.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/adhiboss/aws-linux-server-playbook" target="_blank"
-                                class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- projects -->
+    <section id="projects" class="section">
+      <div class="prompt-line">~ $ <span class="cmd">ls projects/</span></div>
+      <div class="output">
+        <ul class="section-list">
+          <li>
+            <span class="item-title">ProcrastiTrack</span>
+            <span class="item-sub">PHP &middot; MySQL &middot; Google Classroom API</span>
+            <span class="item-desc">Gamified task management system to help students overcome procrastination. Features Google Classroom OAuth sync, database backend, and AI-driven motivational tools.</span>
+            <div class="tags"><a href="https://github.com/adhiboss/Procrasti_Track" target="_blank" class="tag">github</a></div>
+          </li>
+          <li>
+            <span class="item-title">Smart System Monitor</span>
+            <span class="item-sub">Linux &middot; Bash &middot; System Admin</span>
+            <span class="item-desc">Lightweight Linux monitoring tool tracking CPU, memory, disk, and network. Includes automation scripts and remote monitoring capabilities.</span>
+            <div class="tags"><a href="https://github.com/adhiboss/smart-system-monitor" target="_blank" class="tag">github</a></div>
+          </li>
+          <li>
+            <span class="item-title">RoadRisk AI</span>
+            <span class="item-sub">AI/ML &middot; Python &middot; Data Visualization</span>
+            <span class="item-desc">Web-based road safety analysis using AI. Identifies potential accident risks and promotes safer driving awareness through data visualization.</span>
+            <div class="tags"><a href="https://roadriskai.vercel.app/" target="_blank" class="tag">live</a></div>
+          </li>
+          <li>
+            <span class="item-title">Daily Tech Notes</span>
+            <span class="item-sub">Linux &middot; Networking &middot; DevOps</span>
+            <span class="item-desc">Structured learning repository documenting Linux systems, networking fundamentals, HTTP internals, and DevOps concepts.</span>
+            <div class="tags"><a href="https://github.com/adhiboss/daily-tech-notes" target="_blank" class="tag">github</a></div>
+          </li>
+          <li>
+            <span class="item-title">Linux Networking Lab</span>
+            <span class="item-sub">Networking &middot; TCP/IP &middot; Linux</span>
+            <span class="item-desc">Hands-on experiments exploring TCP communication, DNS resolution, HTTP requests, and port testing.</span>
+            <div class="tags"><a href="https://github.com/adhiboss/linux-networking-lab" target="_blank" class="tag">github</a></div>
+          </li>
+          <li>
+            <span class="item-title">AWS Linux Server Playbook</span>
+            <span class="item-sub">AWS &middot; EC2 &middot; CloudWatch</span>
+            <span class="item-desc">Practical documentation on deploying, managing, and troubleshooting Linux servers in cloud environments. Covers EC2, SSH hardening, and CloudWatch.</span>
+            <div class="tags"><a href="https://github.com/adhiboss/aws-linux-server-playbook" target="_blank" class="tag">github</a></div>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="section cyber-grid-bg">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Certs</span>
-                <h2 class="section-title">Certifications</h2>
-            </div>
-            <div class="cert-grid">
-                <!-- Cert 1 -->
-                <div class="glass-card cert-card fade-in">
-                    <div class="cert-img-placeholder">
-                        <img src="images/OC.png" alt="Oracle Cloud Certified Networking Professional Certificate"
-                            class="cert-image">
-                    </div>
-                    <div class="cert-info">
-                        <h3>OCI 2025 Certified Networking Professional</h3>
-                        <p>Oracle Cloud Infrastructure</p>
-                    </div>
-                </div>
-                <!-- Cert 2 -->
-                <div class="glass-card cert-card fade-in">
-                    <div class="cert-img-placeholder">
-                        <img src="images/AWS.jpg" alt="AWS Cloud Practitioner Certificate" class="cert-image">
-                    </div>
-                    <div class="cert-info">
-                        <h3>AWS Cloud Practitioner</h3>
-                        <p>Amazon Web Services</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- certifications -->
+    <section class="section">
+      <div class="prompt-line">~ $ <span class="cmd">cat certs.txt</span></div>
+      <div class="output">
+        <ul class="simple-list">
+          <li><span class="item-title">OCI 2025 Certified Networking Professional</span> &mdash; Oracle Cloud Infrastructure</li>
+          <li><span class="item-title">AWS Cloud Practitioner</span> &mdash; Amazon Web Services</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Achievements Section (Timeline Layout) -->
-    <section id="achievements" class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Achievements</span>
-                <h2 class="section-title">My <span class="text-magenta">Achievements</span></h2>
-                <h4 class="kannada-text" style="margin-top: 15px; font-size: 1.3rem; font-style: italic;">"ಕಾಯಕವೇ ಕೈಲಾಸ"
-                </h4>
-                <p style="font-size: 0.9rem; color: #ccc; margin-top: 5px;">Work is Worship - Sri Basavanna</p>
-            </div>
-
-            <div class="glass-card intro-card fade-in"
-                style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-                <img src="images/jainlogo.png" alt="Jain University Logo"
-                    style="height: 60px; object-fit: contain; filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));">
-                <p class="intro-text">
-                    My real journey of growth and achievement began at Jain University.
-                    It was here that I discovered my potential, developed confidence, and
-                    learned to take initiative. There was a time when I felt unnoticed
-                    and unsure of my direction, but the opportunities, mentors, and
-                    experiences at Jain helped transform me into someone who strives
-                    to create impact. These milestones represent some of the most
-                    meaningful steps in my journey so far.
-                </p>
-            </div>
-
-            <!-- Timeline Structure for Achievements -->
-            <div class="timeline">
-
-                <!-- Achievement 1 -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Club Leadership Journey</h3>
-                                <span class="timeline-date">Jain University | 2024 – 2025</span>
-                            </div>
-                            <span class="gpa-badge">Club Lead</span>
-                        </div>
-                        <p>
-                            In 2024, I joined a college club at Jain University and was selected as a member.
-                            Through consistent contribution and teamwork, I was later promoted to
-                            <strong>Club Lead in 2025</strong>. As a leader, I successfully organized
-                            and managed a major event for the first time, where I coordinated a team
-                            and handled the event budget responsibly. This experience strengthened my
-                            leadership, planning, and team management skills.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Achievement 2 -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Placements & Industry Interface cell</h3>
-                                <span class="timeline-date">Jain University | Present</span>
-                            </div>
-                            <span class="gpa-badge"
-                                style="background: rgba(0, 240, 255, 0.1); color: var(--cyan); border-color: var(--cyan);">Student Coordinator</span>
-                        </div>
-                        <p>
-                            I was selected as a <strong>Student Coordinator in the Placement Team</strong> at my university.
-                            This opportunity allowed me to work closely with the placement leadership team
-                            including
-                            <a href="https://www.linkedin.com/in/senthil-d-64445a141/" target="_blank">Senthil Sir</a>,
-                            <a href="https://www.linkedin.com/in/dr-v-pushparajesh-aa63311b8/" target="_blank">Dr.
-                                Pushparajesh Sir</a>,
-                            <a href="https://www.linkedin.com/in/shashiraj-r-a04206306/" target="_blank">Shashiraj
-                                Sir</a>,
-                            and
-                            <a href="https://www.linkedin.com/in/siddappaji-n-2856ab227/" target="_blank">Siddappaji
-                                Sir</a>.
-                        </p>
-
-                        <p>
-                            Through this platform, I was selected as a
-                            <strong>Student Ambassador for Capgemini Brand Quest 2025</strong>.
-                            In this role, I helped promote Capgemini's campus campaign,
-                            encouraged student participation, and acted as a bridge between
-                            the company and the student community.
-                        </p>
-
-                        <p>
-                            Additionally, I had the opportunity to represent
-                            <strong>LinkedIn in my college as a LinkedIn Co-Pilot for 2026</strong>,
-                            supporting initiatives that promote professional networking
-                            and career readiness among students.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Achievement 3 -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content glass-card">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Core Member & Treasurer – GRI</h3>
-                                <span class="timeline-date">Centre for Grassroots Research & Innovation</span>
-                            </div>
-                            <span class="gpa-badge"
-                                style="background: rgba(255, 0, 170, 0.1); color: var(--magenta); border-color: var(--magenta);">Treasurer</span>
-                        </div>
-                        <p>
-                            I serve as a <strong>Core Member and Treasurer</strong> of the
-                            <strong>Centre for Grassroots Research & Innovation (GRI)</strong>,
-                            a student-led initiative at the Faculty of Engineering and Technology,
-                            Jain (Deemed-to-be) University.
-                        </p>
-
-                        <p>
-                            The initiative focuses on partnering with rural communities to
-                            develop sustainable solutions through research, field engagement,
-                            and frugal innovation. Our work aims to create meaningful impact
-                            by combining technology, research, and grassroots problem solving.
-                        </p>
-
-                        <p>
-                            This initiative is guided and led by
-                            <a href="https://www.linkedin.com/in/arulprakasajothi-apj-m-05732a18/" target="_blank">
-                                Director Arulprakasajothi Sir</a>, whose mentorship has been instrumental
-                            in shaping the vision of this research center.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="glass-card intro-card fade-in" style="margin-top:40px; border-color: var(--cyan);">
-                <p class="intro-text">
-                    These achievements represent only the beginning of my journey.
-                    With two more years ahead in my academic path, I look forward to
-                    building more impactful projects, contributing to meaningful
-                    initiatives, and continuing to grow as a technologist and leader.
-                </p>
-            </div>
-            <!-- Add this AFTER the Timeline closing div </div> -->
-
-            <!-- Hackathons Attended Sub-section -->
-            <div class="section-header" style="margin-top: 80px;">
-                <span class="section-tag">Events</span>
-                <h2 class="section-title">Hackathons <span class="text-cyan">Attended</span></h2>
-            </div>
-
-            <div class="hackathon-grid">
-
-                <!-- Hackathon 1 -->
-                <div class="glass-card hackathon-card fade-in">
-                    <img src="images/hackathon.jpeg" alt="Bharatiya Antriksh Hackathon" class="hackathon-img">
-                    <div class="hackathon-info">
-                        <h3>Bharatiya Antriksh Hackathon 2025</h3>
-                        <p>My first Hackathon experience at Dayananda Sagar University. A great start to innovation!</p>
-                    </div>
-                </div>
-
-                <!-- Hackathon 2 -->
-                <div class="glass-card hackathon-card fade-in">
-                    <img src="images/inceptrix.jpeg" alt="Inceptrix 2.0" class="hackathon-img">
-                    <div class="hackathon-info">
-                        <h3>Inceptrix 2.0 Hackathon 2026</h3>
-                        <p> Our Project RoadRisk AI
-                            We built RoadRisk AI, a predictive road safety navigation system.
-                            Traditional navigation apps optimize for fastest routes.
-                            RoadRisk optimizes for safest routes.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+    <!-- contact -->
+    <section id="contact" class="section">
+      <div class="prompt-line">~ $ <span class="cmd">cat contact.json</span></div>
+      <div class="output">
+        <ul class="contact-links">
+          <li><span class="label">github:</span> <a href="https://github.com/adhiboss" target="_blank">github.com/adhiboss</a></li>
+          <li><span class="label">linkedin:</span> <a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank">linkedin.com/in/adhigowda2006</a></li>
+          <li><span class="label">leetcode:</span> <a href="https://leetcode.com/u/adhiboss/" target="_blank">leetcode.com/u/adhiboss</a></li>
+          <li><span class="label">scholar:</span> <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
+          <li><span class="label">research:</span> <a href="https://www.researchgate.net/profile/Adithya-Gowda-3?ev=hdr_xprf" target="_blank">ResearchGate</a></li>
+          <li><span class="label">resume:</span> <a href="resume.pdf" target="_blank">view</a> / <a href="resume.pdf" download="Adhi_Gowda_Resume.pdf">download</a></li>
+          <li><span class="label">email:</span> <a href="https://formspree.io/f/xyknzvna" target="_blank">send a message</a></li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section cyber-grid-bg">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Contact</span>
-                <h2 class="section-title">Get In <span class="text-cyan">Touch</span></h2>
-            </div>
-            <div class="contact-container">
-                <form class="glass-card contact-form fade-in" action="https://formspree.io/f/xyknzvna" method="POST">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" placeholder="your@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+    <!-- Footer -->
+    <div class="footer">
+      <p>Adhi Gowda &middot; 2026 &middot; Bangalore / Kanakapura</p>
+    </div>
 
-    <footer>
-        <div class="footer-content">
-            <div class="logo"><span class="logo-dot"></span></div>
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
-                <div class="social-links" style="display: flex; gap: 20px;">
-                    <a href="https://github.com/adhiboss" target="_blank" class="social-icon" aria-label="GitHub"><i
-                            class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" class="social-icon"
-                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://leetcode.com/u/adhiboss/" target="_blank" class="social-icon"
-                        aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
-                    <a href="https://www.researchgate.net/profile/Adithya-Gowda-3?ev=hdr_xprf" target="_blank" class="social-icon"
-                        aria-label="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
-                    <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en" target="_blank" class="social-icon"
-                        aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-                </div>
-                <p>Adhi Gowda 2026 <span class="kannada-text" style="font-size: 0.8rem; margin-left: 10px;">| ನಮ್ಮ
-                        ಬೆಂಗಳೂರು/ಕನಕಪುರ</span></p>
-            </div>
-            <div class="status-footer">
-                <span class="status-dot"></span> All Systems Operational
-            </div>
-        </div>
-    </footer>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
