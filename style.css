@@ -1,13 +1,13 @@
-/* === Reset & Variables === */
+/* === Reset & Variables (Git Light Mode Theme) === */
 :root {
-  --bg: #333333;
-  --bg-box: #2a2a2a;
-  --text: #e6e6e6;
-  --text-dim: #999999;
-  --border: #555555;
-  --accent: #F05032;
-  --font-main: 'Space Mono', monospace;
-  --font-header: 'VT323', monospace;
+  --bg: #F0EFE7;
+  --bg-box: #EAE9E0;
+  --text: #4E443C;
+  --border: #D8D7CF;
+  --accent: #F14E32;
+  --link: #0388A6;
+  --font-main: 'Roboto Slab', serif;
+  --font-header: 'Bitter', serif;
 }
 
 *, *::before, *::after {
@@ -35,29 +35,14 @@ body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--link);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: all 0.2s;
 }
 
 a:hover {
-  border-bottom: 1px solid var(--accent);
-}
-
-/* === CRT Scanline Overlay === */
-.crt::before {
-  content: " ";
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  z-index: 999;
-  background-size: 100% 2px, 3px 100%;
-  pointer-events: none;
+  text-decoration: underline;
 }
 
 /* === Structure === */
@@ -72,8 +57,8 @@ a:hover {
 
 /* === Header === */
 .header {
-  border: 1px solid var(--border);
-  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,10 +72,12 @@ a:hover {
 }
 
 .ascii-art {
-  font-family: var(--font-header);
+  font-family: var(--font-main); /* ASCII looks cleaner in monospace usually, but we keep it neutral here */
   font-size: min(2vw, 1.2rem);
   line-height: 1.1;
   text-align: center;
+  color: var(--accent);
+  font-weight: 700;
 }
 
 .header-nav {
@@ -102,22 +89,20 @@ a:hover {
 
 .header-nav a {
   font-family: var(--font-header);
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--link);
 }
 
 .header-nav a:hover {
-  color: var(--bg);
-  background: var(--text);
-  border-bottom: none;
+  color: var(--accent);
+  text-decoration: none;
 }
 
 /* === Grid Layout === */
 .grid-layout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .span-2 {
@@ -144,27 +129,14 @@ a:hover {
   flex-direction: column;
   background: var(--bg-box);
   position: relative;
-  border-radius: 4px;
-}
-
-.box::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--text);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.box:hover::before {
-  opacity: 0.03;
+  border-radius: 3px;
 }
 
 .box-header {
   border-bottom: 1px solid var(--border);
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   font-family: var(--font-header);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   background: transparent;
   color: var(--accent);
@@ -186,18 +158,23 @@ a:hover {
 /* === Typography === */
 h1 {
   font-family: var(--font-header);
-  font-size: 4rem;
-  letter-spacing: -2px;
-  line-height: 1;
+  font-size: 3rem;
+  letter-spacing: -1px;
+  line-height: 1.1;
   margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+h3 {
+  font-family: var(--font-header);
 }
 
 .subtitle {
-  font-size: 1.1rem;
-  color: var(--text-dim);
+  font-size: 1rem;
+  color: var(--text);
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 p {
@@ -210,14 +187,14 @@ p:last-child {
 /* === Elements === */
 .retro-img {
   max-width: 100%;
-  border: 2px solid var(--border);
-  filter: grayscale(100%) contrast(1.2);
+  border: 1px solid var(--border);
   margin-bottom: 1rem;
+  border-radius: 3px;
 }
 
 .caption {
   font-size: 0.85rem;
-  color: var(--text-dim);
+  color: var(--text);
   font-style: italic;
 }
 
@@ -234,14 +211,15 @@ p:last-child {
   padding-left: 1.2rem;
 }
 .list li::before {
-  content: ">";
+  content: "•";
   position: absolute;
   left: 0;
   top: 0;
+  color: var(--accent);
   font-weight: bold;
 }
 
-.minimal-list gap {
+.minimal-list {
   gap: 0.8rem;
 }
 .minimal-list li {
@@ -254,6 +232,7 @@ p:last-child {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border);
+  border-radius: 3px;
 }
 .tr {
   display: grid;
@@ -265,13 +244,13 @@ p:last-child {
 }
 .th {
   font-weight: bold;
-  background: var(--text);
-  color: var(--bg);
+  background: transparent;
+  color: var(--text);
 }
 .td {
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-right: 1px solid var(--border);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 .td:last-child {
   border-right: none;
@@ -280,11 +259,11 @@ p:last-child {
 @media (max-width: 600px) {
   .tr {
     grid-template-columns: 1fr;
-    border-bottom: 2px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
   .td {
     border-right: none;
-    border-bottom: 1px dotted var(--text-dim);
+    border-bottom: 1px dotted var(--border);
   }
 }
 
@@ -296,21 +275,24 @@ p:last-child {
 }
 
 .skill-card {
-  border: 1px dashed var(--text-dim);
-  padding: 1rem;
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  border-radius: 3px;
+  background: var(--bg);
 }
 
 .skill-card h3 {
   font-family: var(--font-header);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  color: var(--accent);
 }
 
 .tech {
-  font-size: 0.8rem;
-  color: var(--text-dim);
+  font-size: 0.85rem;
+  color: var(--text);
   margin-bottom: 0.5rem;
-  text-transform: uppercase;
+  font-weight: 700;
 }
 
 /* Projects */
@@ -324,14 +306,25 @@ p:last-child {
 .project-list li {
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  border-radius: 3px;
+  background: var(--bg);
 }
 
 .project-list li span {
-  font-size: 0.85rem;
-  color: var(--text-dim);
+  font-size: 0.95rem;
+  color: var(--text);
 }
 
-/* Contact Flex */
+.project-list a {
+  font-family: var(--font-header);
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+/* Contact Flex / Buttons */
 .contact-flex {
   display: flex;
   justify-content: space-around;
@@ -340,51 +333,15 @@ p:last-child {
 }
 .contact-flex a {
   font-family: var(--font-header);
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid transparent;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+  transition: opacity 0.2s;
+  text-decoration: none;
 }
 .contact-flex a:hover {
-  border: 1px solid var(--text);
-  background: var(--text);
-  color: var(--bg);
-}
-
-/* === Glitch Hover Effects === */
-.glitch-link {
-  position: relative;
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: underline;
-  text-transform: uppercase;
-  font-family: var(--font-header);
-  font-size: 1.5rem;
-}
-
-.glitch-link:hover {
-  animation: linkGlitch 0.3s infinite;
-  text-decoration: none;
-  background: var(--text);
-  color: var(--bg);
-}
-
-@keyframes linkGlitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
-}
-
-/* === Blinking Cursor === */
-.blinking-cursor::after {
-  content: '█';
-  animation: blink 1s step-end infinite;
-  margin-left: 5px;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  opacity: 0.9;
 }
