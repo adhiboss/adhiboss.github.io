@@ -83,9 +83,14 @@ a:hover {
   position: relative;
 }
 
+.header-logo {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 .ascii-art {
   font-family: var(--font-header);
-  font-size: 1.2rem;
+  font-size: min(2vw, 1.2rem);
   line-height: 1.1;
   text-align: center;
 }
