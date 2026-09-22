@@ -1,371 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adhi Gowda</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/download.jpg" type="image/jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adhi Gowda | Terminal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/download.jpg" type="image/jpeg">
 </head>
+<body class="crt">
+    
+    <div class="screen-content">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-logo">
+                <pre class="ascii-art">
+   ___       ___   __    _       _____                __       
+  / _ | ___ / _ \ / /   (_)____ / ___/____  _    __  / /___ _  
+ / __ |/ _ `/ // / _ \ / //___// (_ // __ \| |/|/ / / // _ `/  
+/_/ |_|\_,_/____/_//_//_/      \___/ \____/|__,__/ /_/ \_,_/   
+                </pre>
+            </div>
+            <div class="header-nav">
+                <a href="#whoami">[ whoami ]</a>
+                <a href="#experience">[ experience ]</a>
+                <a href="#skills">[ skills ]</a>
+                <a href="#projects">[ projects ]</a>
+                <a href="#contact">[ contact ]</a>
+            </div>
+        </header>
 
-<body>
+        <main class="grid-layout">
+            
+            <!-- WHOAMI -->
+            <section id="whoami" class="box span-2">
+                <div class="box-header">> WHOAMI.EXE</div>
+                <div class="box-content">
+                    <h1>ADHI GOWDA</h1>
+                    <h3 class="subtitle">CS ENGINEERING STUDENT</h3>
+                    <p>B.Tech Computer Science student at <strong>Jain University</strong>. I like Linux, cloud infrastructure, networking, and full stack dev, making systems do things they probably shouldn't.</p>
+                    <p>Good with people, comfortable with technology, and currently doing my best to build useful stuff before AI takes over...</p>
+                    <br>
+                    <p><em>"I cook on GitHub at night. Just like Batman, but with more git pushes."</em></p>
+                </div>
+            </section>
 
-  <div class="wrapper">
+            <!-- BATMAN PROTOCOL -->
+            <section id="batman" class="box">
+                <div class="box-header">> BATMAN_PROTOCOL.SH</div>
+                <div class="box-content center-content glitch-wrapper">
+                    <img src="images/the similarities tho___.jpg" alt="Batman Meme" class="retro-img glitch" loading="lazy">
+                    <p class="caption">"I am vengeance. I am the night. I am debugging in production."</p>
+                </div>
+            </section>
 
-    <!-- Header -->
-    <header class="header">
-      <nav class="nav-links">
-        <a href="#whoami">whoami</a>
-        <a href="#experience">experience</a>
-        <a href="#skills">skills</a>
-        <a href="#projects">projects</a>
-        <a href="#contact">contact</a>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <!-- Batman Logo SVG -->
-      <a href="#batman" title="Batman Protocol" class="batman-btn" aria-label="Batman Protocol">
-        <svg class="batman-logo" viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M 500 95 C 478 95 460 60 450 50 C 445 75 435 95 385 100 C 300 110 200 150 50 370 C 150 320 230 300 290 330 C 320 270 380 260 500 410 C 620 260 680 270 710 330 C 770 300 850 320 950 370 C 800 150 700 110 615 100 C 565 95 555 75 550 50 C 540 60 522 95 500 95 Z"
-            fill="currentColor" />
-        </svg>
-      </a>
-    </header>
+            <!-- EDUCATION -->
+            <section id="education" class="box">
+                <div class="box-header">> CAT EDUCATION.MD</div>
+                <div class="box-content">
+                    <ul class="list">
+                        <li>
+                            <strong>B.Tech Computer Science & Engineering</strong><br>
+                            Jain University, Bangalore | Aug 2024 - Present<br>
+                            CGPA: 8.0 (Specializing in Cloud & Security)
+                        </li>
+                        <li>
+                            <strong>Pre-University (Science + Biology)</strong><br>
+                            Rural PU College, Kanakapura | 2022 - 2024
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-    <!-- Mobile Nav -->
-    <div class="mobile-nav" id="mobileNav">
-      <button class="mobile-nav-close" id="mobileNavClose">&times;</button>
-      <a href="#whoami" onclick="closeMobileNav()">whoami</a>
-      <a href="#experience" onclick="closeMobileNav()">experience</a>
-      <a href="#skills" onclick="closeMobileNav()">skills</a>
-      <a href="#projects" onclick="closeMobileNav()">projects</a>
-      <a href="#batman" onclick="closeMobileNav()">batman</a>
-      <a href="#contact" onclick="closeMobileNav()">contact</a>
+            <!-- EXPERIENCE -->
+            <section id="experience" class="box span-2">
+                <div class="box-header">> LS EXPERIENCE/</div>
+                <div class="box-content">
+                    <div class="table">
+                        <div class="tr th">
+                            <div class="td">ROLE</div>
+                            <div class="td">ORGANIZATION</div>
+                            <div class="td">DETAILS</div>
+                        </div>
+                        <div class="tr">
+                            <div class="td">Intern</div>
+                            <div class="td">Omniforge</div>
+                            <div class="td">Learning startup operations, dynamic challenges, fast-paced environment.</div>
+                        </div>
+                        <div class="tr">
+                            <div class="td">Corporate Relations Intern</div>
+                            <div class="td">Jain University</div>
+                            <div class="td">Fostering industry connections, facilitating professional opportunities.</div>
+                        </div>
+                        <div class="tr">
+                            <div class="td">Placement Coordinator</div>
+                            <div class="td">Jain University</div>
+                            <div class="td">Bridging the gap between students and corporate partners, demonstrating technical projects.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS -->
+            <section id="skills" class="box span-3">
+                <div class="box-header">> SYS.SKILLS</div>
+                <div class="box-content skills-grid">
+                    <div class="skill-card">
+                        <h3>01_FULL-STACK</h3>
+                        <p class="tech">JavaScript, React, Node.js, Python, SQL, REST APIs</p>
+                        <p>Build web applications, dashboards, and scalable backend services with end-to-end integration.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>02_AI_CV</h3>
+                        <p class="tech">Python, YOLO, MobileNetV2, ML</p>
+                        <p>Build AI-powered systems for real-time object detection, image classification, and automated pipelines.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>03_CLOUD_INFRA</h3>
+                        <p class="tech">AWS, Oracle Cloud, Linux, Networking</p>
+                        <p>Deploy, configure, and manage cloud services, Linux servers, and network infrastructure securely.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>04_DEV_WORKFLOW</h3>
+                        <p class="tech">Figma, Git, VS Code, Postman</p>
+                        <p>Design interfaces, prototype ideas, and ship products with disciplined workflow.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects" class="box span-2">
+                <div class="box-header">> LS PROJECTS/</div>
+                <div class="box-content">
+                    <ul class="project-list">
+                        <li>
+                            <a href="https://github.com/adhiboss/Procrasti_Track" target="_blank" class="glitch-link">ProcrastiTrack</a>
+                            <span>Gamified task management system (PHP, MySQL, Google Classroom API).</span>
+                        </li>
+                        <li>
+                            <a href="https://github.com/adhiboss/smart-system-monitor" target="_blank" class="glitch-link">Smart System Monitor</a>
+                            <span>Lightweight Linux monitoring tool tracking CPU, memory, network.</span>
+                        </li>
+                        <li>
+                            <a href="https://roadriskai.vercel.app/" target="_blank" class="glitch-link">RoadRisk AI</a>
+                            <span>Web-based road safety analysis using AI. Predictive accident risk.</span>
+                        </li>
+                        <li>
+                            <a href="https://github.com/adhiboss/aws-linux-server-playbook" target="_blank" class="glitch-link">AWS Linux Server Playbook</a>
+                            <span>Practical documentation on deploying, managing Linux servers in cloud.</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- ACHIEVEMENTS -->
+            <section id="achievements" class="box">
+                <div class="box-header">> CAT ACHIEVEMENTS.LOG</div>
+                <div class="box-content">
+                    <ul class="list minimal-list">
+                        <li><strong>President</strong>, CRCE (Present)</li>
+                        <li><strong>Club Lead</strong>, FOSS Club (FSMK)</li>
+                        <li><strong>Theatre Club Lead</strong>, Jain University</li>
+                        <li><strong>Core Member</strong>, GRI</li>
+                        <li><em>Hackathons:</em> Bharatiya Antriksh '25, Inceptrix 2.0 '26</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact" class="box span-3">
+                <div class="box-header">> ./CONNECT.SH</div>
+                <div class="box-content contact-flex">
+                    <a href="https://github.com/adhiboss" target="_blank">[ GITHUB ]</a>
+                    <a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank">[ LINKEDIN ]</a>
+                    <a href="https://leetcode.com/u/adhiboss/" target="_blank">[ LEETCODE ]</a>
+                    <a href="resume.pdf" target="_blank">[ RESUME ]</a>
+                    <a href="https://formspree.io/f/xyknzvna" target="_blank">[ EMAIL ]</a>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="box span-3">
+                <div class="box-content center-content">
+                    <p class="blinking-cursor">SYSTEM HALTED. (C) 2026 ADHI GOWDA.</p>
+                </div>
+            </footer>
+
+        </main>
     </div>
 
-    <!-- whoami -->
-    <section id="whoami" class="section">
-      <div class="prompt-line">~ $ <span class="cmd">whoami</span></div>
-      <div class="output">
-        <p><span class="highlight">Adhi Gowda</span> &mdash; CS Engineering Student</p>
-        <p>B.Tech Computer Science student at <span class="accent">Jain University</span> I like Linux, cloud
-          infrastructure, networking, full stack dev making systems do things they probably shouldn't. Good with people,
-          comfortable with technology, and currently doing my best to build useful stuff before AI takes over...</p>
-        <p>I cook on GitHub at night. Just like Batman, but with more git pushes.</p>
-      </div>
-    </section>
-
-    <!-- education -->
-    <section class="section">
-      <div class="prompt-line">~ $ <span class="cmd">cat education.md</span></div>
-      <div class="output">
-        <ul class="section-list">
-          <li>
-            <span class="item-title">B.Tech Computer Science &amp; Engineering</span>
-            <span class="item-sub">Jain University, Bangalore &middot; Aug 2024 &ndash; Present &middot; CGPA:
-              8.0</span>
-            <span class="item-desc">Specializing in Cloud &amp; Security concepts.</span>
-            <div class="tags">
-              <span class="tag">Sem 1: 7.4</span>
-              <span class="tag">Sem 2: 8.4</span>
-              <span class="tag">Sem 3: 8.6</span>
-              <span class="tag">Sem 4: 8.6</span>
-              <span class="tag">Sem 5: 8.6</span>
-            </div>
-          </li>
-          <li>
-            <span class="item-title">Pre-University (Science + Biology)</span>
-            <span class="item-sub">Rural PU College, Kanakapura &middot; 2022 &ndash; 2024</span>
-          </li>
-          <li>
-            <span class="item-title">High School (10th Grade)</span>
-            <span class="item-sub">Jain Public School, Bangalore &middot; Completed 2022</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- experience -->
-    <section id="experience" class="section">
-      <div class="prompt-line">~ $ <span class="cmd">ls experience/</span></div>
-      <div class="output">
-        <ul class="section-list">
-          <li>
-            <span class="item-title">Intern</span>
-            <span class="item-sub">Omniforge &middot; Present</span>
-            <span class="item-desc">Learning the ins and outs of how a startup operates, taking on dynamic challenges,
-              and gaining hands-on experience in a fast-paced environment.</span>
-          </li>
-          <li>
-            <span class="item-title">Corporate Relations Intern</span>
-            <span class="item-sub">Jain University &middot; Present</span>
-            <span class="item-desc">Working closely with the Corporate Relations team to foster industry connections,
-              facilitate professional opportunities, and manage essential IT skill sets for career readiness.</span>
-          </li>
-          <li>
-            <span class="item-title">Placement Coordinator</span>
-            <span class="item-sub">Jain University &middot; Present</span>
-            <span class="item-desc">Serving as a Student Coordinator in the Placements &amp; Industry Interface cell,
-              bridging the gap between students and corporate partners while actively managing and demonstrating
-              technical projects.</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- achievements -->
-    <section class="section">
-      <div class="prompt-line">~ $ <span class="cmd">cat achievements.log</span></div>
-      <div class="output">
-        <p class="muted">My real journey of growth and achievement began at Jain University. These milestones represent
-          leadership, grassroots innovation, and community initiatives.</p>
-        <p class="muted" style="margin-top: 8px; font-style: italic;">"ಕಾಯಕವೇ ಕೈಲಾಸ" &mdash; Work is Worship &mdash; Sri
-          Basavanna</p>
-
-        <ul class="section-list" style="margin-top: 16px;">
-          <li>
-            <span class="item-title">President </span>
-            <span class="item-sub">Chenraj Roychand Center for Entrepreneurship (CRCE) &middot; Present</span>
-            <span class="item-desc">Leading CRCE, spearheading student entrepreneurship,
-              venture incubation, startup mentorship, and innovation ecosystems across campus.</span>
-          </li>
-          <li>
-            <span class="item-title">Club Lead &ndash; FOSS Club</span>
-            <span class="item-sub">Free Software Movement Karnataka (FSMK) &middot; Present</span>
-            <span class="item-desc">Leading open-source software initiatives, hands-on Linux/FOSS workshops, hack
-              sessions, and community-driven collaborative software development.</span>
-          </li>
-          <li>
-            <span class="item-title">Theatre Club Lead</span>
-            <span class="item-sub">Jain University &middot; 2024 &ndash; 2025</span>
-            <span class="item-desc">Joined as a member, promoted to Club Lead in 2025. Directed and organized landmark
-              cultural events and stage productions showcasing the rich heritage and roots of Kannada cinema,
-              coordinating teams and managing event budgets responsibly.</span>
-          </li>
-          <li>
-            <span class="item-title">Placements &amp; Industry Interface Cell</span>
-            <span class="item-sub">Jain University &middot; Present &middot; Student Coordinator</span>
-            <span class="item-desc">Student Ambassador for Capgemini Brand Quest 2025. LinkedIn Co-Pilot for
-              2026.</span>
-          </li>
-          <li>
-            <span class="item-title">Core Member &amp; Treasurer &ndash; GRI</span>
-            <span class="item-sub">Centre for Grassroots Research &amp; Innovation</span>
-            <span class="item-desc">Student-led initiative partnering with rural communities to develop sustainable
-              solutions through research, field engagement, and frugal innovation.</span>
-          </li>
-        </ul>
-
-        <p class="muted" style="margin-top: 20px;">Hackathons Attended:</p>
-        <ul class="simple-list">
-          <li><span class="item-title">Bharatiya Antriksh Hackathon 2025</span> &mdash; First hackathon experience at
-            Dayananda Sagar University</li>
-          <li><span class="item-title">Inceptrix 2.0 Hackathon 2026</span> &mdash; Built RoadRisk AI, a predictive road
-            safety navigation system</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- skills / what i build -->
-    <section id="skills" class="section">
-      <div class="prompt-line">~ $ <span class="cmd">cat what-i-build.md</span></div>
-      <div class="output">
-        <div class="build-grid">
-
-          <div class="build-card">
-            <div class="build-card-header">
-              <span class="build-num">01</span>
-              <h3 class="build-title">Full-Stack Systems</h3>
-            </div>
-            <div class="build-tags">
-              <span>JavaScript</span><span>React</span><span>Node.js</span><span>Python</span><span>SQL</span><span>REST APIs</span>
-            </div>
-            <p class="build-desc">Build web applications, dashboards, and scalable backend services with end-to-end integration.</p>
-          </div>
-
-          <div class="build-card">
-            <div class="build-card-header">
-              <span class="build-num">02</span>
-              <h3 class="build-title">AI &amp; Computer Vision</h3>
-            </div>
-            <div class="build-tags">
-              <span>Python</span><span>YOLO</span><span>MobileNetV2</span><span>Machine Learning</span>
-            </div>
-            <p class="build-desc">Build AI-powered systems for real-time object detection, image classification, and automated pipelines.</p>
-          </div>
-
-          <div class="build-card">
-            <div class="build-card-header">
-              <span class="build-num">03</span>
-              <h3 class="build-title">Cloud &amp; Infrastructure</h3>
-            </div>
-            <div class="build-tags">
-              <span>AWS</span><span>Oracle Cloud</span><span>Linux</span><span>Networking</span>
-            </div>
-            <p class="build-desc">Deploy, configure, and manage cloud services, Linux servers, and network infrastructure securely.</p>
-          </div>
-
-          <div class="build-card">
-            <div class="build-card-header">
-              <span class="build-num">04</span>
-              <h3 class="build-title">Design &amp; Developer Workflow</h3>
-            </div>
-            <div class="build-tags">
-              <span>Figma</span><span>Git &amp; GitHub</span><span>VS Code</span><span>Postman</span>
-            </div>
-            <p class="build-desc">Design intuitive interfaces, prototype ideas, and ship products with a disciplined development workflow.</p>
-          </div>
-
-          <div class="build-card">
-            <div class="build-card-header">
-              <span class="build-num">05</span>
-              <h3 class="build-title">Research &amp; Engineering</h3>
-            </div>
-            <div class="build-tags">
-              <span>Python</span><span>SQL</span><span>AI Research</span><span>Networking</span><span>Operating Systems</span>
-            </div>
-            <p class="build-desc">Turn real-world problems into experiments, robust software architectures, and measurable engineering solutions.</p>
-          </div>
-
-          <div class="build-card">
-            <div class="build-card-header">
-              <span class="build-num">06</span>
-              <h3 class="build-title">Operations &amp; Leadership</h3>
-            </div>
-            <div class="build-tags">
-              <span>Excel &amp; Sheets</span><span>Operations</span><span>Event Budgeting</span><span>Team Leadership</span>
-            </div>
-            <p class="build-desc">Lead student organizations from scratch, coordinate cross-functional teams, manage budgets, and streamline execution.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- projects -->
-    <section id="projects" class="section">
-      <div class="prompt-line">~ $ <span class="cmd">ls projects/</span></div>
-      <div class="output">
-        <ul class="section-list">
-          <li>
-            <span class="item-title">ProcrastiTrack</span>
-            <span class="item-sub">PHP &middot; MySQL &middot; Google Classroom API</span>
-            <span class="item-desc">Gamified task management system to help students overcome procrastination. Features
-              Google Classroom OAuth sync, database backend, and AI-driven motivational tools.</span>
-            <div class="tags"><a href="https://github.com/adhiboss/Procrasti_Track" target="_blank"
-                class="tag">github</a></div>
-          </li>
-          <li>
-            <span class="item-title">Smart System Monitor</span>
-            <span class="item-sub">Linux &middot; Bash &middot; System Admin</span>
-            <span class="item-desc">Lightweight Linux monitoring tool tracking CPU, memory, disk, and network. Includes
-              automation scripts and remote monitoring capabilities.</span>
-            <div class="tags"><a href="https://github.com/adhiboss/smart-system-monitor" target="_blank"
-                class="tag">github</a></div>
-          </li>
-          <li>
-            <span class="item-title">RoadRisk AI</span>
-            <span class="item-sub">AI/ML &middot; Python &middot; Data Visualization</span>
-            <span class="item-desc">Web-based road safety analysis using AI. Identifies potential accident risks and
-              promotes safer driving awareness through data visualization.</span>
-            <div class="tags"><a href="https://roadriskai.vercel.app/" target="_blank" class="tag">live</a></div>
-          </li>
-          <li>
-            <span class="item-title">Daily Tech Notes</span>
-            <span class="item-sub">Linux &middot; Networking &middot; DevOps</span>
-            <span class="item-desc">Structured learning repository documenting Linux systems, networking fundamentals,
-              HTTP internals, and DevOps concepts.</span>
-            <div class="tags"><a href="https://github.com/adhiboss/daily-tech-notes" target="_blank"
-                class="tag">github</a></div>
-          </li>
-          <li>
-            <span class="item-title">Linux Networking Lab</span>
-            <span class="item-sub">Networking &middot; TCP/IP &middot; Linux</span>
-            <span class="item-desc">Hands-on experiments exploring TCP communication, DNS resolution, HTTP requests, and
-              port testing.</span>
-            <div class="tags"><a href="https://github.com/adhiboss/linux-networking-lab" target="_blank"
-                class="tag">github</a></div>
-          </li>
-          <li>
-            <span class="item-title">AWS Linux Server Playbook</span>
-            <span class="item-sub">AWS &middot; EC2 &middot; CloudWatch</span>
-            <span class="item-desc">Practical documentation on deploying, managing, and troubleshooting Linux servers in
-              cloud environments. Covers EC2, SSH hardening, and CloudWatch.</span>
-            <div class="tags"><a href="https://github.com/adhiboss/aws-linux-server-playbook" target="_blank"
-                class="tag">github</a></div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- certifications -->
-    <section class="section">
-      <div class="prompt-line">~ $ <span class="cmd">cat certs.txt</span></div>
-      <div class="output">
-        <ul class="simple-list">
-          <li><span class="item-title">OCI 2025 Certified Networking Professional</span> &mdash; Oracle Cloud
-            Infrastructure</li>
-          <li><span class="item-title">AWS Cloud Practitioner</span> &mdash; Amazon Web Services</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- batman protocol / meme -->
-    <section id="batman" class="section">
-      <div class="prompt-line">~ $ <span class="cmd">./batman_protocol.sh --meme</span></div>
-      <div class="output">
-        <div class="meme-box">
-          <div class="meme-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="meme-title">the similarities tho___.jpg</span>
-          </div>
-          <img src="images/the similarities tho___.jpg" class="meme-image" loading="lazy">
-          <p class="meme-caption"><span class="highlight">"I am vengeance. I am the night. I am debugging in
-              production."</span> &mdash; The Dark Knight</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- contact -->
-    <section id="contact" class="section">
-      <div class="prompt-line">~ $ <span class="cmd">cat contact.json</span></div>
-      <div class="output">
-        <ul class="contact-links">
-          <li><span class="label">github:</span> <a href="https://github.com/adhiboss"
-              target="_blank">github.com/adhiboss</a></li>
-          <li><span class="label">linkedin:</span> <a href="https://www.linkedin.com/in/adhigowda2006/"
-              target="_blank">linkedin.com/in/adhigowda2006</a></li>
-          <li><span class="label">leetcode:</span> <a href="https://leetcode.com/u/adhiboss/"
-              target="_blank">leetcode.com/u/adhiboss</a></li>
-          <li><span class="label">scholar:</span> <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en"
-              target="_blank">Google Scholar</a></li>
-          <li><span class="label">research:</span> <a
-              href="https://www.researchgate.net/profile/Adithya-Gowda-3?ev=hdr_xprf" target="_blank">ResearchGate</a>
-          </li>
-          <li><span class="label">resume:</span> <a href="resume.pdf" target="_blank">view</a> / <a href="resume.pdf"
-              download="Adhi_Gowda_Resume.pdf">download</a></li>
-          <li><span class="label">email:</span> <a href="https://formspree.io/f/xyknzvna" target="_blank">send a
-              message</a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <div class="footer">
-      <p>Adhi Gowda &middot; 2026 &middot; Bangalore / Kanakapura</p>
-    </div>
-
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>

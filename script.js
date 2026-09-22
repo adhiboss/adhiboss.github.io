@@ -1,25 +1,31 @@
-// Mobile Navigation
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-const closeBtn = document.getElementById('mobileNavClose');
-
-if (hamburger && mobileNav) {
-  hamburger.addEventListener('click', () => {
-    mobileNav.classList.add('open');
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-    });
-  }
-}
-
-function closeMobileNav() {
-  if (mobileNav) mobileNav.classList.remove('open');
-}
-
 // Batman Easter Egg
-console.log("%c🦇 BATMAN PROTOCOL INITIALIZED 🦇\n%c\"I am vengeance. I am the night. I am Adhi Gowda.\"", 
-  "color: #e3b341; font-size: 14px; font-weight: bold; background: #06090e; padding: 4px 8px; border-radius: 4px;",
-  "color: #7ee787; font-size: 12px; font-style: italic;");
+console.log("%c>>> SYSTEM INITIALIZED\n%c\"I am vengeance. I am the night. I am debugging in production.\"", 
+  "color: #ffffff; font-size: 14px; font-weight: bold; background: #000000; padding: 4px 8px;",
+  "color: #888888; font-size: 12px; font-style: italic;");
+
+// Glitch Effect for Headers
+const glitchTexts = document.querySelectorAll('.box-header');
+
+glitchTexts.forEach(text => {
+    text.addEventListener('mouseover', () => {
+        const originalText = text.innerText;
+        let iterations = 0;
+        
+        const interval = setInterval(() => {
+            text.innerText = originalText.split('')
+                .map((char, index) => {
+                    if (index < iterations) {
+                        return originalText[index];
+                    }
+                    return String.fromCharCode(33 + Math.random() * 94);
+                })
+                .join('');
+            
+            if (iterations >= originalText.length) {
+                clearInterval(interval);
+            }
+            
+            iterations += 1;
+        }, 30);
+    });
+});
