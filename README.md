@@ -1,5 +1,6 @@
 # Adhi Gowda - Personal Portfolio Space
 
+![Portfolio Preview](images/readme.png)
 Welcome to the repository of my personal portfolio website! This project showcases my journey as a 2nd-year B.Tech Computer Science student specializing in Cloud & Security, highlighting my skills, projects, certifications, and achievements.
 
 ## 🚀 Live Demo
