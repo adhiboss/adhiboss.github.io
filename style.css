@@ -72,12 +72,37 @@ a:hover {
 }
 
 .ascii-art {
-  font-family: var(--font-main); /* ASCII looks cleaner in monospace usually, but we keep it neutral here */
+  font-family: monospace; /* ASCII looks cleaner in monospace */
   font-size: min(2vw, 1.2rem);
   line-height: 1.1;
   text-align: center;
   color: var(--accent);
   font-weight: 700;
+  animation: glitch-flicker 4s infinite, glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 2px var(--accent), 0 0 5px rgba(241, 78, 50, 0.4); }
+  to { text-shadow: 0 0 5px var(--accent), 0 0 15px rgba(241, 78, 50, 0.8); }
+}
+
+@keyframes glitch-flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 1;
+    transform: skewX(0deg);
+  }
+  20%, 21.999% {
+    opacity: 0.4;
+    transform: skewX(-5deg);
+  }
+  63%, 63.999% {
+    opacity: 0.8;
+    transform: skewX(2deg) translateY(1px);
+  }
+  65%, 69.999% {
+    opacity: 1;
+    transform: skewX(-2deg) translateY(-1px);
+  }
 }
 
 .header-nav {
@@ -345,3 +370,164 @@ p:last-child {
 .contact-flex a:hover {
   opacity: 0.9;
 }
+
+/* === Education Timeline === */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 1.5rem;
+}
+
+.timeline-item {
+  display: flex;
+  position: relative;
+  gap: 1rem;
+}
+
+.timeline-icon-box {
+  background-color: #F4EAE6;
+  color: var(--text);
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.timeline-marker {
+  position: relative;
+  width: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-marker::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-item:not(:last-child) .timeline-marker::after {
+  content: '';
+  position: absolute;
+  top: 26px;
+  bottom: -2rem;
+  width: 2px;
+  background-color: var(--border);
+  z-index: 1;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.5rem;
+}
+
+.timeline-title {
+  font-family: var(--font-header);
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+  margin-top: 0.4rem;
+}
+
+.timeline-org {
+  color: var(--link);
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-date {
+  color: #555;
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-desc {
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+/* === Experience Cards === */
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.exp-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.exp-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.exp-icon-box {
+  background-color: #F4EAE6;
+  color: var(--text);
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.exp-card-titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 48px;
+}
+
+.exp-role {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+.exp-org a, .exp-org {
+  font-family: var(--font-header);
+  color: var(--link);
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.exp-org a:hover {
+  text-decoration: underline;
+}
+
+.exp-desc {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .exp-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
