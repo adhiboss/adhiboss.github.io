@@ -498,7 +498,7 @@ p:last-child {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 48px;
+  min-height: 48px;
 }
 
 .exp-role {
