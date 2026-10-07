@@ -1,13 +1,15 @@
-/* === Reset & Variables (Git Light Mode Theme) === */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* === Reset & Variables (Dark Pixel Theme) === */
 :root {
-  --bg: #F0EFE7;
-  --bg-box: #EAE9E0;
-  --text: #4E443C;
-  --border: #D8D7CF;
-  --accent: #F14E32;
-  --link: #0388A6;
-  --font-main: 'Roboto Slab', serif;
-  --font-header: 'Bitter', serif;
+  --bg: #252424;
+  --bg-box: #383533;
+  --text: #e6e3d8;
+  --border: #4d4a48;
+  --accent: #ebb4c1; /* soft pink */
+  --link: #94d0c2;   /* soft teal */
+  --font-main: 'VT323', monospace;
+  --font-header: 'VT323', monospace;
 }
 
 *, *::before, *::after {
@@ -57,18 +59,18 @@ a:hover {
 
 /* === Header === */
 .header {
-  border-bottom: 1px solid var(--border);
-  padding: 1.5rem 0;
+  background: var(--bg-box);
+  border-radius: 12px;
+  padding: 1rem 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 1.5rem;
-  position: relative;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .header-logo {
-  max-width: 100%;
-  overflow: hidden;
+  display: none;
 }
 
 .ascii-art {
@@ -108,8 +110,9 @@ a:hover {
 .header-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .header-nav a {
@@ -149,20 +152,20 @@ a:hover {
 
 /* === Box Component === */
 .box {
-  border: 1px solid var(--border);
+  border: none;
   display: flex;
   flex-direction: column;
   background: var(--bg-box);
   position: relative;
-  border-radius: 3px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .box-header {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px dashed var(--border);
   padding: 0.75rem 1rem;
   font-family: var(--font-header);
-  font-size: 1.2rem;
-  text-transform: uppercase;
+  font-size: 1.4rem;
   background: transparent;
   color: var(--accent);
 }

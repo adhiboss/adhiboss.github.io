@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 </head>
@@ -15,76 +16,81 @@
     <div class="screen-content">
         <!-- HEADER -->
         <header class="header">
-            <div class="header-logo">
-                <pre class="ascii-art">
-   ___       ___   __    _       _____                __       
-  / _ | ___ / _ \ / /   (_)____ / ___/____  _    __  / /___ _  
- / __ |/ _ `/ // / _ \ / //___// (_ // __ \| |/|/ / / // _ `/  
-/_/ |_|\_,_/____/_//_//_/      \___/ \____/|__,__/ /_/ \_,_/   
-                </pre>
-            </div>
             <div class="header-nav">
-                <a href="index.html">[ whoami ]</a>
-                <a href="experience.html">[ experience ]</a>
-                <a href="skills.html">[ skills ]</a>
-                <a href="projects.html">[ projects ]</a>
-                <a href="research.html">[ research ]</a>
-                <a href="contact.html">[ contact ]</a>
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="projects.html"><i class="fa-solid fa-folder"></i> My projects</a>
+                <a href="contact.html"><i class="fa-solid fa-address-book"></i> Contact me</a>
+            </div>
+            <div class="header-nav" style="gap: 1.2rem; font-size: 1.4rem;">
+                <a href="#" id="theme-toggle"><i class="fa-solid fa-moon"></i></a>
+                <a href="https://discord.com" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://github.com/adhiboss" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </header>
 
         <main class="grid-layout">
-            <!-- WHOAMI -->
-            <section id="whoami" class="box span-2">
-                <div class="box-header">> WHOAMI.EXE</div>
-                <div class="box-content">
-                    <h1>ADHI GOWDA</h1>
-                    <h3 class="subtitle">CS ENGINEERING STUDENT | DEVELOPER | COMMUNITY BUILDER</h3>
-                    <p>B.Tech Computer Science student at <strong>Jain University</strong>. I like Linux, cloud infrastructure, networking, and full stack dev, making systems do things they probably shouldn't.</p>
-                    <p>Good with people, comfortable with technology, and currently doing my best to build useful stuff before AI takes over...</p>
-                    <br>
-                    <p><em>"I cook on GitHub at night. Just like Batman, but with more git pushes."</em></p>
+            <!-- ABOUT ME -->
+            <section class="box span-2" style="padding: 2.5rem; justify-content: flex-start;">
+                <!-- Profile Header -->
+                <div style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem; flex-wrap: wrap;">
+                    <img src="images/profile.png" alt="Adhi Gowda" style="width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--bg); outline: 4px solid var(--text); object-fit: cover; image-rendering: pixelated; background: var(--bg);">
+                    <div>
+                        <h1 style="color: var(--text); font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: 1px;">Adhi Gowda</h1>
+                        <p style="margin-bottom: 0.5rem; line-height: 1.4; color: var(--text);">I love Linux, cloud infrastructure and Open Source.<br>Full stack dev enthusiast.<br>Yet learning in Jain University.</p>
+                        <p align="left" style="margin-top: 0.8rem;">
+                            <img src="https://skillicons.dev/icons?i=python,js,ts,java,cpp,html,css,react,linux,docker" alt="Tech Stack" height="28" style="image-rendering: pixelated;"/>
+                        </p>
+                    </div>
                 </div>
+
+                <!-- Bio -->
+                <h2 style="color: var(--text); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 1rem;">About me</h2>
+                <p style="margin-bottom: 1rem;">I'm Adhi Gowda and I'm a developer just for fun. I love to create things that everyone could benefit of, investing my time in open source development, from which we can find some Linux applications, web pages, terminal based programs and so much more.</p>
+                <p style="margin-bottom: 1rem;">My true passion is networking and infrastructure, but that will have to wait until I move to a role that offers this career~</p>
+                <p style="margin-bottom: 1rem;">As stated above, I love Linux! Hence, I also love the terminal. I've always liked Python and JS, but Go has recently taken a part in my heart.</p>
             </section>
 
-            <!-- BATMAN PROTOCOL -->
-            <section id="batman" class="box">
-                <div class="box-header">> BATMAN_PROTOCOL.SH</div>
-                <div class="box-content center-content ">
-                    <img src="images/the similarities tho___.jpg" alt="Batman Meme" class="retro-img " loading="lazy">
-                    <p class="caption">"I am vengeance. I am the night. I am debugging in production."</p>
+            <!-- EXTRA DATA -->
+            <aside class="box span-1" style="padding: 2.5rem;">
+                <h2 style="color: var(--text); font-size: 1.5rem; margin-bottom: 2rem;">Extra data</h2>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem;">
+                    <span>Age</span>
+                    <span>19</span>
                 </div>
-            </section>
-
-            <!-- GITHUB ACTIVITY -->
-            <section id="github-activity" class="box span-3">
-                <div class="box-header">> GITHUB_ACTIVITY.LOG</div>
-                <div class="box-content center-content">
-                    <p class="subtitle" style="margin-bottom: 1rem;">Git Commits & Contributions</p>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem;">
+                    <span>Birthday</span>
+                    <span>Dec. 5th</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.8rem;">
+                    <span>Country</span>
+                    <span>India</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 2rem;">
+                    <span>Gender</span>
+                    <span>Male</span>
+                </div>
+                <p style="color: var(--link);">#505Bangalore</p>
+            </aside>
+            
+            <!-- GITHUB ACTIVITY & DUOLINGO -->
+            <section id="github-activity" class="box span-3" style="padding: 1.5rem;">
+                <h2 style="color: var(--text); font-size: 1.4rem; margin-bottom: 1rem; text-align: center;">GitHub Activity</h2>
+                <div class="box-content center-content" style="padding: 0;">
                     <a href="https://github.com/adhiboss" target="_blank">
-                        <img src="https://ghchart.rshah.org/adhiboss" alt="Adhi's GitHub Contributions" style="width: 100%; max-width: 800px; border: 1px dashed var(--border); padding: 1rem; border-radius: 3px; background: var(--bg);">
+                        <img src="https://ghchart.rshah.org/ebb4c1/adhiboss" alt="Adhi's GitHub Contributions" style="width: 100%; max-width: 800px; padding: 1rem; border-radius: 12px;">
                     </a>
                 </div>
             </section>
 
-            <!-- DUOLINGO STATS -->
-            <section id="duolingo-stats" class="box span-3">
-                <div class="box-header">> DUOLINGO_STATS.LOG</div>
-                <div class="box-content center-content">
-                    <p class="subtitle" style="margin-bottom: 1rem;">Language Learning Streak</p>
+            <section id="duolingo-stats" class="box span-3" style="padding: 1.5rem;">
+                <h2 style="color: var(--text); font-size: 1.4rem; margin-bottom: 1rem; text-align: center;">Duolingo Streak</h2>
+                <div class="box-content center-content" style="padding: 0;">
                     <a href="https://www.duolingo.com/profile/ADHIGOWDA1" target="_blank">
-                        <img src="https://duolingo-stats-card.vercel.app/api?username=ADHIGOWDA1" alt="Adhi's Duolingo Stats" style="max-width: 100%; border: 1px dashed var(--border); padding: 0.5rem; border-radius: 3px; background: var(--bg);">
+                        <img src="https://duolingo-stats-card.vercel.app/api?username=ADHIGOWDA1&theme=github-dark" alt="Adhi's Duolingo Stats" style="max-width: 100%; padding: 0.5rem; border-radius: 12px;">
                     </a>
                 </div>
             </section>
-
-            <!-- FOOTER -->
-            <footer class="box span-3">
-                <div class="box-content center-content">
-                    <p class="">SYSTEM HALTED. (C) 2026 ADHI GOWDA.</p>
-                </div>
-            </footer>
-
         </main>
     </div>
 
