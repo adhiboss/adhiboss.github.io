@@ -176,6 +176,29 @@ a:hover {
   }
 }
 
+@media (max-width: 600px) {
+  .screen-content {
+    padding: 1rem;
+  }
+  .main-title {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  .header-nav {
+    padding: 0.8rem 1rem;
+    gap: 1rem;
+  }
+  .header-nav a {
+    font-size: 1.1rem;
+  }
+  .box-content {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
 /* === Box Component === */
 .box {
   border: 1px solid var(--border);
