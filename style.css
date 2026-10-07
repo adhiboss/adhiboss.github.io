@@ -1,13 +1,15 @@
-/* === Reset & Variables (Git Light Mode Theme) === */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* === Reset & Variables (Space Terminal Theme) === */
 :root {
-  --bg: #F0EFE7;
-  --bg-box: #EAE9E0;
-  --text: #4E443C;
-  --border: #D8D7CF;
-  --accent: #F14E32;
-  --link: #0388A6;
-  --font-main: 'Roboto Slab', serif;
-  --font-header: 'Bitter', serif;
+  --bg: #1A1A1A;
+  --bg-window: rgba(20, 20, 20, 0.7);
+  --text: #EAEAEA;
+  --border: #444;
+  --accent-pink: #F7768E;
+  --accent-green: #73DACA;
+  --font-main: 'VT323', monospace;
+  --font-header: 'VT323', monospace;
 }
 
 *, *::before, *::after {
@@ -22,7 +24,11 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: url('images/space_bg.png'); /* Assumes image is saved here */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-main);
   line-height: 1.6;
@@ -35,14 +41,13 @@ body {
 }
 
 a {
-  color: var(--link);
+  color: var(--accent-green);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
   transition: all 0.2s;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-shadow: 0 0 8px rgba(115, 218, 202, 0.8);
 }
 
 /* === Structure === */
@@ -57,13 +62,29 @@ a:hover {
 
 /* === Header === */
 .header {
-  border-bottom: 1px solid var(--border);
   padding: 1.5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   position: relative;
+}
+
+.main-title {
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: 4px 4px 0 var(--accent-pink), -4px -4px 0 var(--accent-green);
+  font-family: var(--font-header);
+  letter-spacing: 4px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
 }
 
 .header-logo {
@@ -110,17 +131,25 @@ a:hover {
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
+  background: var(--bg-window);
+  border: 1px solid var(--border);
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
 }
 
 .header-nav a {
   font-family: var(--font-header);
-  font-size: 1.2rem;
-  color: var(--link);
+  font-size: 1.4rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.header-nav a:hover {
-  color: var(--accent);
-  text-decoration: none;
+.header-nav a:hover, .header-nav a.active {
+  color: var(--accent-green);
+  text-shadow: 0 0 8px rgba(115, 218, 202, 0.8);
 }
 
 /* === Grid Layout === */
@@ -152,20 +181,38 @@ a:hover {
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  background: var(--bg-box);
+  background: var(--bg-window);
   position: relative;
-  border-radius: 3px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
 }
 
 .box-header {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px dashed var(--border);
   padding: 0.75rem 1rem;
   font-family: var(--font-header);
   font-size: 1.2rem;
   text-transform: uppercase;
   background: transparent;
-  color: var(--accent);
+  color: var(--accent-pink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.window-controls {
+  display: flex;
+  gap: 0.4rem;
+}
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
 
 .box-content {
   padding: 1.5rem;
