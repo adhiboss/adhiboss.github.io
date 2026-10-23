@@ -1,133 +1,1010 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark" data-text="default" data-motion="full">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adhi Gowda</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&family=Roboto+Slab:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Adhi Gowda — Cloud, Security & AI Systems Developer</title>
+  <meta name="description" content="Personal portfolio space of Adhi Gowda. B.Tech Computer Science student at Jain University specializing in Cloud, Security, AI & Systems.">
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="images/favicon.jpg">
+  <!-- Core Design System Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Zero-FOUC Theme & Settings Initialization -->
+  <script>
+    (function() {
+      try {
+        const p = JSON.parse(localStorage.getItem("adhi_prefs") || "{}");
+        const doc = document.documentElement;
+        let t = ["dark", "light", "system"].includes(p.theme) ? p.theme : "dark";
+        if (t === "system") {
+          t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        doc.dataset.theme = t;
+        doc.dataset.text = ["small", "default", "large"].includes(p.text) ? p.text : "default";
+        doc.dataset.motion = p.motion === "reduce" ? "reduce" : "full";
+      } catch (e) {}
+    })();
+  </script>
 </head>
+<body class="antialiased">
 
-<body>
-
-    <div class="screen-content">
-        <!-- HEADER -->
-        <header class="header">
-            <h1 class="main-title">Adhi Gowda</h1>
-            <div class="header-nav">
-                <a href="index.html" class="active"><i class="fa-solid fa-house"></i> [ whoami ]</a>
-                <a href="experience.html"><i class="fa-solid fa-briefcase"></i> [ experience ]</a>
-                <a href="skills.html"><i class="fa-solid fa-code"></i> [ skills ]</a>
-                <a href="projects.html"><i class="fa-solid fa-folder"></i> [ projects ]</a>
-                <a href="research.html"><i class="fa-solid fa-microscope"></i> [ research ]</a>
-                <a href="contact.html"><i class="fa-solid fa-envelope"></i> [ contact ]</a>
-            </div>
-        </header>
-
-        <main class="grid-layout">
-            <!-- WHOAMI -->
-            <section id="whoami" class="box span-2">
-                <div class="box-header">
-                    <span>> WHOAMIVRPG.exe</span>
-                    <div class="window-controls">
-                        <div class="dot green"></div>
-                        <div class="dot yellow"></div>
-                        <div class="dot red"></div>
-                    </div>
-                </div>
-                <div class="box-content" style="display: flex; gap: 2rem; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 150px;">
-                        <img src="images/profile.png" alt="Adhi Gowda" style="width: 100%; border: 2px solid var(--text); padding: 5px; border-radius: 4px; background: rgba(0,0,0,0.5);">
-                    </div>
-                    <div style="flex: 3; min-width: 0; flex-basis: 250px;">
-                        <h1>ADHI GOWDA</h1>
-                        <p style="color: #aaa; margin-bottom: 1.5rem;">CS ENGINEERING STUDENT | DEVELOPER | COMMUNITY BUILDER</p>
-                        <p>B.Tech Computer Science student at <strong>Jain University</strong>. I like Linux, cloud infrastructure, networking, and full stack dev, making systems do things they probably shouldn't.</p>
-                        <p>Good with people, comfortable with technology, and currently doing my best to build useful stuff before AI takes over...</p>
-                        <div class="quote-box">
-                            "I cook on GitHub at night. Just like Batman, but with more git pushes."
-                        </div>
-                        <div class="tech-bar">
-                            <img src="https://skillicons.dev/icons?i=linux,c,react,ts,js,python,aws,postgres,git,bash,vscode,docker" alt="Tech Stack" height="30" />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- BATMAN PROTOCOL -->
-            <section id="batman" class="box">
-                <div class="box-header">
-                    <span>> BATMAN_PROTOCOL.SH</span>
-                    <div class="window-controls">
-                        <div class="dot green"></div>
-                        <div class="dot yellow"></div>
-                        <div class="dot red"></div>
-                    </div>
-                </div>
-                <div class="box-content center-content" style="padding: 1rem;">
-                    <div style="position: relative; width: 100%; border-radius: 4px; overflow: hidden; border: 1px solid var(--border);">
-                        <img src="images/the similarities tho___.jpg" alt="Batman Meme" style="width: 100%; display: block;" loading="lazy">
-                    </div>
-                    <p class="caption">"I am vengeance. I am the night.<br>I am debugging in production."</p>
-                </div>
-            </section>
-
-            <!-- GITHUB ACTIVITY -->
-            <section id="github-activity" class="box span-3">
-                <div class="box-header">
-                    <span>> GITHUB_Y%O$@&.LOG</span>
-                    <div class="window-controls">
-                        <div class="dot green"></div>
-                        <div class="dot yellow"></div>
-                        <div class="dot red"></div>
-                    </div>
-                </div>
-                <div class="box-content center-content">
-                    <p class="subtitle" style="margin-bottom: 1rem;">Git Commits & Contributions</p>
-                    <div style="width: 100%; overflow-x: auto; text-align: center;">
-                        <a href="https://github.com/adhiboss" target="_blank">
-                            <img src="https://ghchart.rshah.org/adhiboss" alt="Adhi's GitHub Contributions" style="width: 100%; min-width: 600px; max-width: 800px; padding: 1rem; border: 1px solid var(--border); border-radius: 8px; background: rgba(0,0,0,0.5);">
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- DUOLINGO STATS -->
-            <section id="duolingo-stats" class="box span-3">
-                <div class="box-header">
-                    <span>> DUOLINGO_STATS.LOG</span>
-                    <div class="window-controls">
-                        <div class="dot green"></div>
-                        <div class="dot yellow"></div>
-                        <div class="dot red"></div>
-                    </div>
-                </div>
-                <div class="box-content center-content">
-                    <p class="subtitle" style="margin-bottom: 1rem;">Language Learning Streak</p>
-                    <div style="width: 100%; overflow-x: auto; text-align: center;">
-                        <a href="https://www.duolingo.com/profile/ADHIGOWDA1" target="_blank">
-                            <img src="https://duolingo-stats-card.vercel.app/api?username=ADHIGOWDA1&theme=dracula" alt="Adhi's Duolingo Stats" style="max-width: 100%; min-width: 300px; padding: 0.5rem; border: 1px solid var(--border); border-radius: 8px; background: rgba(0,0,0,0.5);">
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FOOTER -->
-            <footer class="box span-3">
-                <div class="box-content center-content">
-                    <p class="">SYSTEM HALTED. (C) 2026 ADHI GOWDA.</p>
-                </div>
-            </footer>
-
-        </main>
+  <!-- Ambient Cosmos Background Canvas & Glow Layer -->
+  <div aria-hidden="true" class="cosmos-root">
+    <div id="cosmos" class="cosmos">
+      <div class="cosmos-glow cosmos-glow-a"></div>
+      <div class="cosmos-glow cosmos-glow-b"></div>
+      <div class="cosmos-glow cosmos-glow-c"></div>
+      <div class="cosmos-grid"></div>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Pinned Floating FPS Diagnostic HUD -->
+  <div id="fpsBadge" class="fps-badge hidden" aria-hidden="true">
+    <i class="fps-dot"></i>
+    <b id="pinnedFpsVal">60</b> fps
+  </div>
+
+  <!-- Global Fixed Header & Navigation -->
+  <header class="site-header fixed inset-x-0 top-0 z-50">
+    <nav class="nav-container flex items-center justify-between px-6 py-4 lg:px-12">
+      
+      <!-- Brand Logo / Menu Drawer Trigger -->
+      <div class="relative">
+        <button type="button" id="menuToggle" class="menu-trigger" aria-expanded="false" aria-controls="menuPanel" aria-label="Open navigation menu">
+          <span class="menu-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" class="w-6 h-6">
+              <path d="M16 2L2 28h28L16 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="16" cy="18" r="3" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="brand-text">
+            Adhi <span class="brand-italic">Gowda</span>
+          </span>
+          <span class="menu-caret" aria-hidden="true"></span>
+        </button>
+
+        <!-- Navigation Drawer Panel -->
+        <div id="menuPanel" class="menu-panel" inert>
+          <header class="menu-head">
+            <span class="menu-head-mark">
+              <svg viewBox="0 0 32 32" fill="none" class="w-8 h-8">
+                <path d="M16 2L2 28h28L16 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="16" cy="18" r="3" fill="currentColor"/>
+              </svg>
+            </span>
+            <div>
+              <b>Adhi Gowda</b>
+              <small>Cloud · Security · AI Systems</small>
+            </div>
+            <button type="button" id="menuClose" class="menu-close" aria-label="Close menu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+          </header>
+
+          <nav aria-label="Page navigation" class="menu-nav-list">
+            <a href="#top" class="menu-nav-item active">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1h-5v-6h-6v6H4a1 1 0 01-1-1z"/></svg>
+              [ whoami ]
+              <span class="menu-chev">→</span>
+            </a>
+            <a href="#projects" class="menu-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+              [ projects ]
+              <span class="menu-chev">→</span>
+            </a>
+            <a href="#research" class="menu-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"/></svg>
+              [ research & publications ]
+              <span class="menu-chev">→</span>
+            </a>
+            <a href="#experience" class="menu-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              [ experience & leadership ]
+              <span class="menu-chev">→</span>
+            </a>
+            <a href="#skills" class="menu-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+              [ skills & certs ]
+              <span class="menu-chev">→</span>
+            </a>
+            <a href="#contact" class="menu-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 3L3 10.5l7 2.5 2.5 7z"/><path d="M10 13l11-10"/></svg>
+              [ connect ]
+              <span class="menu-chev">→</span>
+            </a>
+          </nav>
+
+          <!-- Quick Connect Card -->
+          <div class="menu-contact-card">
+            <a href="#contact" class="menu-contact-main">
+              <div>
+                <small class="menu-eyebrow">Work is Worship</small>
+                <b>ಕಾಯಕವೇ ಕೈಲಾಸ</b>
+                <span class="menu-contact-sub">Available for Cloud, AI & Engineering Opportunities</span>
+              </div>
+              <span class="menu-contact-go">→</span>
+            </a>
+          </div>
+
+          <!-- Dev Settings & Live FPS Diagnostics -->
+          <section class="menu-settings-section">
+            <h3 class="menu-group-title">Preferences & Performance</h3>
+            <div class="menu-setting-row">
+              <span class="menu-setting-label">Text Scale</span>
+              <div role="radiogroup" id="textSizeGroup" class="menu-segment">
+                <button type="button" data-text-opt="small">S</button>
+                <button type="button" data-text-opt="default" class="active">M</button>
+                <button type="button" data-text-opt="large">L</button>
+              </div>
+            </div>
+
+            <!-- Live FPS Meter Accordion -->
+            <details class="menu-perf" open>
+              <summary>Live Performance (FPS check) <span class="perf-chev">▼</span></summary>
+              <div class="menu-fps-box">
+                <div class="fps-readout">
+                  <i id="menuFpsDot" class="fps-dot"></i>
+                  <b id="menuFpsVal">--</b> <span>fps</span>
+                  <small id="fpsStatusText">Benchmarking frame rate...</small>
+                </div>
+                <button type="button" id="pinFpsToggle" class="menu-switch-btn" title="Pin FPS to viewport">
+                  <span>Pin HUD</span>
+                  <i class="switch-toggle" id="pinSwitchIndicator"></i>
+                </button>
+              </div>
+            </details>
+          </section>
+
+          <!-- Drawer Footer -->
+          <footer class="menu-footer">
+            <p>Jain University · CS Engineering (Cloud & Security)</p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- Theme Selector Dropdown & Resume CTA -->
+      <div class="flex items-center gap-3">
+        <a href="resume.pdf" target="_blank" class="resume-btn" title="View Downloadable Resume">
+          <span>Resume</span> 📄
+        </a>
+        <div class="theme-picker-container relative">
+          <button type="button" id="themeBtn" class="theme-btn" aria-expanded="false" aria-label="Toggle theme">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="theme-icon">
+              <path d="M12 3a9 9 0 100 18 1.8 1.8 0 001.8-1.8 1.2 1.2 0 00-.5-1 1.8 1.8 0 011.8-1.8H17a4 4 0 004-4C21 6.6 17 3 12 3z"/>
+              <circle cx="7.5" cy="11" r="1.2" fill="#ff6338"/>
+              <circle cx="10.5" cy="7.2" r="1.2" fill="#d7ff3f"/>
+              <circle cx="15.2" cy="7.8" r="1.2" fill="#6e8cff"/>
+            </svg>
+          </button>
+          <div id="themePanel" class="theme-panel" inert>
+            <p class="theme-title">Color Theme</p>
+            <div class="theme-options-grid">
+              <button type="button" class="theme-opt-btn" data-theme-val="dark">
+                <span class="theme-swatch dark-swatch">🌙</span>
+                <span>Cosmic Dark</span>
+              </button>
+              <button type="button" class="theme-opt-btn" data-theme-val="light">
+                <span class="theme-swatch light-swatch">☀️</span>
+                <span>Paper Light</span>
+              </button>
+              <button type="button" class="theme-opt-btn" data-theme-val="system">
+                <span class="theme-swatch system-swatch">⚙️</span>
+                <span>System</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN VIEWPORT -->
+  <main id="top" class="relative">
+
+    <!-- 1. SIGNATURE HERO SECTION: SCROLL TO DIVE INTO THE 'i' OF ADHI -->
+    <section class="u-section" aria-label="Interactive Hero Portal">
+      <div class="u-stage" id="stageContainer">
+        
+        <!-- Ambient Radial Light Spot following cursor -->
+        <div class="u-spot" id="cursorSpot" aria-hidden="true"></div>
+
+        <!-- 3D Camera Scene Container -->
+        <div class="u-scene">
+          <div class="u-photo" aria-hidden="true"></div>
+          <div class="u-grain" aria-hidden="true"></div>
+          <div class="u-orb u-orb-a" aria-hidden="true"></div>
+          <div class="u-orb u-orb-b" aria-hidden="true"></div>
+          <div class="u-orb u-orb-c" aria-hidden="true"></div>
+
+          <!-- Camera & World Coordinate Space -->
+          <div class="u-camera" id="cameraViewport">
+            <div class="u-world" id="worldContainer">
+              <div class="u-halo" aria-hidden="true"></div>
+              <div class="u-orbit u-orbit-1" aria-hidden="true"></div>
+              <div class="u-orbit u-orbit-2" aria-hidden="true"></div>
+              <div class="u-orbit u-orbit-3" aria-hidden="true"></div>
+
+              <!-- Main Hero Typography -->
+              <div class="u-copy">
+                <p class="u-eyebrow">Cloud & Security Specialist · AI Developer · Community Builder</p>
+                <h1 class="u-title">
+                  <span class="sr-only">Adhi</span>
+                  <span class="u-mark" aria-hidden="true"></span>
+                  <span class="u-wordmark" aria-hidden="true">
+                    Adh<span class="u-i">ı<i class="u-dot" id="focalDot" aria-hidden="true"></i></span>
+                  </span>
+                </h1>
+                <p class="u-subline">2nd-Year B.Tech Computer Science student at Jain University. "I cook on GitHub at night. Just like Batman, but with more git pushes."</p>
+                
+                <!-- Quick project pills on mobile -->
+                <div class="u-sites-mobile">
+                  <span>Selected Projects</span>
+                  <ul>
+                    <li style="--c:#d7ff3f"><a href="#projects">RoadRisk AI</a></li>
+                    <li style="--c:#ff6338"><a href="#projects">GarudaPurana AI</a></li>
+                    <li style="--c:#6e8cff"><a href="#projects">System Monitor</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 12 FLOATING ORBITAL NODES (Mapped to Adhi's exact projects & experience) -->
+              <ul class="u-nodes" id="orbitalNodesList">
+                
+                <!-- Node 01: RoadRisk AI -->
+                <li class="u-node" style="--x:6%;--y:18%;--c:var(--m-lime);--i:0;--from:#d7ff3f;--to:#14a37f;--art-ink:#07120c">
+                  <a href="https://github.com/adhiboss/roadriskai" target="_blank" rel="noopener noreferrer">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a8 8 0 00-8 8c0 3 1.5 5.5 4 7v3h8v-3c2.5-1.5 4-4 4-7a8 8 0 00-8-8z"/><path d="M9 22h6"/></svg>
+                    </span>
+                    <b>01</b>
+                    <strong>RoadRisk AI</strong>
+                    <small>AI-Powered Road Safety Analytics</small>
+                  </a>
+                </li>
+
+                <!-- Node 02: GarudaPurana AI (Flagship RAG) -->
+                <li class="u-node" style="--x:72%;--y:12%;--c:var(--m-coral);--i:1;--from:#ff7a45;--to:#c2185b;--art-ink:#fff">
+                  <a href="#projects">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18M6.5 6.5l11 11M6.5 17.5l11-11"/></svg>
+                    </span>
+                    <b>02</b>
+                    <strong>GarudaPurana AI</strong>
+                    <small>Neural Search & Semantic RAG</small>
+                  </a>
+                </li>
+
+                <!-- Node 03: Cloud Certifications -->
+                <li class="u-node" style="--x:80%;--y:46%;--c:var(--m-blue);--i:2;--from:#7b93ff;--to:#3b1fa8;--art-ink:#fff">
+                  <a href="#skills">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+                    </span>
+                    <b>03</b>
+                    <strong>Cloud Certified</strong>
+                    <small>OCI Networking & AWS Practitioner</small>
+                  </a>
+                </li>
+
+                <!-- Node 04: V2X Research Publications -->
+                <li class="u-node" style="--x:11%;--y:64%;--c:var(--m-lime);--i:3;--from:#ffe66d;--to:#2f9e5a;--art-ink:#0d1f12">
+                  <a href="#research">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 4.5A2.5 2.5 0 016.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15z"/></svg>
+                    </span>
+                    <b>04</b>
+                    <strong>V2X Research</strong>
+                    <small>DOI Publications & Google Scholar</small>
+                  </a>
+                </li>
+
+                <!-- Node 05: Smart System Monitor -->
+                <li class="u-node" style="--x:42%;--y:8%;--c:var(--m-coral);--i:4;--from:#ffb38a;--to:#8a2b0e;--art-ink:#fff">
+                  <a href="https://github.com/adhiboss/smart-system-monitor" target="_blank" rel="noopener noreferrer">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                    </span>
+                    <b>05</b>
+                    <strong>System Monitor</strong>
+                    <small>Lightweight Linux Toolkit in Python</small>
+                  </a>
+                </li>
+
+                <!-- Node 06: FLAMES.EXE Pixel Experience -->
+                <li class="u-node" style="--x:54%;--y:80%;--c:var(--m-blue);--i:5;--from:#ffb3e6;--to:#7b2cbf;--art-ink:#fff">
+                  <a href="https://github.com/adhiboss/flames" target="_blank" rel="noopener noreferrer">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16Z"/></svg>
+                    </span>
+                    <b>06</b>
+                    <strong>FLAMES.EXE</strong>
+                    <small>Nostalgic Pixel-Art Web App</small>
+                  </a>
+                </li>
+
+                <!-- Node 07: FOSS Club Lead (FSMK) -->
+                <li class="u-node" style="--x:2%;--y:42%;--c:var(--m-lime);--i:6;--from:#ff6b6b;--to:#7a1022;--art-ink:#fff">
+                  <a href="#experience">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20M2 12h20"/></svg>
+                    </span>
+                    <b>07</b>
+                    <strong>FOSS Club Lead</strong>
+                    <small>Free Software Movement Karnataka</small>
+                  </a>
+                </li>
+
+                <!-- Node 08: Kernel Behavior Analyzer -->
+                <li class="u-node" style="--x:31%;--y:77%;--c:var(--m-coral);--i:7;--from:#ffd166;--to:#ef476f;--art-ink:#fff">
+                  <a href="https://github.com/adhiboss/kernel-behavior-analyzer" target="_blank" rel="noopener noreferrer">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </span>
+                    <b>08</b>
+                    <strong>Kernel Analyzer</strong>
+                    <small>Linux Kernel Observability Toolkit</small>
+                  </a>
+                </li>
+
+                <!-- Node 09: Daily Tech Notes -->
+                <li class="u-node" style="--x:77%;--y:83%;--c:var(--m-blue);--i:8;--from:#4cc9f0;--to:#3a3fd9;--art-ink:#fff">
+                  <a href="https://github.com/adhiboss/daily-tech-notes" target="_blank" rel="noopener noreferrer">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+                    </span>
+                    <b>09</b>
+                    <strong>Daily Tech Notes</strong>
+                    <small>Linux, Networking & DevOps Journal</small>
+                  </a>
+                </li>
+
+                <!-- Node 10: CRCE President -->
+                <li class="u-node" style="--x:88%;--y:26%;--c:var(--m-lime);--i:9;--from:#e9c46a;--to:#14284b;--art-ink:#fff">
+                  <a href="#experience">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </span>
+                    <b>10</b>
+                    <strong>CRCE President</strong>
+                    <small>Leadership & Student Governance</small>
+                  </a>
+                </li>
+
+                <!-- Node 11: IoT Air Guard & Smart Safety -->
+                <li class="u-node" style="--x:21%;--y:7%;--c:var(--m-coral);--i:10;--from:#5ee7d0;--to:#0b5e7a;--art-ink:#fff">
+                  <a href="https://github.com/adhiboss/air-guard" target="_blank" rel="noopener noreferrer">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </span>
+                    <b>11</b>
+                    <strong>Air Guard & IoT</strong>
+                    <small>Real-time Environmental Monitoring</small>
+                  </a>
+                </li>
+
+                <!-- Node 12: Batman Protocol -->
+                <li class="u-node" style="--x:83%;--y:65%;--c:var(--m-blue);--i:11;--from:#c9b6f2;--to:#22225e;--art-ink:#fff">
+                  <a href="#whoami">
+                    <span class="u-node-flood" aria-hidden="true"></span>
+                    <span class="u-node-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </span>
+                    <b>12</b>
+                    <strong>Batman Protocol</strong>
+                    <small>"I am debugging in production."</small>
+                  </a>
+                </li>
+              </ul>
+
+              <!-- Bottom Bar with Live Zoom Readout -->
+              <div class="u-bottom">
+                <span><span class="u-wheel">↕</span> Scroll to dive into the i</span>
+                <span class="u-readout" id="zoomReadout">Zoom 1.00×</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- THE ARRIVAL PORTAL SCREEN -->
+        <div class="u-arrive" id="arrivalPortal" inert>
+          <div class="u-portal-copy">
+            <div class="u-arrive-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span class="u-arrive-kicker">You have entered the focal point of the i.</span>
+            <p class="u-arrive-title">
+              <span class="u-arrive-line"><span>Welcome to</span></span>
+              <span class="u-arrive-line"><span class="u-arrive-accent">Adhi Gowda's Space.</span></span>
+            </p>
+            <p class="u-arrive-sub"><span>Adhi</span> · Explore real projects, research papers & technical systems:</p>
+            
+            <ul class="u-arrive-chips">
+              <li style="--c:var(--m-lime)"><a href="#projects"><b>01</b> RoadRisk AI</a></li>
+              <li style="--c:var(--m-coral)"><a href="#projects"><b>02</b> GarudaPurana AI</a></li>
+              <li style="--c:var(--m-blue)"><a href="#research"><b>03</b> V2X Research Papers</a></li>
+              <li style="--c:var(--m-lime)"><a href="#experience"><b>04</b> Leadership & GRI</a></li>
+              <li style="--c:var(--m-coral)"><a href="#skills"><b>05</b> Cloud Certifications</a></li>
+              <li style="--c:var(--m-blue)"><a href="#contact"><b>06</b> Connect & Chat</a></li>
+            </ul>
+
+            <div class="u-arrive-cta">
+              <a href="#projects" class="u-cta-primary">View All Projects →</a>
+              <a href="#contact" class="u-cta-ghost">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. WHOAMI & BIOGRAPHY SECTION -->
+    <section id="whoami" class="section-container">
+      <div class="about-grid">
+        <div>
+          <p class="section-kicker">> WHOAMI.SH</p>
+          <h2 class="section-title">Adhi Gowda.<br/><em>CS Engineering @ Jain University.</em></h2>
+          <p class="about-text">
+            I am a 2nd-year Computer Science Engineering student specializing in <strong>Cloud & Security</strong> at Jain University. I like Linux, cloud infrastructure, networking, and full stack development — making systems do things they probably shouldn't.
+          </p>
+          <p class="about-text">
+            Good with people, comfortable with technology, and currently doing my best to build useful stuff before AI takes over...
+          </p>
+          
+          <div class="quote-box">
+            "I cook on GitHub at night. Just like Batman, but with more git pushes."
+          </div>
+
+          <!-- Interactive Code Terminal Card -->
+          <div class="code-terminal">
+            <div class="terminal-bar">
+              <span class="t-dot red"></span>
+              <span class="t-dot yellow"></span>
+              <span class="t-dot green"></span>
+              <span class="terminal-filename">adhi.config.ts</span>
+            </div>
+            <pre><code><span class="c-kw">const</span> adhi = {
+  <span class="c-key">name</span>: <span class="c-str">"Adhi Gowda"</span>,
+  <span class="c-key">education</span>: <span class="c-str">"B.Tech CSE (Cloud & Security), Jain University"</span>,
+  <span class="c-key">roles</span>: [<span class="c-str">"President @ CRCE"</span>, <span class="c-str">"Club Lead @ FOSS (FSMK)"</span>, <span class="c-str">"Secretary @ GRI"</span>],
+  <span class="c-key">certifications</span>: [<span class="c-str">"OCI 2025 Networking Pro"</span>, <span class="c-str">"AWS Cloud Practitioner"</span>],
+  <span class="c-key">specialization</span>: [<span class="c-str">"Linux Systems"</span>, <span class="c-str">"V2X Research"</span>, <span class="c-str">"AI & RAG"</span>, <span class="c-str">"DevOps"</span>],
+  <span class="c-key">available</span>: <span class="c-bool">true</span>
+};
+
+<span class="c-comment">// Execute engineering pipeline</span>
+adhi.<span class="c-fn">buildUsefulSystems</span>();</code></pre>
+          </div>
+        </div>
+
+        <div class="profile-card-wrapper">
+          <div class="profile-card">
+            <img src="images/profile.png" alt="Adhi Gowda" class="profile-avatar" onerror="this.src='https://github.com/adhiboss.png'">
+            <div class="profile-badge">
+              <strong>Adhi Gowda</strong>
+              <small>Bangalore, Karnataka, India</small>
+            </div>
+            <div class="motto-box">
+              <span class="kannada-text">"ಕಾಯಕವೇ ಕೈಲಾಸ"</span>
+              <small>(Work is Worship — Sri Basavanna)</small>
+            </div>
+            
+            <div class="tech-stack-row">
+              <img src="https://skillicons.dev/icons?i=linux,c,react,ts,js,python,aws,postgres,git,bash,docker,vscode" alt="Adhi's Tech Stack" class="tech-stack-badges">
+            </div>
+
+            <!-- Batman protocol meme card -->
+            <div class="batman-card">
+              <img src="images/the similarities tho___.jpg" alt="Batman Meme" class="batman-img" onerror="this.style.display='none'">
+              <p class="batman-quote">"I am vengeance. I am the night.<br>I am debugging in production."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. REAL PROJECTS SHOWCASE -->
+    <section id="projects" class="section-container">
+      <div class="section-header">
+        <p class="section-kicker">> LS PROJECTS/</p>
+        <h2 class="section-title">Featured Projects.<br/><em>From Cloud Plazas to Neural Safety.</em></h2>
+        <p class="section-subtitle">Real engineering projects built by Adhi Gowda. Click to explore on GitHub or click <strong>"+ Add to message"</strong> to discuss them.</p>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- Project 1: RoadRisk AI -->
+        <article class="project-card" style="--c:var(--m-lime);--from:#d7ff3f;--to:#14a37f">
+          <div class="project-badge">AI, IoT & Safety</div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 00-8 8c0 3 1.5 5.5 4 7v3h8v-3c2.5-1.5 4-4 4-7a8 8 0 00-8-8z"/><path d="M9 22h6"/></svg>
+          </div>
+          <h3>RoadRisk AI</h3>
+          <p class="project-desc">Web-based intelligent road safety analysis tool using AI and telemetry data visualization to detect road hazards and predict accident-prone zones in smart cities.</p>
+          <div class="project-tags">
+            <span>TypeScript</span>
+            <span>AI / Computer Vision</span>
+            <span>Data Visualization</span>
+            <span>IoT</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/adhiboss/roadriskai" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Repo →</a>
+            <button type="button" class="btn-add-inquiry" data-item="RoadRisk AI (Intelligent Road Safety Tool)">
+              <span>+</span> Add to message
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 2: GarudaPurana AI -->
+        <article class="project-card" style="--c:var(--m-coral);--from:#ff6338;--to:#b82a0b">
+          <div class="project-badge">AI & RAG Engine</div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>GarudaPurana AI</h3>
+          <p class="project-desc">Neural retrieval-augmented generation (RAG) system with semantic chunking over classical texts (Bhagavad Gita & Garuda Purana), multi-stage query classification, and context synthesis.</p>
+          <div class="project-tags">
+            <span>FastAPI</span>
+            <span>Python</span>
+            <span>Embeddings</span>
+            <span>Next.js</span>
+            <span>RAG</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/adhiboss" target="_blank" rel="noopener noreferrer" class="project-link">View Architecture →</a>
+            <button type="button" class="btn-add-inquiry" data-item="GarudaPurana AI (Neural RAG Architecture)">
+              <span>+</span> Add to message
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 3: Smart System Monitor -->
+        <article class="project-card" style="--c:var(--m-blue);--from:#7b93ff;--to:#3b1fa8">
+          <div class="project-badge">Linux & Systems</div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Smart System Monitor</h3>
+          <p class="project-desc">Lightweight Linux monitoring and automation toolkit in Python and Bash for tracking CPU/RAM bottlenecks, disk I/O, process tree analysis, and automated alerts.</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Linux Utilities</span>
+            <span>Bash</span>
+            <span>Systems</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/adhiboss/smart-system-monitor" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Repo →</a>
+            <button type="button" class="btn-add-inquiry" data-item="Smart System Monitor (Linux Toolkit)">
+              <span>+</span> Add to message
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 4: Kernel Behavior Analyzer -->
+        <article class="project-card" style="--c:var(--m-coral);--from:#ffb38a;--to:#8a2b0e">
+          <div class="project-badge">Kernel & OS Observability</div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>Kernel Behavior Analyzer</h3>
+          <p class="project-desc">Experimental observability toolkit for tracing system calls, analyzing kernel subsystem states, memory allocations, and performance anomalies under stress loads.</p>
+          <div class="project-tags">
+            <span>Shell</span>
+            <span>Linux Kernel</span>
+            <span>Observability</span>
+            <span>Debugging</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/adhiboss/kernel-behavior-analyzer" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Repo →</a>
+            <button type="button" class="btn-add-inquiry" data-item="Kernel Behavior Analyzer">
+              <span>+</span> Add to message
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 5: FLAMES.EXE -->
+        <article class="project-card" style="--c:var(--m-lime);--from:#ffe66d;--to:#2f9e5a">
+          <div class="project-badge">Creative & Interactive</div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg>
+          </div>
+          <h3>FLAMES.EXE</h3>
+          <p class="project-desc">Nostalgic, pixel-inspired web experience recreating the classic FLAMES game with retro pixel-art aesthetic, sound effects, and smooth client-side state handling.</p>
+          <div class="project-tags">
+            <span>TypeScript</span>
+            <span>CSS Pixel Art</span>
+            <span>Retro UI</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/adhiboss/flames" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Repo →</a>
+            <button type="button" class="btn-add-inquiry" data-item="FLAMES.EXE (Creative Retro Web Experience)">
+              <span>+</span> Add to message
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 6: Daily Tech Notes & Linux Playbooks -->
+        <article class="project-card" style="--c:var(--m-blue);--from:#4cc9f0;--to:#3a3fd9">
+          <div class="project-badge">DevOps & Cloud</div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          </div>
+          <h3>Daily Tech Notes & Playbooks</h3>
+          <p class="project-desc">A comprehensive documentation repository and hands-on lab experiments exploring TCP communication, DNS, HTTP, AWS Linux Server playbooks, and WSL setup.</p>
+          <div class="project-tags">
+            <span>Networking</span>
+            <span>AWS EC2</span>
+            <span>Linux Lab</span>
+            <span>WSL</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/adhiboss/daily-tech-notes" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Repo →</a>
+            <button type="button" class="btn-add-inquiry" data-item="Linux & Cloud Networking Documentation">
+              <span>+</span> Add to message
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 7: Pixel Rearranger -->
+        <article class="project-card" style="--c:var(--m-coral);--from:#ffd166;--to:#ef476f">
+          <div class="project-badge">Canvas & Image Processing</div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/></svg>
+          </div>
+          <h3>Pixel Rearranger</h3>
+          <p class="project-desc">Browser-based procedural image processing utility that sorts, shuffles, and manipulates pixel arrays on the HTML5 Canvas in real time.</p>
+          <div class="project-tags">
+            <span>JavaScript</span>
+            <span>HTML5 Canvas</span>
+            <span>Image Algorithms</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/adhiboss/pixel-rearranger" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Repo →</a>
+            <button type="button" class="btn-add-inquiry" data-item="Pixel Rearranger Canvas Tool">
+              <span>+</span> Add to message
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 8: Top Hackathons & 8Hack -->
+        <article class="project-card" style="--c:var(--m-lime);--from:#e9c46a;--to:#14284b">
+          <div class="project-badge">Community Platforms</div>
+          <div class="project-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/></svg>
+          </div>
+          <h3>Top Hackathons & 8Hack</h3>
+          <p class="project-desc">Curated platform concepts for student developers to discover competitive hackathons, find project teammates, and track collegiate hackathon submissions.</p>
+          <div class="project-tags">
+            <span>JavaScript</span>
+            <span>CSS</span>
+            <span>Community</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/adhiboss/hackathons_top" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Repo →</a>
+            <button type="button" class="btn-add-inquiry" data-item="Hackathon Discovery Platform">
+              <span>+</span> Add to message
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. RESEARCH & PUBLICATIONS SECTION -->
+    <section id="research" class="section-container">
+      <div class="section-header">
+        <p class="section-kicker">> LS PUBLICATIONS/ & SCHOLAR</p>
+        <h2 class="section-title">Research & Publications.<br/><em>Edge V2X Networks & Smart City Safety.</em></h2>
+        <p class="section-subtitle">
+          Academic research by Adhi Gowda focusing on autonomous self-healing firmware, lightweight transformer models on edge nodes, and collaborative emergency response ecosystems.
+        </p>
+      </div>
+
+      <!-- Research Profile Links -->
+      <div class="research-profiles-bar">
+        <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="research-profile-btn">
+          <span>🎓 Google Scholar Profile</span> →
+        </a>
+        <a href="https://www.researchgate.net/profile/Adithya-Gowda-3?ev=hdr_xprf" target="_blank" rel="noopener noreferrer" class="research-profile-btn">
+          <span>🔬 ResearchGate Profile</span> →
+        </a>
+      </div>
+
+      <div class="research-grid">
+        
+        <!-- Publication 1 -->
+        <div class="research-card">
+          <div class="flex items-center justify-between">
+            <span class="research-num">MARCH 2026</span>
+            <span class="cert-pill">Zenodo DOI</span>
+          </div>
+          <h3>Accident Detection and Alert System: A Collaborative V2X Safety Ecosystem for Smart City Emergency Response</h3>
+          <p>
+            Proposing a low-latency Vehicle-to-Everything (V2X) architecture that coordinates sensor data across moving vehicles and urban edge road units to dispatch instant emergency services upon multi-point collision validation.
+          </p>
+          <div class="doi-box">
+            <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.19106604" target="_blank" rel="noopener noreferrer">10.5281/zenodo.19106604</a></span>
+            <small>License: CC BY 4.0</small>
+            <a href="research/TDPCL_Research_Paper.pdf" target="_blank" class="pdf-btn">📄 Read Paper PDF</a>
+          </div>
+          <button type="button" class="btn-add-inquiry text-sm mt-4" data-item="V2X Accident Detection & Emergency System Paper">
+            <span>+</span> Add to message
+          </button>
+        </div>
+
+        <!-- Publication 2 -->
+        <div class="research-card">
+          <div class="flex items-center justify-between">
+            <span class="research-num">MARCH 2026</span>
+            <span class="cert-pill">OSF DOI</span>
+          </div>
+          <h3>Firmware Self-Healing for Vehicle-to-Everything (V2X) Networks: A Runtime-Triggered Autonomous Repair Framework</h3>
+          <p>
+            An autonomous recovery framework leveraging lightweight quantized transformer models running on resource-constrained micro-edge nodes to repair corrupted or compromised firmware without taking vehicle subsystems offline.
+          </p>
+          <div class="doi-box">
+            <span><strong>DOI:</strong> <a href="https://doi.org/10.17605/OSF.IO/8BWT4" target="_blank" rel="noopener noreferrer">10.17605/OSF.IO/8BWT4</a></span>
+            <small>License: CC BY 4.0</small>
+            <a href="research/Self_healing.pdf" target="_blank" class="pdf-btn">📄 Read Paper PDF</a>
+          </div>
+          <button type="button" class="btn-add-inquiry text-sm mt-4" data-item="Firmware Self-Healing V2X Edge Transformers Paper">
+            <span>+</span> Add to message
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. EXPERIENCE & LEADERSHIP SECTION -->
+    <section id="experience" class="section-container">
+      <div class="section-header">
+        <p class="section-kicker">> CAT LEADERSHIP_EXPERIENCE.LOG</p>
+        <h2 class="section-title">Leadership & Experience.<br/><em>Building Teams & Fostering Communities.</em></h2>
+        <p class="section-subtitle">Active roles across technical societies, research centers, and open-source movements.</p>
+      </div>
+
+      <div class="experience-timeline-grid">
+        
+        <div class="exp-card">
+          <div class="exp-role-badge">PRESENT</div>
+          <div class="exp-header">
+            <h4>PRESIDENT</h4>
+            <div class="exp-org">CRCE (Student Governance & Technical Innovation)</div>
+          </div>
+          <p class="exp-desc">Directing student operations, driving technical initiatives, and coordinating collegiate activities across departments.</p>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-role-badge">COMMUNITY LEAD</div>
+          <div class="exp-header">
+            <h4>CLUB LEAD</h4>
+            <div class="exp-org">FOSS Club · Free Software Movement Karnataka (FSMK)</div>
+          </div>
+          <p class="exp-desc">Leading open-source advocacy, Linux workshops, and developer meetups to empower students with freedom-respecting software.</p>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-role-badge">RESEARCH EXEC</div>
+          <div class="exp-header">
+            <h4>SECRETARY</h4>
+            <div class="exp-org">
+              <a href="https://www.linkedin.com/company/centre-for-grassroots-research-innovation-gri/?viewAsMember=true" target="_blank" rel="noopener noreferrer">
+                Centre For Grassroots Research & Innovation (GRI) ↗
+              </a>
+            </div>
+          </div>
+          <p class="exp-desc">Organizing scientific initiatives, mentoring student researchers, and coordinating grassroots research publications.</p>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-role-badge">TECHNICAL BODY</div>
+          <div class="exp-header">
+            <h4>EXECUTIVE COMMITTEE</h4>
+            <div class="exp-org">
+              <a href="https://www.linkedin.com/company/computer-society-of-india/" target="_blank" rel="noopener noreferrer">
+                Computer Society of India (CSI) ↗
+              </a>
+            </div>
+          </div>
+          <p class="exp-desc">Managing inter-collegiate technical symposiums, hackathons, and corporate speaker sessions.</p>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-role-badge">UNIVERSITY INTERN</div>
+          <div class="exp-header">
+            <h4>CORPORATE RELATIONS & PLACEMENT</h4>
+            <div class="exp-org">Jain University</div>
+          </div>
+          <p class="exp-desc">Fostering industry alliances, organizing campus recruitment drives, and demonstrating student technical portfolios to recruiters.</p>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-role-badge">HACKATHONS</div>
+          <div class="exp-header">
+            <h4>HACKATHON COMPETITOR</h4>
+            <div class="exp-org">Bharatiya Antriksh '25 · Inceptrix 2.0 '26</div>
+          </div>
+          <p class="exp-desc">Building rapid prototypes in high-pressure 24–48hr environments spanning AI safety, aerospace, and web systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SKILLS & CERTIFICATIONS MATRIX -->
+    <section id="skills" class="section-container">
+      <div class="section-header">
+        <p class="section-kicker">> SYS.SKILLS & VERIFIED_CERTS</p>
+        <h2 class="section-title">Skills & Certifications.<br/><em>Engineered for Resilient Infrastructure.</em></h2>
+      </div>
+
+      <!-- Certifications Highlight -->
+      <div class="certs-container mb-8">
+        <div class="cert-card">
+          <div class="cert-icon"><img src="images/OC.png" alt="OCI Certified" class="cert-img-badge"></div>
+          <div>
+            <strong>OCI 2025 Certified Networking Professional</strong>
+            <p>Oracle Cloud Infrastructure · Advanced Cloud Network Topology, VCN Architecture, Security Lists & Gateway Routing</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon"><img src="images/AWS.jpg" alt="AWS Certified" class="cert-img-badge"></div>
+          <div>
+            <strong>AWS Cloud Practitioner</strong>
+            <p>Amazon Web Services · Core Cloud Services, IAM, Security, EC2, S3, RDS & Well-Architected Framework</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <span class="skill-code">01_FULL-STACK</span>
+          <h3>Web & Backend Systems</h3>
+          <p class="skill-tech">JavaScript, TypeScript, React, Next.js, Node.js, Python, FastAPI, SQL, REST APIs</p>
+          <p>Building responsive web applications, interactive dashboards, and scalable backend services with end-to-end integration.</p>
+        </div>
+
+        <div class="skill-card">
+          <span class="skill-code">02_AI_CV</span>
+          <h3>AI, Computer Vision & NLP</h3>
+          <p class="skill-tech">Python, YOLO, MobileNetV2, Rasa, RAG Pipelines, Embeddings</p>
+          <p>Building intelligent systems for real-time object detection, telemetry classification, and conversational RAG assistants.</p>
+        </div>
+
+        <div class="skill-card">
+          <span class="skill-code">03_CLOUD_INFRA</span>
+          <h3>Cloud, Security & Linux</h3>
+          <p class="skill-tech">AWS, Oracle Cloud (OCI), Linux Kernel, TCP/IP, DNS, Bash, Docker</p>
+          <p>Deploying, configuring, and hardening Linux servers, containerizing services, and managing cloud network infrastructure securely.</p>
+        </div>
+
+        <div class="skill-card">
+          <span class="skill-code">04_DEV_WORKFLOW</span>
+          <h3>Developer Workflow & Tools</h3>
+          <p class="skill-tech">Git, GitHub, VS Code, Postman, Linux WSL, Figma</p>
+          <p>Disciplined version control, automated CI/CD pipelines, API testing, and collaborative engineering workflows.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. LIVE GITHUB CONTRIBUTIONS & DUOLINGO STATS -->
+    <section class="section-container">
+      <div class="section-header text-center">
+        <p class="section-kicker">> REAL-TIME TELEMETRY</p>
+        <h2 class="section-title">Git Activity & Consistency.</h2>
+      </div>
+
+      <div class="stats-wrapper">
+        <!-- Live GitHub Chart -->
+        <div class="stats-card">
+          <h3>GitHub Contribution Heatmap (@adhiboss)</h3>
+          <div class="chart-scroll">
+            <a href="https://github.com/adhiboss" target="_blank" rel="noopener noreferrer">
+              <img src="https://ghchart.rshah.org/adhiboss" alt="Adhi Gowda's GitHub Activity" class="github-chart-img">
+            </a>
+          </div>
+        </div>
+
+        <!-- Duolingo Streak -->
+        <div class="stats-card mt-6">
+          <h3>Language Learning Streak (Duolingo)</h3>
+          <div class="chart-scroll text-center">
+            <a href="https://www.duolingo.com/profile/ADHIGOWDA1" target="_blank" rel="noopener noreferrer">
+              <img src="https://duolingo-stats-card.vercel.app/api?username=ADHIGOWDA1&theme=dracula" alt="Adhi's Duolingo Streak" class="duolingo-card-img">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CONTACT & CONNECT -->
+    <section id="contact" class="section-container text-center">
+      <div class="max-w-2xl mx-auto">
+        <p class="section-kicker">> ./CONNECT.SH</p>
+        <h2 class="section-title">Let's Build Something Useful.<br/><em>Reach Out Directly.</em></h2>
+        <p class="section-subtitle">
+          Whether you want to discuss cloud infrastructure, collaborate on research, or discuss engineering roles — feel free to connect!
+        </p>
+
+        <!-- Direct Social Links Bar -->
+        <div class="social-links-grid mt-6">
+          <a href="https://github.com/adhiboss" target="_blank" rel="noopener noreferrer" class="social-chip">
+            <span>GitHub</span> ↗
+          </a>
+          <a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" rel="noopener noreferrer" class="social-chip">
+            <span>LinkedIn</span> ↗
+          </a>
+          <a href="https://leetcode.com/u/adhiboss/" target="_blank" rel="noopener noreferrer" class="social-chip">
+            <span>LeetCode</span> ↗
+          </a>
+          <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-chip">
+            <span>Google Scholar</span> ↗
+          </a>
+          <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="social-chip resume-chip">
+            <span>Download Resume</span> 📄
+          </a>
+        </div>
+
+        <div class="contact-buttons-group mt-8">
+          <a href="https://wa.me/?text=Hi%20Adhi%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you!" target="_blank" rel="noopener noreferrer" class="u-cta-primary" id="directWaBtn">
+            <span>💬 Chat on WhatsApp</span> →
+          </a>
+          <a href="https://formspree.io/f/xyknzvna" target="_blank" rel="noopener noreferrer" class="u-cta-ghost" id="directEmailBtn">
+            <span>✉️ Send via Formspree</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SITE FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Adhi <em>Gowda</em></h3>
+          <p>B.Tech CSE (Cloud & Security) · Jain University</p>
+          <small>SYSTEM HALTED. © 2026 Adhi Gowda. Built with reverse-engineered 60FPS precision.</small>
+        </div>
+        <div class="footer-links">
+          <a href="#top">Back to Top ↑</a>
+          <a href="#whoami">Whoami</a>
+          <a href="#projects">Projects</a>
+          <a href="#research">Research</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- FLOATING INQUIRY BASKET PILL -->
+  <aside id="inquiryBasket" class="basket-pill hidden" aria-label="Inquiry Basket">
+    <div class="basket-inner">
+      <span class="basket-count" id="basketCount">0</span>
+      <div class="basket-info">
+        <strong id="basketLabel">Topics / Projects Selected</strong>
+        <small id="basketHint">Click to generate pre-filled inquiry</small>
+      </div>
+      <button type="button" id="basketSendBtn" class="basket-send-btn" title="Send selected items">
+        <span>Connect</span> →
+      </button>
+      <button type="button" id="basketClearBtn" class="basket-clear-btn" title="Clear selections">×</button>
+    </div>
+  </aside>
+
+  <!-- Interactive JavaScript Engine -->
+  <script src="script.js"></script>
 </body>
-
 </html>
