@@ -217,6 +217,13 @@ const portfolioData = {
         icon: "linkedin"
       },
       {
+        id: "peerlist",
+        label: "peerlist",
+        title: "peerlist.io/adhiboss",
+        url: "https://peerlist.io/adhiboss",
+        icon: "peerlist"
+      },
+      {
         id: "scholar",
         label: "google scholar",
         title: "scholar.google.com/citations",
