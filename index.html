@@ -1,456 +1,435 @@
 <!doctype html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>adhi</title>
-    <meta name="description" content="personal developer portfolio of adhi gowda — software, cloud & security, and figuring out how things work." />
-    
-    <link rel="canonical" href="https://adhigowda.me/" />
-    <link rel="me" href="https://github.com/adhiboss" />
-    <link rel="me" href="https://www.linkedin.com/in/adhigowda2006/" />
-    
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate icon" href="images/favicon.jpg" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&family=Caveat:wght@600;700&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>adhi</title>
+  <meta name="description"
+    content="personal developer portfolio of adhi gowda — software, cloud & security, and figuring out how things work." />
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Background Canvas for Graph Paper Grid and ASCII Ocean Simulation -->
-    <canvas aria-hidden="true"></canvas>
+  <link rel="canonical" href="https://adhigowda.me/" />
+  <link rel="me" href="https://github.com/adhiboss" />
+  <link rel="me" href="https://www.linkedin.com/in/adhigowda2006/" />
 
-    <a class="skip-link" href="#about">skip to portfolio</a>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="images/favicon.jpg" />
 
-    <!-- Top Fixed Bar: Brand & Controls -->
-    <header>
-      <a class="portfolio-brand" href="#about">adhi</a>
-      <div class="ocean-controls">
-        <button
-          class="motion-toggle"
-          type="button"
-          aria-label="pause ocean motion"
-          title="pause ocean motion"
-          data-paused="false"
-        >
-          <svg class="icon pause-icon" viewBox="0 0 256 256" aria-hidden="true">
-            <use href="ui-icons.svg#pause-circle"></use>
-          </svg>
-          <svg class="icon play-icon" viewBox="0 0 256 256" aria-hidden="true">
-            <use href="ui-icons.svg#play-circle"></use>
-          </svg>
-          <span class="motion-label">pause</span>
-        </button>
-        <span class="control-pipe motion-separator" aria-hidden="true">|</span>
-        <button
-          class="theme-toggle"
-          type="button"
-          aria-label="switch to dark theme"
-          title="switch to dark theme"
-        >
-          <svg class="icon sea-day" viewBox="0 0 256 256" aria-hidden="true">
-            <use href="ui-icons.svg#sun-horizon"></use>
-          </svg>
-          <svg class="icon sea-night" viewBox="0 0 256 256" aria-hidden="true">
-            <use href="ui-icons.svg#moon-stars"></use>
-          </svg>
-          <span class="theme-label">light</span>
-        </button>
-      </div>
-    </header>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&family=Caveat:wght@600;700&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
 
-    <!-- Bottom Fixed Section Navigation Dock -->
-    <nav class="section-nav" aria-label="portfolio sections">
-      <a class="section-link" href="#about" aria-label="about" aria-current="location">
-        <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-          <use href="ui-icons.svg#island"></use>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Background Canvas for Graph Paper Grid and ASCII Ocean Simulation -->
+  <canvas aria-hidden="true"></canvas>
+
+  <a class="skip-link" href="#about">skip to portfolio</a>
+
+  <!-- Top Fixed Bar: Brand & Controls -->
+  <header>
+    <a class="portfolio-brand" href="#about">adhi</a>
+    <div class="ocean-controls">
+      <button class="motion-toggle" type="button" aria-label="pause ocean motion" title="pause ocean motion"
+        data-paused="false">
+        <svg class="icon pause-icon" viewBox="0 0 256 256" aria-hidden="true">
+          <use href="ui-icons.svg#pause-circle"></use>
         </svg>
-        <span class="nav-label">about</span>
-        <span class="nav-short" aria-hidden="true">about</span>
-      </a>
-      <a class="section-link" href="#work" aria-label="work">
-        <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-          <use href="ui-icons.svg#briefcase"></use>
+        <svg class="icon play-icon" viewBox="0 0 256 256" aria-hidden="true">
+          <use href="ui-icons.svg#play-circle"></use>
         </svg>
-        <span class="nav-label">work</span>
-        <span class="nav-short" aria-hidden="true">work</span>
-      </a>
-      <a class="section-link" href="#projects" aria-label="projects">
-        <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-          <use href="ui-icons.svg#browsers"></use>
+        <span class="motion-label">pause</span>
+      </button>
+      <span class="control-pipe motion-separator" aria-hidden="true">|</span>
+      <button class="theme-toggle" type="button" aria-label="switch to dark theme" title="switch to dark theme">
+        <svg class="icon sea-day" viewBox="0 0 256 256" aria-hidden="true">
+          <use href="ui-icons.svg#sun-horizon"></use>
         </svg>
-        <span class="nav-label">projects</span>
-        <span class="nav-short" aria-hidden="true">builds</span>
-      </a>
-      <a class="section-link" href="#research" aria-label="research">
-        <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-          <use href="ui-icons.svg#article"></use>
+        <svg class="icon sea-night" viewBox="0 0 256 256" aria-hidden="true">
+          <use href="ui-icons.svg#moon-stars"></use>
         </svg>
-        <span class="nav-label">research</span>
-        <span class="nav-short" aria-hidden="true">papers</span>
-      </a>
-      <a class="section-link" href="#skills" aria-label="skills">
-        <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-          <use href="ui-icons.svg#brackets-curly"></use>
-        </svg>
-        <span class="nav-label">skills</span>
-        <span class="nav-short" aria-hidden="true">skills</span>
-      </a>
-      <a class="section-link" href="#recognition" aria-label="recognition">
-        <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-          <use href="ui-icons.svg#seal-check"></use>
-        </svg>
-        <span class="nav-label">recognition</span>
-        <span class="nav-short" aria-hidden="true">roles</span>
-      </a>
-      <a class="section-link" href="#contact" aria-label="contact">
-        <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-          <use href="ui-icons.svg#chat-circle-dots"></use>
-        </svg>
-        <span class="nav-label">contact</span>
-        <span class="nav-short" aria-hidden="true">hello</span>
-      </a>
-    </nav>
+        <span class="theme-label">light</span>
+      </button>
+    </div>
+  </header>
 
-    <!-- Main Deck Reading Surface -->
-    <main class="portfolio-deck" aria-label="adhi portfolio">
-      <div class="reading-progress" aria-hidden="true"><span></span></div>
-      
-      <div class="deck-scroll" role="region" tabindex="0" aria-label="portfolio content">
-        
-        <!-- SECTION 1 — HERO / ABOUT -->
-        <section class="deck-section about-panel" id="about" aria-labelledby="heading-about" tabindex="-1">
-          <div class="intro-content">
-            <h1 class="signature-heading" id="heading-about">
-              <img
-                class="signature"
-                src="images/signature.svg"
-                width="600"
-                height="260"
-                fetchpriority="high"
-                decoding="async"
-                alt="adhi"
-                draggable="false"
-              />
-            </h1>
-            <p class="alias">you can call me “adhi”</p>
-            <p class="intro-statement">
-              software, cloud &amp; security, and figuring out how things work
-            </p>
-            <p class="recent-work">
-              most recently, software &amp; corporate intern at
-              <a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" rel="noopener noreferrer">
-                omniforge &amp; jain university
-              </a>
-            </p>
-            <div class="intro-actions">
-              <a class="primary-action" href="#projects">view projects</a>
-              <a class="text-action" href="#contact">say hello</a>
-            </div>
-          </div>
-        </section>
+  <!-- Bottom Fixed Section Navigation Dock -->
+  <nav class="section-nav" aria-label="portfolio sections">
+    <a class="section-link" href="#about" aria-label="about" aria-current="location">
+      <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+        <use href="ui-icons.svg#island"></use>
+      </svg>
+      <span class="nav-label">about</span>
+      <span class="nav-short" aria-hidden="true">about</span>
+    </a>
+    <a class="section-link" href="#work" aria-label="work">
+      <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+        <use href="ui-icons.svg#briefcase"></use>
+      </svg>
+      <span class="nav-label">work</span>
+      <span class="nav-short" aria-hidden="true">work</span>
+    </a>
+    <a class="section-link" href="#projects" aria-label="projects">
+      <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+        <use href="ui-icons.svg#browsers"></use>
+      </svg>
+      <span class="nav-label">projects</span>
+      <span class="nav-short" aria-hidden="true">builds</span>
+    </a>
+    <a class="section-link" href="#research" aria-label="research">
+      <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+        <use href="ui-icons.svg#article"></use>
+      </svg>
+      <span class="nav-label">research</span>
+      <span class="nav-short" aria-hidden="true">papers</span>
+    </a>
+    <a class="section-link" href="#skills" aria-label="skills">
+      <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+        <use href="ui-icons.svg#brackets-curly"></use>
+      </svg>
+      <span class="nav-label">skills</span>
+      <span class="nav-short" aria-hidden="true">skills</span>
+    </a>
+    <a class="section-link" href="#recognition" aria-label="recognition">
+      <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+        <use href="ui-icons.svg#seal-check"></use>
+      </svg>
+      <span class="nav-label">recognition</span>
+      <span class="nav-short" aria-hidden="true">roles</span>
+    </a>
+    <a class="section-link" href="#contact" aria-label="contact">
+      <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+        <use href="ui-icons.svg#chat-circle-dots"></use>
+      </svg>
+      <span class="nav-label">contact</span>
+      <span class="nav-short" aria-hidden="true">hello</span>
+    </a>
+  </nav>
 
-        <!-- SECTION 2 — WORK / EXPERIENCE -->
-        <section class="deck-section" id="work" aria-labelledby="heading-work" tabindex="-1">
-          <h2 class="cell-text" id="heading-work">work</h2>
+  <!-- Main Deck Reading Surface -->
+  <main class="portfolio-deck" aria-label="adhi portfolio">
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
 
-          <!-- Work Item 1: OmniForge -->
-          <div class="work-item">
-            <div class="work-heading">
-              <img
-                src="images/omniforge.svg"
-                loading="lazy"
-                decoding="async"
-                width="44"
-                height="44"
-                alt="omniforge"
-                draggable="false"
-              />
-              <div>
-                <h3>omniforge</h3>
-                <p>full stack dev intern</p>
-              </div>
-            </div>
-            <p class="work-dates">
-              <time datetime="2026-04">april 2026</time>
-              <span aria-hidden="true">—</span> <span class="sr-only">to</span>
-              <time datetime="2026-08">august 2026</time>
-            </p>
-            <div class="work-description">
-              <p>learning &amp; implementing as a full stack dev</p>
-              <p>building robust full stack web services, scalable architectures, and interactive client experiences</p>
-            </div>
-            <a
-              class="inline-link"
-              href="https://www.linkedin.com/in/adhigowda2006/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >visit omniforge</a>
-          </div>
+    <div class="deck-scroll" role="region" tabindex="0" aria-label="portfolio content">
 
-          <!-- Work Item 2: Jain University -->
-          <div class="work-item">
-            <div class="work-heading">
-              <img
-                src="images/jain-square.svg"
-                loading="lazy"
-                decoding="async"
-                width="44"
-                height="44"
-                alt="jain (deemed-to-be university)"
-                draggable="false"
-              />
-              <div>
-                <h3>jain (deemed-to-be university)</h3>
-                <p>corporate intern</p>
-              </div>
-            </div>
-            <p class="work-dates">
-              <time datetime="2026-04">april 2026</time>
-              <span aria-hidden="true">—</span> <span class="sr-only">to</span>
-              <time datetime="2026-09">september 2026</time>
-            </p>
-            <div class="work-description">
-              <p>placement coordinator intern facilitating campus recruitment</p>
-              <p>managing student–recruiter coordination and accelerating campus hiring pipelines</p>
-            </div>
-            <a
-              class="inline-link"
-              href="https://www.linkedin.com/in/adhigowda2006/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >visit jain university</a>
-          </div>
-        </section>
-
-        <!-- SECTION 3 — PROJECTS -->
-        <section class="deck-section" id="projects" aria-labelledby="heading-projects" tabindex="-1">
-          <h2 class="cell-text" id="heading-projects">projects</h2>
-          <ul class="project-list">
-            <li>
-              <a href="https://github.com/adhiboss/roadriskai" target="_blank" rel="noopener noreferrer">
-                <span>
-                  <strong>roadrisk ai</strong>
-                  <small>ai / iot &amp; safety</small>
-                </span>
-                <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                  <use href="ui-icons.svg#link-simple"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/adhiboss" target="_blank" rel="noopener noreferrer">
-                <span>
-                  <strong>garudapurana ai</strong>
-                  <small>neural rag / search</small>
-                </span>
-                <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                  <use href="ui-icons.svg#link-simple"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/adhiboss/smart-system-monitor" target="_blank" rel="noopener noreferrer">
-                <span>
-                  <strong>smart system monitor</strong>
-                  <small>linux / utility</small>
-                </span>
-                <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                  <use href="ui-icons.svg#link-simple"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/adhiboss/kernel-behavior-analyzer" target="_blank" rel="noopener noreferrer">
-                <span>
-                  <strong>kernel behavior analyzer</strong>
-                  <small>kernel / observability</small>
-                </span>
-                <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                  <use href="ui-icons.svg#link-simple"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/adhiboss/flames" target="_blank" rel="noopener noreferrer">
-                <span>
-                  <strong>flames.exe</strong>
-                  <small>retro / interactive</small>
-                </span>
-                <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                  <use href="ui-icons.svg#link-simple"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/adhiboss/daily-tech-notes" target="_blank" rel="noopener noreferrer">
-                <span>
-                  <strong>daily tech notes</strong>
-                  <small>devops / cloud playbooks</small>
-                </span>
-                <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                  <use href="ui-icons.svg#link-simple"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/adhiboss/pixel-rearranger" target="_blank" rel="noopener noreferrer">
-                <span>
-                  <strong>pixel rearranger</strong>
-                  <small>canvas / algorithms</small>
-                </span>
-                <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                  <use href="ui-icons.svg#link-simple"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/adhiboss/hackathons_top" target="_blank" rel="noopener noreferrer">
-                <span>
-                  <strong>top hackathons</strong>
-                  <small>community / platform</small>
-                </span>
-                <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                  <use href="ui-icons.svg#link-simple"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-          <p class="section-note">
-            my open source contributions are on
-            <a href="https://github.com/adhiboss" target="_blank" rel="noopener noreferrer">github</a>
+      <!-- SECTION 1 — HERO / ABOUT -->
+      <section class="deck-section about-panel" id="about" aria-labelledby="heading-about" tabindex="-1">
+        <div class="intro-content">
+          <h1 class="signature-heading" id="heading-about">
+            <img class="signature" src="images/signature.svg" width="600" height="260" fetchpriority="high"
+              decoding="async" alt="adhi" draggable="false" />
+          </h1>
+          <p class="alias">you can call me “adhi”</p>
+          <p class="intro-statement">
+            software, building ideas with AI &amp; and figuring out how things work
           </p>
-        </section>
-
-        <!-- SECTION — RESEARCH -->
-        <section class="deck-section" id="research" aria-labelledby="heading-research" tabindex="-1">
-          <h2 class="cell-text" id="heading-research">research</h2>
-          <ul class="project-list">
-            <li>
-              <a href="https://doi.org/10.5281/zenodo.19106604" target="_blank" rel="noopener noreferrer">
-                <span>
-                  <strong>v2x emergency ecosystem research (zenodo)</strong>
-                  <small>accident detection and alert system: collaborative v2x safety ecosystem for smart city emergency response · doi: 10.5281/zenodo.19106604</small>
-                </span>
-                <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                  <use href="ui-icons.svg#link-simple"></use>
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://doi.org/10.5281/zenodo.20287607" target="_blank" rel="noopener noreferrer">
-                <span>
-                  <strong>firmware self-healing framework (osf)</strong>
-                  <small>firmware self-healing for vehicle-to-everything (v2x) networks: a runtime-triggered autonomous repair framework · doi: 10.5281/zenodo.20287607</small>
-                </span>
-                <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                  <use href="ui-icons.svg#link-simple"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-          <p class="section-note">
-            academic research and preprints are indexed on
-            <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">google scholar</a>
+          <p class="recent-work">
+            most recently, software &amp; corporate intern at
+            <a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" rel="noopener noreferrer">
+              omniforge &amp; jain university
+            </a>
           </p>
-        </section>
-
-        <!-- SECTION 4 — SKILLS -->
-        <section class="deck-section" id="skills" aria-labelledby="heading-skills" tabindex="-1">
-          <h2 class="cell-text" id="heading-skills">skills</h2>
-          <dl class="skill-groups">
-            <div>
-              <dt>development workflow</dt>
-              <dd>ai-assisted development | rapid prototyping | debugging with ai</dd>
-            </div>
-            <div>
-              <dt>tools &amp; collaboration</dt>
-              <dd>chatgpt | claude | vs code | git | github</dd>
-            </div>
-            <div>
-              <dt>application development</dt>
-              <dd>frontend | full-stack applications | ai-powered applications</dd>
-            </div>
-            <div>
-              <dt>cloud &amp; deployment</dt>
-              <dd>aws | cloudflare | deployment | hosting</dd>
-            </div>
-          </dl>
-        </section>
-
-        <!-- SECTION 5 — RECOGNITION -->
-        <section class="deck-section" id="recognition" aria-labelledby="heading-recognition" tabindex="-1">
-          <h2 class="cell-text" id="heading-recognition">recognition</h2>
-          <ul class="recognition-list">
-            <li>
-              <span><a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" rel="noopener noreferrer">crce fet — chenraj roychand center for entrepreneurship</a></span>
-              <strong>president</strong>
-            </li>
-            <li>
-              <span><a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" rel="noopener noreferrer">computer society of india</a></span>
-              <strong>executive committee</strong>
-            </li>
-            <li>
-              <span><a href="https://lnkd.in/p/ddsyKzhY" target="_blank" rel="noopener noreferrer">linkedin learning fet</a></span>
-              <strong>brand ambassador</strong>
-            </li>
-            <li>
-              <span><a href="https://lnkd.in/p/ddsyKzhY" target="_blank" rel="noopener noreferrer">capgemini brand quest 2025 &amp; 2026</a></span>
-              <strong>student ambassador</strong>
-            </li>
-            <li>
-              <span><a href="https://www.linkedin.com/company/glug-fet-ju/" target="_blank" rel="noopener noreferrer">glug fet ju (fsmk gnu/linux user group)</a></span>
-              <strong>contributor</strong>
-            </li>
-            <li>
-              <span><a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" rel="noopener noreferrer">centre for grassroots research &amp; innovation (gri)</a></span>
-              <strong>secretary</strong>
-            </li>
-          </ul>
-        </section>
-
-        <!-- SECTION 6 — CONTACT -->
-        <section class="deck-section contact-panel" id="contact" aria-labelledby="heading-contact" tabindex="-1">
-          <h2 class="cell-text" id="heading-contact">contact</h2>
-          <p class="contact-intro">wanna discuss a project or just say hi?</p>
-          <div class="contact-links">
-            <a href="mailto:contact@adhiboss.com" aria-label="email adhi" title="contact@adhiboss.com">
-              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                <use href="ui-icons.svg#envelope-open"></use>
-              </svg>
-            </a>
-            <a href="https://github.com/adhiboss" aria-label="github" title="github.com/adhiboss" target="_blank" rel="noopener noreferrer">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <use href="ui-icons.svg#github"></use>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/adhigowda2006/" aria-label="linkedin" title="linkedin.com/in/adhigowda2006" target="_blank" rel="noopener noreferrer">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <use href="ui-icons.svg#linkedin"></use>
-              </svg>
-            </a>
-            <a href="https://peerlist.io/adhiboss" aria-label="peerlist" title="peerlist.io/adhiboss" target="_blank" rel="noopener noreferrer">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <use href="ui-icons.svg#peerlist"></use>
-              </svg>
-            </a>
-            <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en" aria-label="scholar" title="scholar.google.com/citations" target="_blank" rel="noopener noreferrer">
-              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
-                <use href="ui-icons.svg#globe-hemisphere-west"></use>
-              </svg>
-            </a>
+          <div class="intro-actions">
+            <a class="primary-action" href="#projects">view projects</a>
+            <a class="text-action" href="#contact">say hello</a>
           </div>
-          <p class="contact-note">drop a message, i’ll be around</p>
-        </section>
+        </div>
+      </section>
 
-      </div>
-    </main>
+      <!-- SECTION 2 — WORK / EXPERIENCE -->
+      <section class="deck-section" id="work" aria-labelledby="heading-work" tabindex="-1">
+        <h2 class="cell-text" id="heading-work">work</h2>
 
-    <!-- Configuration & Interactive Simulation Engine -->
-    <script src="portfolio-data.js"></script>
-    <script src="script.js"></script>
-  </body>
+        <!-- Work Item 1: OmniForge -->
+        <div class="work-item">
+          <div class="work-heading">
+            <img src="images/omniforge.svg" loading="lazy" decoding="async" width="44" height="44" alt="omniforge"
+              draggable="false" />
+            <div>
+              <h3>omniforge</h3>
+              <p>full stack dev intern</p>
+            </div>
+          </div>
+          <p class="work-dates">
+            <time datetime="2026-04">april 2026</time>
+            <span aria-hidden="true">—</span> <span class="sr-only">to</span>
+            <time datetime="2026-08">august 2026</time>
+          </p>
+          <div class="work-description">
+            <p>learning &amp; implementing as a full stack dev</p>
+            <p>building robust full stack web services, scalable architectures, and interactive client experiences</p>
+          </div>
+          <a class="inline-link" href="https://www.linkedin.com/in/adhigowda2006/" target="_blank"
+            rel="noopener noreferrer">visit omniforge</a>
+        </div>
+
+        <!-- Work Item 2: Jain University -->
+        <div class="work-item">
+          <div class="work-heading">
+            <img src="images/jain-square.svg" loading="lazy" decoding="async" width="44" height="44"
+              alt="jain (deemed-to-be university)" draggable="false" />
+            <div>
+              <h3>jain (deemed-to-be university)</h3>
+              <p>corporate intern</p>
+            </div>
+          </div>
+          <p class="work-dates">
+            <time datetime="2026-04">april 2026</time>
+            <span aria-hidden="true">—</span> <span class="sr-only">to</span>
+            <time datetime="2026-09">september 2026</time>
+          </p>
+          <div class="work-description">
+            <p>placement coordinator intern facilitating campus recruitment</p>
+            <p>managing student–recruiter coordination and accelerating campus hiring pipelines</p>
+          </div>
+          <a class="inline-link" href="https://www.linkedin.com/in/adhigowda2006/" target="_blank"
+            rel="noopener noreferrer">visit jain university</a>
+        </div>
+      </section>
+
+      <!-- SECTION 3 — PROJECTS -->
+      <section class="deck-section" id="projects" aria-labelledby="heading-projects" tabindex="-1">
+        <h2 class="cell-text" id="heading-projects">projects</h2>
+        <ul class="project-list">
+          <li>
+            <a href="https://github.com/adhiboss/roadriskai" target="_blank" rel="noopener noreferrer">
+              <span>
+                <strong>roadrisk ai</strong>
+                <small>ai / iot &amp; safety</small>
+              </span>
+              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+                <use href="ui-icons.svg#link-simple"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/adhiboss" target="_blank" rel="noopener noreferrer">
+              <span>
+                <strong>garudapurana ai</strong>
+                <small>neural rag / search</small>
+              </span>
+              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+                <use href="ui-icons.svg#link-simple"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/adhiboss/smart-system-monitor" target="_blank" rel="noopener noreferrer">
+              <span>
+                <strong>smart system monitor</strong>
+                <small>linux / utility</small>
+              </span>
+              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+                <use href="ui-icons.svg#link-simple"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/adhiboss/kernel-behavior-analyzer" target="_blank" rel="noopener noreferrer">
+              <span>
+                <strong>kernel behavior analyzer</strong>
+                <small>kernel / observability</small>
+              </span>
+              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+                <use href="ui-icons.svg#link-simple"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/adhiboss/flames" target="_blank" rel="noopener noreferrer">
+              <span>
+                <strong>flames.exe</strong>
+                <small>retro / interactive</small>
+              </span>
+              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+                <use href="ui-icons.svg#link-simple"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/adhiboss/daily-tech-notes" target="_blank" rel="noopener noreferrer">
+              <span>
+                <strong>daily tech notes</strong>
+                <small>devops / cloud playbooks</small>
+              </span>
+              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+                <use href="ui-icons.svg#link-simple"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/adhiboss/pixel-rearranger" target="_blank" rel="noopener noreferrer">
+              <span>
+                <strong>pixel rearranger</strong>
+                <small>canvas / algorithms</small>
+              </span>
+              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+                <use href="ui-icons.svg#link-simple"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/adhiboss/hackathons_top" target="_blank" rel="noopener noreferrer">
+              <span>
+                <strong>top hackathons</strong>
+                <small>community / platform</small>
+              </span>
+              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+                <use href="ui-icons.svg#link-simple"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <p class="section-note">
+          my open source contributions are on
+          <a href="https://github.com/adhiboss" target="_blank" rel="noopener noreferrer">github</a>
+        </p>
+      </section>
+
+      <!-- SECTION — RESEARCH -->
+      <section class="deck-section" id="research" aria-labelledby="heading-research" tabindex="-1">
+        <h2 class="cell-text" id="heading-research">research</h2>
+        <ul class="project-list">
+          <li>
+            <a href="https://doi.org/10.5281/zenodo.19106604" target="_blank" rel="noopener noreferrer">
+              <span>
+                <strong>v2x emergency ecosystem research (zenodo)</strong>
+                <small>accident detection and alert system: collaborative v2x safety ecosystem for smart city emergency
+                  response · doi: 10.5281/zenodo.19106604</small>
+              </span>
+              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+                <use href="ui-icons.svg#link-simple"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://doi.org/10.5281/zenodo.20287607" target="_blank" rel="noopener noreferrer">
+              <span>
+                <strong>firmware self-healing framework (osf)</strong>
+                <small>firmware self-healing for vehicle-to-everything (v2x) networks: a runtime-triggered autonomous
+                  repair framework · doi: 10.5281/zenodo.20287607</small>
+              </span>
+              <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+                <use href="ui-icons.svg#link-simple"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <p class="section-note">
+          academic research and preprints are indexed on
+          <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en" target="_blank"
+            rel="noopener noreferrer">google scholar</a>
+        </p>
+      </section>
+
+      <!-- SECTION 4 — SKILLS -->
+      <section class="deck-section" id="skills" aria-labelledby="heading-skills" tabindex="-1">
+        <h2 class="cell-text" id="heading-skills">skills</h2>
+        <dl class="skill-groups">
+          <div>
+            <dt>development workflow</dt>
+            <dd>ai-assisted development | rapid prototyping | debugging with ai</dd>
+          </div>
+          <div>
+            <dt>tools &amp; collaboration</dt>
+            <dd>chatgpt | claude | vs code | git | github</dd>
+          </div>
+          <div>
+            <dt>application development</dt>
+            <dd>frontend | full-stack applications | ai-powered applications</dd>
+          </div>
+          <div>
+            <dt>cloud &amp; deployment</dt>
+            <dd>aws | cloudflare | deployment | hosting</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- SECTION 5 — RECOGNITION -->
+      <section class="deck-section" id="recognition" aria-labelledby="heading-recognition" tabindex="-1">
+        <h2 class="cell-text" id="heading-recognition">recognition</h2>
+        <ul class="recognition-list">
+          <li>
+            <span><a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" rel="noopener noreferrer">crce
+                fet — chenraj roychand center for entrepreneurship</a></span>
+            <strong>president</strong>
+          </li>
+          <li>
+            <span><a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank"
+                rel="noopener noreferrer">computer society of india</a></span>
+            <strong>executive committee</strong>
+          </li>
+          <li>
+            <span><a href="https://lnkd.in/p/ddsyKzhY" target="_blank" rel="noopener noreferrer">linkedin learning
+                fet</a></span>
+            <strong>brand ambassador</strong>
+          </li>
+          <li>
+            <span><a href="https://lnkd.in/p/ddsyKzhY" target="_blank" rel="noopener noreferrer">capgemini brand quest
+                2025 &amp; 2026</a></span>
+            <strong>student ambassador</strong>
+          </li>
+          <li>
+            <span><a href="https://www.linkedin.com/company/glug-fet-ju/" target="_blank" rel="noopener noreferrer">glug
+                fet ju (fsmk gnu/linux user group)</a></span>
+            <strong>contributor</strong>
+          </li>
+          <li>
+            <span><a href="https://www.linkedin.com/in/adhigowda2006/" target="_blank" rel="noopener noreferrer">centre
+                for grassroots research &amp; innovation (gri)</a></span>
+            <strong>secretary</strong>
+          </li>
+        </ul>
+      </section>
+
+      <!-- SECTION 6 — CONTACT -->
+      <section class="deck-section contact-panel" id="contact" aria-labelledby="heading-contact" tabindex="-1">
+        <h2 class="cell-text" id="heading-contact">contact</h2>
+        <p class="contact-intro">wanna discuss a project or just say hi?</p>
+        <div class="contact-links">
+          <a href="mailto:contact@adhiboss.com" aria-label="email adhi" title="contact@adhiboss.com">
+            <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+              <use href="ui-icons.svg#envelope-open"></use>
+            </svg>
+          </a>
+          <a href="https://github.com/adhiboss" aria-label="github" title="github.com/adhiboss" target="_blank"
+            rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="ui-icons.svg#github"></use>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/adhigowda2006/" aria-label="linkedin"
+            title="linkedin.com/in/adhigowda2006" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="ui-icons.svg#linkedin"></use>
+            </svg>
+          </a>
+          <a href="https://peerlist.io/adhiboss" aria-label="peerlist" title="peerlist.io/adhiboss" target="_blank"
+            rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="ui-icons.svg#peerlist"></use>
+            </svg>
+          </a>
+          <a href="https://scholar.google.com/citations?user=SPDqnssAAAAJ&hl=en" aria-label="scholar"
+            title="scholar.google.com/citations" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 256 256" aria-hidden="true">
+              <use href="ui-icons.svg#globe-hemisphere-west"></use>
+            </svg>
+          </a>
+        </div>
+        <p class="contact-note">drop a message, i’ll be around</p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Configuration & Interactive Simulation Engine -->
+  <script src="portfolio-data.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
