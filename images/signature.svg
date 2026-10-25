@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260" fill="none">
+  <!-- Elegant Handwritten Signature: Adhi -->
+  <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Capital 'A' with expressive loop and stroke -->
+    <path d="M 68 185 C 85 130, 115 62, 148 42 C 165 31, 182 35, 178 58 C 170 98, 142 168, 126 215 C 120 232, 128 238, 142 225 C 168 200, 185 145, 195 105 C 200 85, 195 72, 182 78 C 160 88, 145 130, 155 175 C 162 205, 185 212, 215 195" 
+          stroke-width="7.5" fill="none"/>
+    
+    <!-- Cross/Flourish tie connecting A into d -->
+    <path d="M 110 135 C 145 125, 205 132, 245 158" 
+          stroke-width="6.5" fill="none"/>
+
+    <!-- Letter 'd' with tall ascending loop -->
+    <path d="M 285 160 C 275 142, 252 145, 242 165 C 232 185, 240 208, 262 208 C 285 208, 305 185, 312 155 L 332 58 C 335 42, 326 38, 318 48 C 305 65, 300 115, 306 172 C 308 198, 316 210, 335 204 C 352 198, 368 180, 385 160" 
+          stroke-width="7" fill="none"/>
+
+    <!-- Letter 'h' with ascending loop and soft shoulder -->
+    <path d="M 380 168 C 392 145, 412 85, 420 54 C 424 40, 416 34, 405 46 C 390 64, 382 120, 386 175 C 388 202, 396 208, 408 200 C 420 190, 432 165, 442 145 C 454 122, 470 125, 472 146 C 475 168, 472 192, 478 204 C 484 214, 498 210, 515 192" 
+          stroke-width="7" fill="none"/>
+
+    <!-- Letter 'i' with smooth exit sweep -->
+    <path d="M 515 155 C 522 145, 532 142, 536 155 C 542 172, 538 195, 548 204 C 555 210, 568 206, 582 195" 
+          stroke-width="7" fill="none"/>
+
+    <!-- Dot above 'i' -->
+    <ellipse cx="546" cy="118" rx="5.5" ry="5" fill="currentColor"/>
+  </g>
+</svg>
